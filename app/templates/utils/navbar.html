@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand navbar-dark bg-black">
+    <div class="container-fluid navbar-full-width justify-content-around">
+        <div class="navbar-collapse justify-content-start mx-3">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="navbar-brand title-nav" href="{{ url_for('home_blueprint.home') }}">
+                        <img src="{{ url_for('static', filename='images/MSE-Logo_Bianco_2_cut.png') }}" alt="Logo" class="navbar-logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link {% if 'marche' in segment %}btn-active{% endif %}" href="{{ url_for('plc_blueprint.marche') }}">
+                        <i class="mse mse-tags"></i> Brand 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if 'plc' in segment %}btn-active{% endif %}" href="{{ url_for('plc_blueprint.plc') }}">
+                        <i class="mse mse-connector"></i>  Controllori 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if 'gruppi' in segment %}btn-active{% endif %}" href="{{ url_for('variabili_blueprint.gruppi') }}">
+                        <i class="mse mse-group"></i> Gruppi 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if 'variabili' in segment %}btn-active{% endif %}" href="{{ url_for('variabili_blueprint.variabili') }}">
+                        <i class="mse mse-list"></i> Variabili 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if 'files' in segment %}btn-active{% endif %}" href="{{ url_for('files_blueprint.files') }}">
+                        <i class="mse mse-files"></i> Files
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if 'json' in segment %}btn-active{% endif %}" href="{{ url_for('files_blueprint.generate_json') }}">
+                        <i class="mse mse-code-file-outlined"></i>
+                        Generate JSON
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if 'input_fields' in segment %}btn-active{% endif %}" href="{{ url_for('home_blueprint.input_fields_demo') }}">
+                        Input fields DEMO
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home_blueprint.logout') }}">
+                        <i class="mse mse-logout"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
