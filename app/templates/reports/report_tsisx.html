@@ -1,0 +1,153 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+<style>
+  .container {
+    margin-top: 20px;
+  }
+  
+  .logo-container {
+      display: flex;
+      align-items: center;
+  }
+  .logo-container img {
+      height: 3rem;
+      margin-right: 10px;
+      background-color: black;
+      border-radius: 6px;
+  }
+  .segment {
+      font-size: 1rem;
+      font-weight: 700;
+  }
+  
+  .date-text {
+    font-weight: 700;
+  }
+
+  .input-value::after {
+    content: attr(value);
+    display: block;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  .text-green-600 {
+    color: green;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 1.7rem;
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+
+    .input-value {
+      margin-bottom: 1rem;
+    }
+
+    .top-info {
+      display: block;
+    }
+
+    h3 {
+      display: none;
+    }
+
+    .print-down {
+      padding-top: 4rem;
+    }
+  }
+</style>
+{% endblock custom_style %}
+
+
+{% block content %}
+<div class="container top-info d-none">
+  <div class="logo-container">
+      <img class="w-auto h-12" src="http://192.168.1.148/static/images/logo.png" alt="Your Company"> <!---->
+      <p class="segment">Sistema Analisi Automatizzato SAA |</p>
+      <p class="date-text">| Data: {{ current_date }}</p>   
+  </div>
+  <div class="text-center title">Report TSI SX</div>
+</div>
+
+<div class="text-center mt-4">
+  <form action="{{ url_for('pdfs_blueprint.print_pdf_report_tsisx') }}" method="post">
+    <input type="hidden" name="selector" value="{{ selector }}">
+    <input type="hidden" name="segment" value="{{ segment }}">
+      <button type="submit" class="no-print btn-primary text-white font-bold py-2 px-4 rounded">
+          <i class="mse mse-download"></i> Scarica PDF
+      </button>
+  </form>
+</div>
+<div class="px-4 sm:px-6 lg:px-8 w-full xl:max-w-4xl mx-auto" style="position: relative;">
+
+    <!-- Start of the generated HTML code -->
+    <div class="bg-white p-4 rounded-lg shadow-lg w-full" style="border-radius: 2rem;margin-top: 10px;">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="col-span-1 md:col-span-2">
+          <h2 class="text-xl font-bold mb-2">Dati Analizzatore</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
+            <div>
+              <label class="block text-sm font-medium">Modello</label>
+              <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="x">
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Cert. Taratura</label>
+              <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="x">
+            </div>
+            <div>
+              <label class="block text-sm font-medium">N/S</label>
+              <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="x">
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Tipo Analisi</label>
+              <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="x">
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Metodo</label>
+              <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="x.xx">
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Val. riferimento</label>
+              <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="x.xx">
+            </div>
+            <div>
+              <label class="block text-sm font-medium">U. di Mis.</label>
+              <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="x.xx">
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold mb-2">Last Calibration</h2>
+          
+          <label class="block text-sm font-medium text-center">Ultima Calibrazione</label>
+          <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="x">
+          <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="Calibrazione non eseguita VALORE INSATIBILE">
+        </div>
+        <div style="margin-top: 26px;">
+          
+          
+          <label class="print-down block text-sm font-medium">Riferimento MAX</label>
+              <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="x">
+                
+          <label class="block text-sm font-medium">Riferimento MIN</label>
+          <input type="text" class="input-value mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="x">
+        </div>
+       
+      </div>
+    </div>
+    <!-- End of the generated HTML code -->
+  </div>
+{% endblock content %}
+
+{% block javascripts %} 
+{% endblock javascripts %}
