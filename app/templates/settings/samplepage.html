@@ -1,0 +1,271 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+
+    }
+
+    table.dataTable thead th {
+        background-color: #a20bf3;
+        /* Arancione */
+        color: #fff;
+        /* Bianco */
+        border-bottom: 2px solid #333;
+        /* Nero */
+    }
+
+    table.dataTable tbody tr:nth-child(odd) {
+        background-color: #161616;
+        /* Grigio scuro */
+    }
+
+    table.dataTable tbody tr:nth-child(even) {
+        background-color: #000000;
+        /* Grigio chiaro */
+    }
+
+    table.dataTable tbody tr:hover {
+        background-color: #ff7f00;
+        /* Arancione */
+        color: #000000;
+        /* Bianco */
+    }
+
+    table.dataTable tr {
+        font-weight: bold;
+
+    }
+
+    thead,
+    tbody,
+    tfoot,
+    tr,
+    td,
+    th {
+        border-color: inherit;
+        border-style: solid;
+        border-width: 3px;
+        color: white;
+        /* border-radius: 1px; */
+    }
+
+    table.dataTable {
+        width: 200%;
+        height: 325px;
+        border-collapse: collapse;
+    }
+
+    table.dataTable th,
+    table.dataTable td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #555;
+        /* Grigio scuro */
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        background-color: #ff7f00;
+        /* Arancione */
+        color: #fff !important;
+        /* Bianco */
+        border: 1px solid #333;
+        /* Nero */
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background-color: #333;
+        /* Nero */
+        color: #ff7f00 !important;
+        /* Arancione */
+    }
+
+    .dataTables_wrapper .dataTables_filter input {
+        background-color: #555;
+        /* Grigio scuro */
+        color: #fff;
+        /* Bianco */
+        border: 1px solid #ff7f00;
+        /* Arancione */
+    }
+</style>
+{% endblock custom_style %}
+
+
+{% block content %}
+<div class="text-center mt-4">
+    <form action="{{ url_for('pdfs_blueprint.print_pdf_sample_page') }}" method="post">
+        <button type="submit" class="btn-primary text-white font-bold py-2 px-4 rounded">
+            <i class="mse mse-download"></i> Scarica PDF
+        </button>
+    </form>
+</div>
+<div class="px-4 sm:px-6 lg:px-8 mt-12 lg:mt-16 xl:mt-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-12">
+        <!-- Primo contenitore -->
+        <div class="overflow-hidden rounded-3xl bg-white shadow p-4 w-full h-auto">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-center">CAMPIONE: 1</h2>
+            </div>
+            <div class="flex items-center justify-center mb-6">
+                <div class="flex-1 text-center">
+                    <label for="min-dx-1" class="sr-only ">Min DX</label>
+                    <input type="text" id="min-dx-1" class="border border-gray-300 rounded p-2 w-32 text-center"
+                        placeholder="Min DX">
+                </div>
+            </div>
+            <hr class="border-t mb-6">
+            <div class="flex flex-col items-center">
+                <label for="barcode-1" class="text-gray-700">Barcode</label>
+                <input type="text" id="barcode-1" class="border border-gray-300 rounded p-2 w-3/4 mt-2"
+                    placeholder=".......">
+            </div>
+            <p class="text-center font-bold text-2xl" style="margin-bottom: -20px; margin-top: 15px;">Riferimento Min DX
+            </p>
+            <p class="text-center text-lg mt-5">Valore</p>
+            <div class="flex justify-center items-center mt-5">
+                <div class="border border-black px-16 py-2">0,000</div>
+                <div class="border border-black px-16 py-2 ml-4">------</div>
+            </div>
+            <p class="text-center text-lg mt-5">Certificato</p>
+            <div class="flex justify-center items-center mt-5">
+                <div class="border border-black px-32 py-2">-----------</div>
+            </div>
+            <div class="flex justify-center items-center mt-5 space-x-2">
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Anno"
+                        class="w-full border-none"></div>
+                <span>/</span>
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Mese"
+                        class="w-full border-none"></div>
+                <span>/</span>
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Giorno"
+                        class="w-full border-none"></div>
+            </div>
+        </div>
+        <!-- Secondo contenitore -->
+        <div class="overflow-hidden rounded-3xl bg-white shadow p-4 w-full h-auto">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-center">CAMPIONE: 2</h2>
+            </div>
+            <div class="flex items-center justify-center mb-6">
+                <div class="flex-1 text-center">
+                    <label for="min-dx-2" class="sr-only">Min DX</label>
+                    <input type="text" id="min-dx-2" class="border border-gray-300 rounded p-2 w-32 text-center"
+                        placeholder="Min DX">
+                </div>
+            </div>
+            <hr class="border-t mb-6">
+            <div class="flex flex-col items-center">
+                <label for="barcode-2" class="text-gray-700">Barcode</label>
+                <input type="text" id="barcode-2" class="border border-gray-300 rounded p-2 w-3/4 mt-2"
+                    placeholder=".......">
+            </div>
+            <p class="text-center font-bold text-2xl" style="margin-bottom: -20px; margin-top: 15px;">Riferimento Min DX
+            </p>
+            <p class="text-center text-lg mt-5">Valore</p>
+            <div class="flex justify-center items-center mt-5">
+                <div class="border border-black px-16 py-2">0,000</div>
+                <div class="border border-black px-16 py-2 ml-4">------</div>
+            </div>
+            <p class="text-center text-lg mt-5">Certificato</p>
+            <div class="flex justify-center items-center mt-5">
+                <div class="border border-black px-32 py-2">-----------</div>
+            </div>
+            <div class="flex justify-center items-center mt-5 space-x-2">
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Anno"
+                        class="w-full border-none"></div>
+                <span>/</span>
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Mese"
+                        class="w-full border-none"></div>
+                <span>/</span>
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Giorno"
+                        class="w-full border-none"></div>
+            </div>
+        </div>
+        <!-- Terzo contenitore -->
+        <div class="overflow-hidden rounded-3xl bg-white shadow p-4 w-full h-auto">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-center">CAMPIONE: 3</h2>
+            </div>
+            <div class="flex items-center justify-center mb-6">
+                <div class="flex-1 text-center">
+                    <label for="min-dx-3" class="sr-only">Min DX</label>
+                    <input type="text" id="min-dx-3" class="border border-gray-300 rounded p-2 w-32 text-center"
+                        placeholder="Min DX">
+                </div>
+            </div>
+            <hr class="border-t mb-6">
+            <div class="flex flex-col items-center">
+                <label for="barcode-3" class="text-gray-700">Barcode</label>
+                <input type="text" id="barcode-3" class="border border-gray-300 rounded p-2 w-3/4 mt-2"
+                    placeholder=".......">
+            </div>
+            <p class="text-center font-bold text-2xl" style="margin-bottom: -20px; margin-top: 15px;">Riferimento Min DX
+            </p>
+            <p class="text-center text-lg mt-5">Valore</p>
+            <div class="flex justify-center items-center mt-5">
+                <div class="border border-black px-16 py-2">0,000</div>
+                <div class="border border-black px-16 py-2 ml-4">------</div>
+            </div>
+            <p class="text-center text-lg mt-5">Certificato</p>
+            <div class="flex justify-center items-center mt-5">
+                <div class="border border-black px-32 py-2">-----------</div>
+            </div>
+            <div class="flex justify-center items-center mt-5 space-x-2">
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Anno"
+                        class="w-full border-none"></div>
+                <span>/</span>
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Mese"
+                        class="w-full border-none"></div>
+                <span>/</span>
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Giorno"
+                        class="w-full border-none"></div>
+            </div>
+        </div>
+        <!-- Quarto contenitore -->
+        <div class="overflow-hidden rounded-3xl bg-white shadow p-4 w-full h-auto">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-center">CAMPIONE: 4</h2>
+            </div>
+            <div class="flex items-center justify-center mb-6">
+                <div class="flex-1 text-center">
+                    <label for="min-dx-4" class="sr-only">Min DX</label>
+                    <input type="text" id="min-dx-4" class="border border-gray-300 rounded p-2 w-32 text-center"
+                        placeholder="Min DX">
+                </div>
+            </div>
+            <hr class="border-t mb-6">
+            <div class="flex flex-col items-center">
+                <label for="barcode-4" class="text-gray-700">Barcode</label>
+                <input type="text" id="barcode-4" class="border border-gray-300 rounded p-2 w-3/4 mt-2"
+                    placeholder=".......">
+            </div>
+            <p class="text-center font-bold text-2xl" style="margin-bottom: -20px; margin-top: 15px;">Riferimento Min DX
+            </p>
+            <p class="text-center text-lg mt-5">Valore</p>
+            <div class="flex justify-center items-center mt-5">
+                <div class="border border-black px-16 py-2">0,000</div>
+                <div class="border border-black px-16 py-2 ml-4">------</div>
+            </div>
+            <p class="text-center text-lg mt-5">Certificato</p>
+            <div class="flex justify-center items-center mt-5">
+                <div class="border border-black px-32 py-2">-----------</div>
+            </div>
+            <div class="flex justify-center items-center mt-5 space-x-2">
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Anno"
+                        class="w-full border-none"></div>
+                <span>/</span>
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Mese"
+                        class="w-full border-none"></div>
+                <span>/</span>
+                <div class="border border-black p-2 flex-1"><input type="text" placeholder="Giorno"
+                        class="w-full border-none"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascripts %}
+{% endblock javascripts %}
