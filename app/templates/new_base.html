@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLC Connector</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/MSE-Logo_Bianco_2_head.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_css/bootstrap-530.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_css/new_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_css/font_awesome.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_css/mse-icons.css') }}">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  {% block custom_style %}
+  {% endblock %}
+  <style>
+    .align-mse{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2px
+    }
+    /* Avoid content being cut off */
+.content {
+    page-break-inside: avoid;
+}
+
+/* Force page breaks where necessary */
+.page-break {
+    page-break-before: always;
+}
+  </style>
+  <body>
+   
+    {% include "utils/new_navbar.html"%}
+
+<div class="lg:pl-48">
+
+
+    <main class="py-10 content">
+      <h3 class="text-center text-black mt-10" style="font-size: 30px; font-weight: bold;"> {% if not segment == "" %}{{segment}}{% endif %}</h3>
+        {% block content %}
+        {% endblock content%}
+        {% include "utils/scrollToTopButton.html"%}
+    </main>
+          
+</div>
+
+    {% include "utils/scripts.html"%}
+    {% block javascripts %}
+    {% endblock %}
+    <!-- Initialize DataTables -->
+   
+  </body>
+</html>
