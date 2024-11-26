@@ -1,0 +1,218 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+<style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+          margin: 0 auto;
+          font-size: 20px;
+          padding: 20px;
+          border-collapse: collapse;
+      }
+
+      td {
+          border: 1px solid black; /* bordo nero */
+          padding: 8px; /* spazio intorno al contenuto */
+      }
+  </style>
+{% endblock custom_style %}
+
+
+{% block content %}
+<div class="px-4 sm:px-6 lg:px-8" style="position: relative;">
+    <div class="overflow-hidden bg-white shadow" style="border-radius: 3rem; position: relative;">
+        <div class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+            style="height: 100%; background-color: #fff; padding-top: 5rem !important;">
+            <img src="{{ url_for('static', filename='images/Oxymat_{}.bmp'.format(segment)) }}">
+        </div>
+        <div class="mb-5 text-center">
+            <h2 class="text-lg mb-3">Ultima CALIBRAZIONE</h2>
+            <div class="flex justify-center">
+                <input type="text" class="h-12 text-lg border border-black rounded p-2 text-center" style="width: 50%;" placeholder="Inserisci la data dell'ultima calibrazione">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+        <div class="px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col lg:flex-row justify-between mt-6 lg:mt-0" style="margin-top: 40px;">
+              <!-- Primo div -->
+              <div class="bg-white shadow mb-6 lg:mb-0 lg:mr-6" style="border-radius: 4rem; padding: 20px; flex-grow: 1;">
+                  <!-- Contenuto del primo div -->
+                  <!-- Generale: OPEN -->
+                  <p class="text-center font-bold text-2xl">Oxymat Max {{segment}}</p>
+                  <!-- Quadrato 1 -->
+                  <div class="mb-5">
+                    <h2 class="text-lg mb-3">Barcode</h2>
+                    <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+                </div>
+                  <div class="border-b mb-6"></div>
+                  <!-- Quadrato 2 -->
+                  <div class="mb-5">
+                    <h2 class="text-lg mb-3">Certificato</h2>
+                    <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+                </div>
+                  <div class="border-b mb-6"></div>
+                  <!-- Quadrato 3 -->
+                  <div class="mb-5">
+                    <h2 class="text-lg mb-3">Titolo</h2>
+                    <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+                </div>
+                  <div class="border-b mb-6"></div>
+                  <!-- Quadrato 4 -->
+                  <div class="mb-5">
+                    <h2 class="text-lg mb-3">Stabile fino al:</h2>
+                    <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+                </div>
+                  <div class="border-b mb-6"></div>
+              </div>
+      
+              <!-- Secondo div -->
+              <div class="bg-white shadow mb-6 lg:mb-0 lg:mr-6" style="border-radius: 4rem; padding: 20px; flex-grow: 1;">
+                <!-- Contenuto del primo div -->
+                <!-- Generale: OPEN -->
+                <p class="text-center font-bold text-2xl">Oxymat Min {{segment}}</p>
+                <!-- Quadrato 1 -->
+                <div class="mb-5">
+                  <h2 class="text-lg mb-3">Barcode</h2>
+                  <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+              </div>
+                <div class="border-b mb-6"></div>
+                <!-- Quadrato 2 -->
+                <div class="mb-5">
+                  <h2 class="text-lg mb-3">Certificato</h2>
+                  <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+              </div>
+                <div class="border-b mb-6"></div>
+                <!-- Quadrato 3 -->
+                <div class="mb-5">
+                  <h2 class="text-lg mb-3">Titolo</h2>
+                  <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+              </div>
+                <div class="border-b mb-6"></div>
+                <!-- Quadrato 4 -->
+                <div class="mb-5">
+                  <h2 class="text-lg mb-3">Stabile fino al:</h2>
+                  <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+              </div>
+            </div>
+
+
+
+           
+          </div>
+      </div>
+      
+      <div class="px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center mt-6 lg:mt-0" style="margin-top: 40px;">
+            <!-- Contenitore ridimensionato, centrato con spazi ai lati -->
+            <div class="bg-white shadow mb-6 lg:mb-0" style="border-radius: 3rem;
+            padding: 20px;
+            width: 50%;
+            max-width: 985.3px;
+            margin-left: auto;
+            margin-right: auto;">
+                <!-- Quadrato 1 -->
+                <div class="mb-5">
+                  <h2 class="text-lg mb-3">Modello</h2>
+                  <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+              </div>
+                
+                <!-- Quadrato 2 -->
+                <div class="mb-5">
+                  <h2 class="text-lg mb-3">Cert. Taratura</h2>
+                  <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+              </div>
+                
+                <!-- Quadrato 3 -->
+                <div class="mb-5">
+                  <h2 class="text-lg mb-3">Serial Number</h2>
+                  <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+              </div>
+                
+                <!-- Quadrato 4 -->
+                <div class="mb-5">
+                  <h2 class="text-lg mb-3">Tipo Analisi</h2>
+                  <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+              </div>
+               <!-- Quadrato 5 -->
+               <div class="mb-5">
+                <h2 class="text-lg mb-3">Metodo</h2>
+                <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+            </div>
+             <!-- Quadrato 6 -->
+             <div class="mb-5">
+              <h2 class="text-lg mb-3">Val. Riferimento</h2>
+              <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="Inserisci la data dell'ultima calibrazione">
+          </div>
+            </div>
+        </div>
+    </div>
+    
+          
+          
+          <!-- END secondo contenitore -->
+
+
+
+          <div class="flex flex-col lg:flex-row space-y-5 lg:space-y-0 lg:space-x-5 mt-12">
+            <!-- Primo div -->
+            <div class="overflow-hidden rounded-lg bg-white shadow p-4 flex-grow" style="height: 213px; border-radius: 4rem;">
+                <p class="text-center font-bold text-2xl">GA2</p>
+                <div class="flex justify-around items-center h-full">
+                    <!-- Quadrato 1 -->
+                    <div class="flex flex-col items-center">
+                        <span class="mb-2 text-black text-xl">EV</span>
+                        <div class="flex items-center justify-center w-16 h-16 border bg-transparent rounded-2xl"></div>
+                    </div>
+                    <!-- Linea verticale -->
+                    <div class="border border-gray-300 h-20"></div>
+                    <!-- Quadrato 2 -->
+                    <div class="flex flex-col items-center">
+                        <span class="mb-2 text-black text-xl">TANK</span>
+                        <div class="flex items-center justify-center w-16 h-16 border bg-transparent rounded-2xl"></div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Secondo div -->
+            <div class="overflow-hidden rounded-lg bg-white shadow p-4 flex-grow" style="height: 213px; border-radius: 4rem;">
+                <p class="text-center font-bold text-2xl">Generale</p>
+                <div class="flex justify-around items-center h-full">
+                    <!-- Quadrato 1 -->
+                    <div class="flex flex-col items-center">
+                        <span class="mb-2 text-black text-xl">POSIZIONE</span>
+                        <div class="flex items-center justify-center w-16 h-16 border bg-transparent rounded-2xl"></div>
+                    </div>
+                    <!-- Linea verticale -->
+                    <div class="border border-gray-300 h-20"></div>
+                    <!-- Quadrato 2 -->
+                    <div class="flex flex-col items-center">
+                        <span class="mb-2 text-black text-xl">GRUPPO ANALISI</span>
+                        <div class="flex items-center justify-center w-16 h-16 border bg-transparent rounded-2xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}
+
+{% block javascripts %} 
+<script>
+    $(document).ready(function () {
+      $("#deviceTable").DataTable();
+    });
+
+
+</script>
+{% endblock javascripts %}
