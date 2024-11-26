@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="base-container">
+    <h1>Registra nuovo PLC</h1>
+    <form action="/registra-plc" method="post">
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="name">Denominazione:</label>
+                <input type="text" id="name" class= "mse-input" placeholder="Denominazione marca..." name="name" required>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="marca">Marche PLC:</label>
+                <select id="marca" name="marca" placeholder="Marca di appartenenza..."  class="mse-input">
+                    {% for marca in marche %}
+                    <option value="{{ marca.id }}">{{ marca.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap"  id="caratteristiche-container">
+            {% for caratteristica in caratteristiche %}
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="name">{{ caratteristica }}:</label>
+                <input type="text" id="caratteristiche" class= "mse-input" placeholder="Inserisci {{ caratteristica }}" name="caratteristiche">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="mse-input-row">    
+            <button type="submit" class='mse-input' value="submit"><i class="mse mse-add mx-1"></i> Registra Controllore</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ url_for('static', filename='js/logiche/querys.js') }}"></script>
+<script>
+    var urlBaseGetCaratteristiche = "{{ url_for('querys_blueprint.get_caratteristiche', marca_id='__marca_id__') }}";
+    document.addEventListener('DOMContentLoaded', function () {
+        const selectMarca = document.getElementById('marca');
+        const containerCaratteristiche = document.getElementById('caratteristiche-container');
+      
+        selectMarca.addEventListener('change', function() { getCaratteristiche(urlBaseGetCaratteristiche); });
+        const event = new Event('change');
+        selectMarca.dispatchEvent(event);
+    });
+</script>
+{% endblock javascripts %}
