@@ -1,0 +1,172 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+<style>
+    body {
+    font-family: Arial, sans-serif;
+   
+}
+table.dataTable thead th {
+    background-color: #a20bf3; /* Arancione */
+    color: #fff; /* Bianco */
+    border-bottom: 2px solid #333; /* Nero */
+}
+table.dataTable tbody tr:nth-child(odd) {
+    background-color: #161616; /* Grigio scuro */
+}
+table.dataTable tbody tr:nth-child(even) {
+    background-color: #000000; /* Grigio chiaro */
+}
+table.dataTable tbody tr:hover {
+    background-color: #ff7f00; /* Arancione */
+    color: #000000; /* Bianco */
+}
+table.dataTable tr {
+   font-weight: bold;
+  
+}
+thead, tbody, tfoot, tr, td, th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 3px;
+    color: white;
+    /* border-radius: 1px; */
+}
+table.dataTable {
+    width: 200%;
+    height: 325px;
+    border-collapse: collapse;
+}
+table.dataTable th, table.dataTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #555; /* Grigio scuro */
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: #ff7f00; /* Arancione */
+    color: #fff !important; /* Bianco */
+    border: 1px solid #333; /* Nero */
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #333; /* Nero */
+    color: #ff7f00 !important; /* Arancione */
+}
+.dataTables_wrapper .dataTables_filter input {
+    background-color: #555; /* Grigio scuro */
+    color: #fff; /* Bianco */
+    border: 1px solid #ff7f00; /* Arancione */
+}
+
+  </style>
+{% endblock custom_style %}
+
+
+{% block content %}
+<div class="px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-center">
+        <div class="divide-y divide-gray-200 overflow-hidden bg-white shadow rounded-3xl flex w-full">
+            <!-- Colonna sinistra -->
+            <div class="flex flex-col justify-center items-center px-4 py-5 sm:p-6 w-full lg:w-1/2 bg-white">
+                <!-- Prima sezione sinistra -->
+                <div class="mb-4 flex flex-col items-start lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Lotto Tank</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+
+                <!-- Seconda sezione sinistra -->
+                <div class="flex flex-col items-start lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Data Rilascio</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+            </div>
+
+            <!-- Colonna destra -->
+            <div class="flex flex-col justify-center items-center px-4 py-5 sm:p-6 w-full lg:w-1/2 bg-white">
+                <!-- Prima sezione destra -->
+                <div class="mb-4 flex flex-col items-start lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Materia Prima</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+
+                <!-- Seconda sezione destra -->
+                <div class="flex flex-col items-start lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Stabilimento</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex justify-center mt-12">
+        <div class="divide-y divide-gray-200 overflow-hidden bg-white shadow rounded-3xl flex w-full">
+            <!-- Colonna sinistra -->
+            <div class="flex flex-col justify-center items-center px-4 py-5 sm:p-6 w-full lg:w-1/2 bg-white">
+                <!-- Prima sezione sinistra -->
+                <div class="mb-4 flex flex-col items-start lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Nome</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+
+                <!-- Seconda sezione sinistra -->
+                <div class="flex flex-col items-start lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Cert.Ana.Mat.Prim.</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+
+                <!-- Terza sezione sinistra -->
+                <div class="flex flex-col items-start mt-4 lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Targa Cisterna</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+            </div>
+
+            <!-- Colonna destra -->
+            <div class="flex flex-col justify-center items-center px-4 py-5 sm:p-6 w-full lg:w-1/2 bg-white">
+                <!-- Prima sezione destra -->
+                <div class="mb-4 flex flex-col items-start lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Lotto</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+
+                <!-- Seconda sezione destra -->
+                <div class="flex flex-col items-start lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">DDT</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+
+                <!-- Terza sezione destra -->
+                <div class="flex flex-col items-start mt-4 lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Q.tà tot. Vers.</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="px-4 sm:px-6 lg:px-8 mt-12 lg:mt-16 xl:mt-20">
+    <div class="flex justify-center items-center w-full h-full">
+        <!-- Primo div -->
+        <div class="bg-white shadow rounded-3xl w-full lg:w-1/2 p-6 lg:p-10 h-auto lg:h-60">
+            <!-- Contenuto del primo div -->
+            <p class="text-center font-bold text-2xl">Tempo Di Flussaggio per Analisi TANK</p>
+            <div class="mt-6">
+                <!-- Prima sezione -->
+                <div class="mb-4 flex flex-col items-start lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Nome</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+
+                <!-- Seconda sezione -->
+                <div class="flex flex-col items-start lg:flex-row lg:items-center">
+                    <h2 class="mb-2 lg:mr-4">Cert.Ana.Mat.Prim.</h2>
+                    <input type="text" class="border rounded-md py-2 w-full lg:w-96 lg:h-12" placeholder="Inserisci testo...">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascripts %} 
+{% endblock javascripts %}
