@@ -1,0 +1,213 @@
+/* Global styles */
+body {
+    background-color: #f8f9fa;
+    color: black;
+}
+
+
+.base-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.base-container h1{
+    text-align: center;
+}
+
+.icon-size {
+    margin: 0;
+    width: 48px; /* Imposta la larghezza desiderata */
+    height: auto; /* Mantiene le proporzioni */
+}
+
+.container {
+    padding: 100px 100px;
+    width: auto;
+    margin: 0 auto;}
+    @media (max-width: 991px) {
+        .container {
+          padding-left: 50px;
+          padding-right: 50px; } 
+    }
+    @media (max-width: 575px) {
+        .container {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          min-height: 100vh; } 
+    }
+
+
+.navbar {
+    background-color: #000;
+    border-bottom: 5px solid orange;
+}
+
+.navbar-dark .navbar-brand {
+    color: orange;
+    font-size: 24px;
+}
+
+.navbar-nav {
+    margin-right: 20px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    fill: white;
+    font-size: 20px;
+    margin-right: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.navbar-logo {
+    width: 120px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    background-color: orange;
+    border-color: orange;
+    color: black;
+    fill: black;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    background-color: orange;
+    border-color: orange;
+    color: black;
+    fill: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: orange;
+}
+
+h1{
+    padding-bottom: 20px;
+}
+.btn-primary {
+    background-color: orange;
+    border-color: orange;
+}
+
+.btn-active {
+
+    border: 2px solid #ff7f00;
+    border-radius: 4;
+}
+
+.btn-primary:hover {
+    background-color: #ff7f00;
+    border-color: #ff7f00;
+}
+
+.form-control {
+    background-color: #fff;
+    color: #000;
+}
+
+.description {
+    color: #000;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value (0.7) to change transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  
+  #preloader.fade-out {
+    opacity: 0;
+  }
+  
+  .half-circle-spinner {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  
+  .half-circle-spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border: 6px solid transparent;
+    border-top-color: #ff7f00;
+    border-right-color: #ff7f00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+.content-container {
+    border: 3px solid orange;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.txt-lg {
+    font-size: larger;
+}
+
+table {
+    border: 1px solid #fff;
+    border-collapse: separate;
+    border-left: 0;
+    border-radius: 5px;
+    border-spacing: 0px;
+    width: 100%;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border-collapse: separate;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+td {
+    padding: 5px 4px 6px 4px; 
+    text-align: left;
+    vertical-align: initial;
+    border-left: 1px solid #ddd;    
+}
+th {
+    padding: 5px 4px 6px 4px; 
+    text-align: center;
+    vertical-align: initial;
+    border-left: 1px solid #ddd;    
+}
+
+thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+    border-radius: 4px 0 0 0;
+}
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+    border-radius: 0 0 0 4px;
+}
