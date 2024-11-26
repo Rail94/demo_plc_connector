@@ -1,0 +1,45 @@
+{% extends 'base_fullscreen.html' %}
+
+{% block content %}
+      <div class="row">
+        <div class="col-sm-6 login-section-wrapper">
+          <div class="brand-wrapper">
+            <img src="{{ url_for('static', filename='images/MSE-Logo_small.png') }}" alt="logo" class="logo">
+          </div>
+          <div class="login-wrapper my-auto">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="alert alert-info">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+    
+            <h1 class="login-title">Log in</h1>
+            <form role="form" method="POST">
+              {{ form.hidden_tag() }}
+              <div class="mb-4">
+                {{ form.username.label(for="username") }}
+                {{ form.username(class="form-control", id="username", placeholder="Username...") }}
+              </div>
+              <div class="mb-4">
+                {{ form.password.label(for="password") }}
+                {{ form.password(class="form-control", id="password", placeholder="Enter your Password...") }}
+              </div>
+              <div class="d-grid gap-2">
+                {{ form.submit(class='btn btn-block login-btn', id="login") }}
+              </div>
+            </form>
+            <p class="login-wrapper-footer-text">Don't have an account? <a href="{{ url_for('home_blueprint.register') }}" class="text-reset">Register here</a></p>
+          </div>
+        </div>
+        <div class="col-sm-6 px-0 d-none d-sm-block">
+          <img src="{{ url_for('static', filename='images/plc.jpg') }}" alt="login image" class="login-img">
+        </div>
+      </div>
+{% endblock content %}
+
+{% block javascripts %} 
+{% endblock javascripts %}
