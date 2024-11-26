@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="css/new_style.css" rel="stylesheet" />
+  <link href="css/bootstrap-530.css" rel="stylesheet" />
+  <link href="css/mse-icons.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body class="matteosfondo">
+
+  <div>
+
+
+    <!-- Static sidebar for desktop -->
+    <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72">
+      <!-- Sidebar component, swap this element with another sidebar if you like -->
+      <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-black px-6 pb-4">
+        <div class="flex h-16 justify-center items-center">
+          <a href="index.html">
+            <img class="w-auto h-12" src="img/logo.png" alt="Your Company" style="height: 6rem; padding-top: 17px" />
+          </a>
+        </div>
+        <nav class="flex flex-1 flex-col">
+          <ul role="list" class="flex flex-1 flex-col gap-y-7">
+            <li>
+              <ul role="list" class="-mx-2 space-y-1">
+                <li>
+                  <a href="index.html"
+                    class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                    style="background-color: transparent"
+                    onmouseover="this.style.backgroundColor='#FF8C00'; this.style.color='#000000';"
+                    onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff';">
+                    <svg class="h-6 w-6 shrink-0 text-white group-hover:text-black" fill="none" viewBox="0 0 24 24"
+                      stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                    </svg>
+                    Dashboard
+                  </a>
+                </li>
+
+
+
+
+
+              </ul>
+            </li>
+            <li>
+              <div class="text-lg font-bold leading-6 " style="color: orange;">
+                Gestionale
+              </div>
+              <ul role="list" class="-mx-2 mt-2 space-y-1">
+                <li class="dropdown-center">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                      Analisi
+                    </button>
+                    <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                      <li><a class="dropdown-item" href="sessioneanalisi.html">Sessione Analisi</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="dropdown-center">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                      Calibrazione
+                    </button>
+                    <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                      <li><a class="dropdown-item" href="oxymat1.html">OxyMat1</a></li>
+                      <li><a class="dropdown-item" href="oxymat2.html">OxyMat2</a></li>
+                      <li><a class="dropdown-item" href="tsi1.html">TSI 1</a></li>
+                      <li><a class="dropdown-item" href="tsi2.html">TSI 2</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="dropdown-center">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                      Manuali
+                    </button>
+                    <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                      <li><a class="dropdown-item" href="testanalisi1.html">Test Analisi 1</a></li>
+                      <li><a class="dropdown-item" href="testanalisi2.html">Test Analisi 2</a></li>
+                      <li><a class="dropdown-item" href="movimentielettrovalvole1.html">Movi. Elettrova. 1</a></li>
+                      <li><a class="dropdown-item" href="movimentielettrovalvole2.html">Movi. Elettrova. 2</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="dropdown-center">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                      Impostazioni
+                    </button>
+                    <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                      <li><a class="dropdown-item" href="impostazionigenerali.html">Generali</a></li>
+                      <li><a class="dropdown-item" href="impostazionianalisi.html">Analisi</a></li>
+                      <li><a class="dropdown-item" href="impostazionirampaanalisi.html">Rampa Analisi</a></li>
+                      <li><a class="dropdown-item" href="impostazionipaginacampione.html">Pagina Campione</a></li>
+                      <li><a class="dropdown-item" href="impostazionitank.html">TANK</a></li>
+                    </ul>
+                  </div>
+                </li>
+
+              </ul>
+            </li>
+            <li class="mt-auto">
+              <a href="#" class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                style="background-color: transparent"
+                onmouseover="this.style.backgroundColor='#FFA500'; this.style.color='#000000';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff';">
+                <svg class="h-6 w-6 shrink-0 text-white group-hover:text-black" fill="none" viewBox="0 0 24 24"
+                  stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Settings
+              </a>
+            </li>
+            <div class="relative">
+              <button type="button" class="-m-1.5 flex items-center p-1.5" id="user-menu-button" aria-expanded="false"
+                aria-haspopup="true">
+                <span class="sr-only">Open user menu</span>
+                <img class="h-8 w-8 rounded-full bg-gray-50"
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt="" />
+                <span class="hidden lg:flex lg:items-center">
+                  <span class="ml-4 text-sm font-semibold leading-6 text-white" aria-hidden="true">Account</span>
+                  <svg class="ml-2 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+    <!-- Aggiunta dell'hamburger menu per dispositivi mobili -->
+    <div class="hamburger-bar"
+      style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background-color: orange;">
+      <div class="fixed inset-x-0 top-0 z-50 flex items-center justify-end lg:hidden">
+        <button id="mobile-menu-button" class="bg-orange-500 p-4 focus:outline-none"
+          style="background-color: orange; position: fixed; top: 0; left: 0;">
+          <svg class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="logo-mobile" style="text-align: center; padding: 16px 0;">
+        <a href="index.html">
+          <img src="img/logo.png" />
+        </a>
+      </div>
+    </div>
+
+
+
+
+    <!-- Menu nascosto per dispositivi mobili -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black bg-opacity-75 lg:hidden">
+      <div class="flex justify-end " style="padding: 0.5rem;">
+        <button id="close-mobile-menu" class="text-white p-4 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <a href="index.html" class="text-white font-bold py-2 px-4">Dashboard</a>
+
+        <div class="text-lg font-bold leading-6 " style="color: orange;">
+          Gestionale
+        </div>
+        <ul role="list" class="-mx-2 mt-2 space-y-1">
+          <li class="dropdown-center">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                Analisi
+              </button>
+              <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                <li><a class="dropdown-item" href="sessioneanalisi.html">Sessione Analisi</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="dropdown-center">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                Calibrazione
+              </button>
+              <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                <li><a class="dropdown-item" href="oxymat1.html">OxyMat1</a></li>
+                <li><a class="dropdown-item" href="oxymat2.html">OxyMat2</a></li>
+                <li><a class="dropdown-item" href="tsi1.html">TSI 1</a></li>
+                <li><a class="dropdown-item" href="tsi2.html">TSI 2</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="dropdown-center">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                Manuali
+              </button>
+              <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                <li><a class="dropdown-item" href="testanalisi1.html">Test Analisi 1</a></li>
+                <li><a class="dropdown-item" href="testanalisi2.html">Test Analisi 2</a></li>
+                <li><a class="dropdown-item" href="movimentielettrovalvole1.html">Movi. Elettrova. 1</a></li>
+                <li><a class="dropdown-item" href="movimentielettrovalvole2.html">Movi. Elettrova. 2</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="dropdown-center">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                Impostazioni
+              </button>
+              <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                <li><a class="dropdown-item" href="impostazionigenerali.html">Generali</a></li>
+                <li><a class="dropdown-item" href="impostazionianalisi.html">Analisi</a></li>
+                <li><a class="dropdown-item" href="impostazionirampaanalisi.html">Rampa Analisi</a></li>
+                <li><a class="dropdown-item" href="impostazionipaginacampione.html">Pagina Campione</a></li>
+                <li><a class="dropdown-item" href="impostazionitank.html">TANK</a></li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+        <!-- Aggiungi altri link del menu qui -->
+      </div>
+    </div>
+
+    <div class="lg:pl-48">
+
+
+      <main class="py-10">
+
+
+
+
+
+
+        <div class="px-4 sm:px-6 lg:px-8" style="padding-top: 71px; position: relative;">
+
+
+
+          <div class="divide-y divide-gray-200 overflow-hidden bg-white shadow"
+            style="border-radius: 3rem; position: relative; height: 510px;">
+            <div class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+              style="height: 100%; background-color: #fff; padding-top: 1rem !important; display: flex; justify-content: space-around; position: relative;">
+              <img src="img/valvolesx.png" alt="Image 1" style="max-width: 45%;">
+                
+              <div class="telefono">
+        <!-- primi valvole da 1 a 5 -->
+        
+        
+        <div id="pos-1-sx" class="valvs" style="position: absolute;
+        top: 59%;
+        left: 11.2%;
+        color: black;
+        background-color: white;
+        font-size: 10px;
+        "></div>
+        
+        
+        <div id="posname-1-sx" style="    position: absolute;
+        top: 65%;
+        left: 11%;
+        color: black;
+        font-size: 10px;">-1</div>
+        
+        
+           <div id="pos-2-sx" class="valvs" style="    position: absolute;
+           top: 59%;
+           left: 15.6%;
+           color: black;
+           background-color: white;
+           
+           
+           font-size: 10px;
+        "></div>
+        
+                      <div id="posname-2-sx" style="    position: absolute;
+                      top: 65%;
+                      left: 15.5%;
+                      color: black;
+                      font-size: 10px;
+                  
+                  ">-2</div>
+        
+        
+                     <div id="pos-3-sx" class="valvs" style="position: absolute;
+                     top: 59%;
+                     left: 20%;
+                     color: black;
+                     background-color: white;
+                     
+                     
+                     font-size: 10px;"></div>
+        
+                       <div id="posname-3-sx" style="    position: absolute;
+                       top: 65%;
+                       left: 19.9%;
+                       color: black;
+                       font-size: 10px;">-3</div>
+        
+        
+        
+                     <div id="pos-4-sx" class="valvs" style="    position: absolute;
+                     top: 59%;
+                     left: 24.6%;
+                     color: black;
+                     background-color: white;
+                     
+                     
+                     font-size: 10px;
+                 "></div>
+        
+                  <div id="posname-4-sx" style="position: absolute;
+                  top: 65%;
+                  left: 24.6%;
+                  color: black;
+                  font-size: 10px;">-4</div>
+        
+                     <div id="pos-5-sx" class="valvs" style="    position: absolute;
+                     top: 59%;
+                     left: 29.4%;
+                     color: black;
+                     background-color: white;
+                     
+                     
+                     font-size: 10px;"></div>
+               
+                     <div id="posname-5-sx" style="position: absolute;
+                     top: 65%;
+                     left: 29.3%;
+                     color: black;
+                     font-size: 10px;">-5</div>
+        
+        
+         <!-- fine valvole da 1 a 5 -->
+        
+        
+         <div id="valprop-sx" style="border: 2px solid #000;
+         padding: 5px;
+         position: absolute;
+         top: 66%;
+         left: 40%;
+         transform: translate(-50%, -50%);
+         border-radius: 0.7rem;
+         font-size: 8px;
+">- %</div>
+                   
+        
+        <div id="genPos-sx" class="valvs" style="     position: absolute;
+        top: 45%;
+        left: 33%;
+        color: black;
+        font-size: 10px;"></div>
+        
+        
+             <div id="vent-sx" class="valvs" style="    position: absolute;
+             top: 28%;
+             left: 39%;
+             color: black;
+             font-size: 10px;"></div>
+        
+                <div id="prop-sx" class="valvs" style="position: absolute;
+                top: 53%;
+                left: 42.4%;
+                color: black;
+                font-size: 10px;"></div>
+        
+               
+        
+              </div>
+              
+        
+              <div class="tablet">
+                  <!-- primi valvole da 1 a 5 -->
+              <div id="pos-1-sx" class="valvs" style="position: absolute;
+              top: 70%;
+              left: 9%;
+              color: black;
+              background-color: white;
+              
+              
+              font-size: 15px;
+          "></div>
+        
+          <div id="posname-1-sx" style="position: absolute;
+          top: 75%;
+          left: 9%;
+          color: black;
+          font-size: 16px;">-1</div>
+        
+        
+              <div id="pos-2-sx" class="valvs" style="position: absolute;
+              top: 70%;
+              left: 14%;
+              color: black;
+              background-color: white;
+              
+              
+              font-size: 15px;"></div>
+                         <div id="posname-2-sx" style="    position: absolute;
+                         top: 75%;
+                         left: 14%;
+                         color: black;
+                         font-size: 15px;
+                     ">-2</div>
+        
+        
+                        <div id="pos-3-sx" class="valvs" style="position: absolute;
+                        top: 70%;
+                        left: 18%;
+                        color: black;
+                        background-color: white;
+                        
+                        
+                        font-size: 15px;"></div>
+                          <div id="posname-3-sx" style="    position: absolute;
+                          top: 75%;
+                          left: 18%;
+                          color: black;
+                          font-size: 15px;">-3</div>
+        
+        
+        
+                        <div id="pos-4-sx" class="valvs" style="    position: absolute;
+                        top: 70%;
+                        left: 23%;
+                        color: black;
+                        background-color: white;
+                        
+                        
+                        font-size: 15px;
+                    "></div>
+                     <div id="posname-4-sx" style="    position: absolute;
+                     top: 75%;
+                     left: 23%;
+                     color: black;
+                     font-size: 15px;">-4</div>
+        
+                        <div id="pos-5-sx" class="valvs" style="    position: absolute;
+                        top: 70%;
+                        left: 28%;
+                        color: black;
+                        background-color: white;
+                        
+                        
+                        font-size: 15px;"></div>
+                        <div id="posname-5-sx" style="position: absolute;
+                        top: 75%;
+                        left: 28%;
+                        color: black;
+                        font-size: 15px;">-5</div>
+        
+                    <!-- fine valvole da 1 a 5 -->
+                    <div id="valprop-sx" style="border: 2px solid #000;
+                    padding: 5px;
+                    position: absolute;
+                    top: 81%;
+                    left: 40%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 0.7rem;
+                    font-size: 13px;">- %</div>
+        
+                             
+        
+                              <div id="genPos-sx" class="valvs" style="position: absolute;
+                              top: 43%;
+                              left: 32%;
+                              color: black;
+                              font-size: 15px;"></div>
+        
+                                <div id="vent-sx" class="valvs" style="position: absolute;
+                                top: 11%;
+                                left: 38.2%;
+                                color: black;
+                                font-size: 15px;
+                            "></div>
+        
+                                   <div id="prop-sx" class="valvs" style="    position: absolute;
+                                   top: 54%;
+                                   left: 41.9%;
+                                   color: black;
+                                   font-size: 15px;
+                               "></div>
+        
+                                  
+        
+        
+        
+                </div>
+        
+        
+              <div class="deskopt">
+              <!-- primi valvole da 1 a 5 -->
+              <div id="pos-1-sx" class="valvs"  style="     position: absolute;
+              position: absolute;
+              top: 80%;
+              left: 9%;
+              color: black;
+              background-color: white;
+              
+              
+              font-size: 25px;"></div>
+        
+        
+              <div id="posname-1-sx" style="    position: absolute;
+                      top: 89%;
+                      left: 9%;
+                      color: black;
+                      font-size: 25px;">-1</div>
+        
+        
+                  <div id="pos-2-sx" class="valvs" style="position: absolute;
+                            position: absolute;
+                          top: 80%;
+                          left: 13%;
+                          color: black;
+                          background-color: white;
+                          
+                          
+                            font-size: 25px;"></div>
+        
+                             <div id="posname-2-sx" style="    position: absolute;
+                             top: 89%;
+                             left: 13%;
+                             color: black;
+                             font-size: 25px;">-2</div>
+        
+        
+                            <div id="pos-3-sx" class="valvs" style="position: absolute;
+                            top: 80%;
+                            left: 17%;
+                            color: black;
+                            background-color: white;
+                            
+                            
+                            font-size: 25px;"></div>
+        
+                              <div id="posname-3-sx" style="position: absolute;
+                              top: 89%;
+                              left: 17%;
+                              color: black;
+                              font-size: 25px;">-3</div>
+        
+        
+        
+                            <div id="pos-4-sx" class="valvs" style="    position: absolute;
+                            top: 80%;
+                            left: 21.5%;
+                            color: black;
+                            background-color: white;
+                            
+                            
+                            font-size: 25px;
+                        "></div>
+        
+                         <div id="posname-4-sx" style="position: absolute;
+                         top: 89%;
+                         left: 21.5%;
+                         color: black;
+                         font-size: 25px;">-4</div>
+        
+                            <div id="pos-5-sx" class="valvs" style="    position: absolute;
+                            top: 80%;
+                            left: 26%;
+                            color: black;
+                            background-color: white;
+                            
+                            
+                            font-size: 25px;"></div>
+        
+                            <div id="posname-5-sx" style="position: absolute;
+                            top: 89%;
+                            left: 26%;
+                            color: black;
+                            font-size: 25px;">-5</div>
+        
+                        <!-- fine valvole da 1 a 5 -->
+                                <div id="valprop-sx" style="border: 2px solid #000;
+                                padding: 10px;
+                                position: absolute;
+                                top: 93%;
+                                left: 37%;
+                                transform: translate(-50%, -50%); border-radius: 0.7rem;">- %</div>
+        
+        
+                                
+        
+                                  <div id="genPos-sx" class="valvs" style="position: absolute;
+                                  top: 44%;
+                                  left: 30%;
+                                  color: black;
+                                  font-size: 20px;"></div>
+        
+                                    <div id="vent-sx" class="valvs" style="    position: absolute;
+                                    top: 12%;
+                                    left:39%;
+                                    color: black;
+                                    font-size: 20px;"></div>
+                                    
+                                        <div id="genAn-sx" class="valvs" style="position: absolute;
+                                        top: 46%;
+                                        left: 43.5%;
+                                        color: black;
+                                        font-size: 20px;"></div>
+        
+        
+                                  </div> <!-- fine deskopt -->
+        
+                        
+        
+              <img src="img/valvoledx.png" alt="Image 2" style="max-width: 45%;">
+        
+              <div class="telefono">
+                
+                <!-- primi valvole da 1 a 5 -->
+                <div id="pos-1-dx" class="valvs" style="position: absolute;
+        top: 59%;
+        left: 67.7%;
+        color: black;
+        background-color: white;
+        
+        
+        font-size: 10px;
+          "></div>
+        
+          <div id="posname-1-dx" style="position: absolute;
+          top: 65%;
+          left: 67.6%;
+          color: black;
+          font-size: 10px;">-6</div>
+        
+        
+              <div id="pos-2-dx" class="valvs" style="    position: absolute;
+              top: 59%;
+              left: 71.9%;
+              color: black;
+              background-color: white;
+              
+              
+              font-size: 10px;
+          "></div>
+                         <div id="posname-2-dx" style="    position: absolute;
+                         top: 65%;
+                         left: 71.9%;
+                         color: black;
+                         font-size: 10px;
+                     
+                     ">-7</div>
+        
+        
+                        <div id="pos-3-dx" class="valvs" style="    position: absolute;
+                        top: 59%;
+                        left: 76.6%;
+                        color: black;
+                        background-color: white;
+                        
+                        
+                        font-size: 10px;"></div>
+                          <div id="posname-3-dx" style="position: absolute;
+                          top: 65%;
+                          left: 76.4%;
+                          color: black;
+                          font-size: 10px;">-8</div>
+        
+        
+        
+                        <div id="pos-4-dx" class="valvs" style="position: absolute;
+                        top: 59%;
+                        left: 81.2%;
+                        color: black;
+                        background-color: white;
+                        
+                        
+                        font-size: 10px;
+                    "></div>
+                     <div id="posname-4-dx" style="    position: absolute;
+                     top: 65%;
+                     left: 81%;
+                     color: black;
+                     font-size: 10px;">-9</div>
+        
+                        <div id="pos-5-dx" class="valvs" style="position: absolute;
+                        top: 59%;
+                        left: 86%;
+                        color: black;
+                        background-color: white;
+                        
+                        
+                        font-size: 10px;"></div>
+                        <div id="posname-5-dx" style="    position: absolute;
+                        top: 65%;
+                        left: 86%;
+                        color: black;
+                        font-size: 10px;">-10</div>
+             
+             
+                      <!-- fine valvole da 1 a 5 -->
+             
+             
+                      <div id="valprop-dx" style="    border: 2px solid #000;
+                      padding: 5px;
+                      position: absolute;
+                      top: 66%;
+                      left: 58.4%;
+                      transform: translate(-50%, -50%);
+                      border-radius: 0.7rem;
+                      font-size: 8px;">- %</div>
+             
+                                <div id="genPos-dx" class="valvs" style="    position: absolute;
+                                top: 45%;
+                                left: 62.7%;
+                                color: black;
+                                font-size: 10px;"></div>
+        
+                                <div id="vent-dx" class="valvs" style="    position: absolute;
+                                top: 28%;
+                                left: 57%;
+                                color: black;
+                                font-size: 10px;"></div>
+                                   <div id="prop-dx" class="valvs" style="    position: absolute;
+                                   top: 53%;
+                                   left: 53.5%;
+                                   color: black;
+                                   font-size: 10px;"></div>
+                                 
+        
+                           </div>
+        
+        
+                           <div class="tablet">
+                            <!-- primi valvole da 1 a 5 -->
+                        <div id="pos-1-dx" class="valvs"  style="    position: absolute;
+        top: 70%;
+        left: 68.4%;
+        color: black;
+        background-color: white;
+        
+        
+        font-size: 15px;
+                    "></div>
+                    <div id="posname-1-dx" style="position: absolute;
+                    top: 75%;
+                    left: 68.2%;
+                    color: black;
+                    font-size: 16px;">-6</div>
+          
+          
+                        <div id="pos-2-dx" class="valvs"  style="    position: absolute;
+                        top: 70%;
+                        left: 73.1%;
+                        color: black;
+                        background-color: white;
+                        
+                        
+                        font-size: 15px;"></div>
+                                   <div id="posname-2-dx" style="    position: absolute;
+                                   top: 75%;
+                                   left: 73.1%;
+                                   color: black;
+                                   font-size: 15px;
+                               ">-7</div>
+          
+          
+                                  <div id="pos-3-dx" class="valvs"  style="position: absolute;
+                                  top: 70%;
+                                  left: 78%;
+                                  color: black;
+                                  background-color: white;
+                                  
+                                  
+                                  font-size: 15px;"></div>
+                                    <div id="posname-3-dx" style="    position: absolute;
+                                    top: 75%;
+                                    left: 78%;
+                                    color: black;
+                                    font-size: 15px;">-8</div>
+          
+          
+          
+                                  <div id="pos-4-dx" class="valvs"  style="     position: absolute;
+                                  top: 70%;
+                                  left: 82.8%;
+                                  color: black;
+                                  background-color: white;
+                                  
+                                  
+                                  font-size: 15px;
+                              "></div>
+                               <div id="posname-4-dx" style=" position: absolute;
+                               top: 75%;
+                               left: 82.8%;
+                               color: black;
+                               font-size: 15px;">-9</div>
+          
+                                  <div id="pos-5-dx" class="valvs"  style="    position: absolute;
+                                  top: 70%;
+                                  left: 87.7%;
+                                  color: black;
+                                  background-color: white;
+                                  
+                                  
+                                  font-size: 15px;"></div>
+                                  <div id="posname-5-dx" style="position: absolute;
+                                  top: 75%;
+                                  left: 88%;
+                                  color: black;
+                                  font-size: 15px;">-10</div>
+          
+                              <!-- fine valvole da 1 a 5 -->
+          
+          
+                              <div id="valprop-dx" style="border: 2px solid #000;
+                              padding: 5px;
+                              position: absolute;
+                              top: 81%;
+                              left: 59%;
+                              transform: translate(-50%, -50%);
+                              border-radius: 0.7rem;
+                              font-size: 13px;;">- %</div>
+          
+                                        <div id="genPos-dx" class="valvs"  style="    position: absolute;
+                                        top: 44%;
+                                        left: 63%;
+                                        color: black;
+                                        font-size: 15px;"></div>
+        
+                                          <div id="vent-dx" class="valvs"  style="    position: absolute;
+                                          top: 11%;
+                                          left: 56.2%;
+                                          color: black;
+                                          font-size: 15px;"></div>
+                                             <div id="prop-dx" class="valvs"  style="    position: absolute;
+                                             top: 55%;
+                                             left: 53.1%;
+                                             color: black;
+                                             font-size: 15px;
+                                         "></div>
+                                               
+          
+                          </div>
+        
+        
+                          <div class="deskopt">
+                            <!-- primi valvole da 1 a 5 -->
+                            <div id="pos-1-dx" class="valvs"  style="
+                            position: absolute;
+                            top: 80%;
+                            left: 68.5%;
+                            color: black;
+                            background-color: white;
+                            font-size: 25px;"></div>
+              
+                            <div id="posname-1-dx" style="position: absolute;
+                            top: 89%;
+                            left: 68.5%;
+                            color: black;
+                            font-size: 25px;">-10</div>
+              
+              
+                                <div id="pos-2-dx" class="valvs"  style="position: absolute;
+                                top: 80%;
+                                left: 73%;
+                                color: black;
+                                background-color: white;
+                                
+                                
+                                font-size: 25px;"></div>
+        
+                                           <div id="posname-2-dx" style=" position: absolute;
+                                           top: 89%;
+                                           left: 73%;
+                                           color: black;
+                                           font-size: 25px;">-9</div>
+              
+              
+                                          <div id="pos-3-dx" class="valvs"  style="    position: absolute;
+                                          top: 80%;
+                                          left: 77%;
+                                          color: black;
+                                          background-color: white;
+                                          
+                                          
+                                          font-size: 25px;"></div>
+                                            <div id="posname-3-dx" style="    position: absolute;
+                                            top: 89%;
+                                            left: 77%;
+                                            color: black;
+                                            font-size: 25px;">-8</div>
+              
+              
+              
+                                          <div id="pos-4-dx" class="valvs"  style="    position: absolute;
+                                          top: 80%;
+                                          left: 81.5%;
+                                          color: black;
+                                          background-color: white;
+                                          font-size: 25px;
+                                      "></div>
+        
+                                       <div id="posname-4-dx" style="position: absolute;
+                                       top: 89%;
+                                       left: 81.6%;
+                                       color: black;
+                                       font-size: 25px;">-7</div>
+              
+                                          <div id="pos-5-dx" class="valvs"  style="    position: absolute;
+                                          top: 80%;
+                                          left: 85.8%;
+                                          color: black;
+                                          background-color: white;
+                                          
+                                          
+                                          font-size: 25px;"></div>
+                                          <div id="posname-5-dx" style="position: absolute;
+                                          top: 89%;
+                                          left: 85.8%;
+                                          color: black;
+                                          font-size: 25px;">-6</div>
+              
+                                      <!-- fine valvole da 1 a 5 -->
+              
+               
+                                        <div id="valprop-dx" style="border: 2px solid #000;
+                                        padding: 10px;
+                                        position: absolute;
+                                        top: 93%;
+                                        left: 59%;
+                                        transform: translate(-50%, -50%); border-radius: 0.7rem;">- %</div>
+                                
+              
+                                                <div id="genPos-dx" class="valvs"  style="position: absolute;
+                                                top: 43%;
+                                                left: 63.5%;
+                                                color: black;
+                                                font-size: 20px;"></div>
+              
+                                                  <div id="vent-dx" class="valvs"  style=" position: absolute;
+                                                  top: 12%;
+                                                  left: 54.1%;
+                                                  color: black;
+                                                  font-size: 20px;"></div>
+                                                  
+                                                      <div id="genAn-dx" class="valvs"  style="position: absolute;
+                                                      top: 46%;
+                                                      left: 50%;
+                                                      color: black;
+                                                      font-size: 20px;"></div>
+              
+              
+                                                </div> <!-- fine deskopt -->
+                           
+            </div>
+          </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <div class="divide-y divide-gray-200 overflow-hidden bg-white shadow"
+            style="border-radius: 3rem;position: relative;height: 410px; margin-top: 20px;">
+            <div class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+              style="height: 100%; background-color: #fff;padding-top: 5rem !important; display: flex;  margin-left: 30px; margin-right: 30px;">
+              <div class="telefono">
+               
+                <div id="valPosTsi-sx" style="    border: 2px solid #000;
+                padding: 15px;
+                position: absolute;
+                top: 20%;
+                left: 16.5%;
+                transform: translate(-50%, -50%);
+                border-radius: 0.7rem;">Valore Posizione SX</div>
+                 <a href="{{ url_for('calibration_blueprint.TSI') }}" style="    border: 2px solid #000;
+                 padding: 15px;
+                 border-radius: 0.7rem;
+                 margin-bottom: 29px;
+                 position: absolute;
+                 top: 35%; left: 1%;"> Calibrazione</a>
+                 <a href="{{ url_for('reports_blueprint.report_tsisx', selector='SX') }}" style="border: 2px solid #000;
+                 padding: 14px;
+                 border-radius: 0.7rem;
+                 margin-bottom: 29px;
+                 width: 120px;
+                 text-align: center;position: absolute;
+                 top: 55%;left: 1%;"> Report</a>
+                 <a href="{{ url_for('settings_blueprint.tsisxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;position: absolute;
+                 top: 75%;left: 1%;"> Impostazioni</a>
+              </div>
+        
+              <div class="tablet">
+               
+                <div id="valPosTsi-sx" style="    border: 2px solid #000;
+                padding: 15px;
+                position: absolute;
+                top: 13%;
+                left: 10.5%;
+                transform: translate(-50%, -50%);
+                border-radius: 0.7rem;">Valore Posizione SX</div>
+                 <a href="{{ url_for('calibration_blueprint.TSI') }}" style="border: 2px solid #000;
+                 padding: 15px;
+                 border-radius: 0.7rem;
+                 margin-bottom: 29px;
+                 position: absolute;
+                 top: 30%;
+                 left: -1%;"> Calibrazione</a>
+                 <a href="{{ url_for('reports_blueprint.report_tsisx', selector='SX') }}" style="    border: 2px solid #000;
+                 padding: 14px;
+                 border-radius: 0.7rem;
+                 margin-bottom: 29px;
+                 width: 120px;
+                 text-align: center;
+                 position: absolute;
+                 top: 50%;
+                 left: -1%;"> Report</a>
+                 <a href="{{ url_for('settings_blueprint.tsisxsettings') }}" style="    border: 2px solid #000;
+                 padding: 15px;
+                 border-radius: 0.7rem;
+                 position: absolute;
+                 top: 70%;
+                 left: -1%;"> Impostazioni</a>
+              </div>
+              <div class="deskopt">
+                <div style="display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 21%;
+                left: 3%;">
+                  <a href="{{ url_for('calibration_blueprint.TSI') }}" style="    border: 2px solid #000;
+                  padding: 15px;
+                  border-radius: 0.7rem;
+                  margin-bottom: 29px;"> Calibrazione</a>
+                  <a href="{{ url_for('reports_blueprint.report_tsisx', selector='SX') }}" style="border: 2px solid #000;
+                  padding: 14px;
+                  border-radius: 0.7rem;
+                  margin-bottom: 29px;
+                  width: 120px;
+                  text-align: center;"> Report</a>
+                  <a href="{{ url_for('settings_blueprint.tsisxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;"> Impostazioni</a>
+                </div>
+                <p id="valPosTsi-sx" style="    border: 2px solid #000;
+                padding: 15px;
+                position: absolute;
+                top: 70%;
+                left: 20%;
+                transform: translate(-50%, -50%);
+                border-radius: 0.7rem;">Valore Posizione SX</p>
+              </div>
+        
+        
+        
+        
+        
+        
+              <img class="imagineplc" src="img/plcfoto.bmp">
+              <div class="telefono">
+                
+                <div id="valPosTsi-dx" style="
+                border: 2px solid #000;
+                padding: 15px;
+                position: absolute;
+                top: 20%;
+                left: 82.5%;
+                transform: translate(-50%, -50%);
+                border-radius: 0.7rem;
+                width: 48%;
+                ">Valore Posizione DX</div>
+                <a href="{{ url_for('calibration_blueprint.TSI') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem; margin-bottom: 29px;position: absolute;
+                top: 35%;left: 59%;"> Calibrazione</a>
+                  <a href="{{ url_for('reports_blueprint.report_tsidx', selector='DX') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;margin-bottom: 29px; width: 120px;
+                  text-align: center;position: absolute;
+                 top: 55%;left: 59%;"> Report</a>
+                  <a href="{{ url_for('settings_blueprint.tsidxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;position: absolute;
+                  top: 75%;left: 59%;"> Impostazioni</a>
+              </div>
+        
+              <div class="tablet">
+               
+                <div id="valPosTsi-sx" style="    border: 2px solid #000;
+                padding: 15px;
+                position: absolute;
+                top: 13%;
+                left: 85.5%;
+                transform: translate(-50%, -50%);
+                border-radius: 0.7rem;
+                width: 24%;">Valore Posizione SX</div>
+                 <a href="{{ url_for('calibration_blueprint.TSI') }}" style="border: 2px solid #000;
+                 padding: 15px;
+                 border-radius: 0.7rem;
+                 margin-bottom: 29px;
+                 position: absolute;
+                 top: 30%;
+                 left: 83%;"> Calibrazione</a>
+                 <a href="{{ url_for('reports_blueprint.report_tsisx', selector='SX') }}" style="border: 2px solid #000;
+                 padding: 14px;
+                 border-radius: 0.7rem;
+                 margin-bottom: 29px;
+                 width: 120px;
+                 text-align: center;position: absolute;top: 50%;left: 83%;"> Report</a>
+                 <a href="{{ url_for('settings_blueprint.tsisxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;position: absolute;top: 70%;left: 83%;"> Impostazioni</a>
+              </div>
+              <div class="deskopt">
+                <div style="    display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 21%;
+                left: 90%;">
+                  <a href="{{ url_for('calibration_blueprint.TSI') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem; margin-bottom: 29px;"> Calibrazione</a>
+                  <a href="{{ url_for('reports_blueprint.report_tsidx', selector='DX') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;margin-bottom: 29px; width: 120px;
+                  text-align: center;"> Report</a>
+                  <a href="{{ url_for('settings_blueprint.tsidxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;"> Impostazioni</a>
+                </div>
+                <p id="valPosTsi-dx" style="border: 2px solid #000;
+                padding: 15px;
+                position: absolute;
+                top: 70%;
+                left: 80.5%;
+                transform: translate(-50%, -50%);border-radius: 0.7rem;">Valore Posizione DX</p>
+              </div>
+        
+             
+            </div>
+          </div>
+        
+        
+        
+        
+          <div class="px-4 sm:px-6 lg:px-8" style="padding-top: 10px; position: relative;">
+            <div class="overflow-hidden bg-white shadow" style="border-radius: 3rem; position: relative;">
+              <!-- Prima immagine con il codice originale -->
+              <div style="display: flex;
+              margin: 50px 50px;
+              flex-direction: row;
+              justify-content:space-between;">
+              <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+              width="80" height="80" viewBox="0 0 357.000000 320.000000" transform: translate(-50%, -50%); "
+              preserveAspectRatio="xMidYMid meet">
+             <g transform="translate(0.000000,320.000000) scale(0.100000,-0.100000)"
+             fill="red" stroke="none">
+             <path d="M1740 2981 c-40 -13 -84 -38 -101 -57 -16 -18 -132 -218 -819 -1409
+             -178 -308 -389 -672 -468 -810 -131 -226 -146 -255 -150 -307 -6 -78 24 -139
+             86 -179 l46 -29 1443 0 c1190 0 1449 2 1476 14 41 17 91 74 107 121 27 82 31
+             74 -497 989 -274 474 -595 1030 -714 1236 -198 343 -220 377 -260 402 -48 30
+             -110 42 -149 29z m106 -106 c11 -7 52 -69 91 -137 39 -67 244 -422 455 -788
+             211 -366 498 -861 636 -1101 152 -263 252 -447 252 -462 0 -37 -19 -74 -49
+             -94 -24 -17 -107 -18 -1411 -21 -762 -2 -1405 0 -1429 3 -62 9 -101 49 -101
+             105 0 33 11 61 49 124 27 44 92 158 146 251 287 499 1063 1843 1160 2010 55
+             94 77 120 110 128 26 7 65 -1 91 -18z"/>
+             <path d="M1712 2429 c-18 -6 -50 -27 -72 -49 -70 -70 -70 -53 -11 -678 29
+             -306 54 -567 57 -579 4 -22 9 -23 99 -23 52 0 95 3 95 8 0 4 25 263 55 576 60
+             625 60 616 2 683 -56 64 -139 87 -225 62z"/>
+             <path d="M1705 938 c-81 -29 -134 -102 -142 -198 -7 -68 12 -131 54 -181 82
+             -97 262 -93 338 8 96 124 51 310 -87 367 -42 18 -118 20 -163 4z"/>
+             </g>
+             </svg>
+                <a href="{{ url_for('settings_blueprint.impostazioni_generali') }}" style="font-size: 4em;"><i class="mse mse-gear"></i></a>
+              </div>
+              <div class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+                style="height: 100%; background-color: #fff;">
+                <img src="img/Strumenti.bmp">
+              </div>
+              <!-- Seconda immagine con le icone -->
+              <div class="relative py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+                style="height: 100%; background-color: transparent; margin-top: -96px;">
+                <img src="img/HMI.bmp">
+        
+                <!-- Icona Tlefono  -->
+                <!-- Icona di allerta del sistema -->
+                <div class="telefono">
+        
+                  <!-- Icona di sistema OK -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" style="position: absolute;
+                z-index: 10;
+                top: 59%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            ">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path fill="green"
+                      d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93c-.39.39-1.02.39-1.41 0l-3.54-3.54c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l2.83 2.83 6.59-6.59c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-7.59 7.59z" />
+                  </svg>
+                </div>
+        
+                <!-- Icona Tablet  -->
+                <!-- Icona di allerta del sistema -->
+                <div class="tablet">
+                  <!-- Icona di sistema OK -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80" style="    position: absolute;
+                z-index: 10;
+                top: 51%;
+                left: 50%;
+                transform: translate(-50%, -50%);">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path fill="green"
+                      d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93c-.39.39-1.02.39-1.41 0l-3.54-3.54c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l2.83 2.83 6.59-6.59c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-7.59 7.59z" />
+                  </svg>
+        
+                </div>
+        
+                <!-- Icona Deskopt  -->
+                <!-- Icona di allerta del sistema -->
+                <div class="deskopt">
+                  <!-- Icona di sistema OK -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100"  style="position: absolute;
+                z-index: 10;
+                top: 49%;
+                left: 50%;
+                transform: translate(-50%, -50%);">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path fill="green"
+                      d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.93c-.39.39-1.02.39-1.41 0l-3.54-3.54c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l2.83 2.83 6.59-6.59c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-7.59 7.59z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+        
+          <div class="divide-y divide-gray-200 overflow-hidden bg-white shadow"
+          style="border-radius: 3rem;
+          position: relative;
+          height: 370px; margin-top: 10px;">
+         <div class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+              style="height: 109%;
+              background-color: #fff;
+              padding-top: 5rem !important;
+              display: flex;
+              position: relative;
+              width: 100%;">
+             <img src="img/valvoleoxymatsx.png" alt="Image 1" >
+            
+             <div class="telefono">
+             <!-- Testo fissato con top e left -->
+             <div style="     position: absolute;
+             top: 6%;
+             left: 41%;
+             color: black;
+             font-size: 19px;">VALVOLE SX</div>
+            
+             <div id="evGa-sx" class="valvs" style="position: absolute;
+                 position: absolute;
+    top: 41%;
+    left: 19%;
+    color: black;
+    font-size: 10px;"></div>
+            
+             <div id="tankGa-sx" class="valvs" style="    position: absolute;
+             top: 54%;
+             left: 19%;
+             color: black;
+             font-size: 10px;"></div>
+            
+            <div id="ventCamp-sx" class="valvs" style="    position: absolute;
+            top: 35%;
+            left: 49.8%;
+            color: black;
+            font-size: 10px;
+            "></div>
+           
+                <div id="genCamp-sx" class="valvs" style="    position: absolute;
+                top: 67%;
+                left: 49.8%;
+                color: black;
+                font-size: 10px;"></div>
+               
+                <div id="zero-sx" class="valvs" style="    position: absolute;
+                top: 37%;
+                left: 75%;
+                color: black;
+                font-size: 10px;"></div>
+                
+                <div id="span-sx" class="valvs" style="    position: absolute;
+                top: 63%;
+                left: 76%;
+                color: black;
+                font-size: 10px;"></div>
+               
+             
+             <div id="spanName-sx" style="    border: 2px solid #000;
+             padding: 4px;
+             position: absolute;
+             top: 46%;
+             left: 81%;
+             transform: translate(-50%, -50%);
+             border-radius: 0.2rem;
+             font-size: 53%;
+         ">Nome</div>
+              <div id="spanName-sx" style="    border: 2px solid #000;
+              padding: 4px;
+              position: absolute;
+              top: 59%;
+              left: 81%;
+              transform: translate(-50%, -50%);
+              border-radius: 0.2rem;
+              font-size: 53%;
+          ">Nome</div>
+            </div>
+        
+        
+            <div class="tablet">
+              <div style="     position: absolute;
+              top: 6%;
+              left: 41%;
+              color: black;
+              font-size: 24px;">VALVOLE SX</div>
+              <!-- Testo fissato con top e left -->
+              <div id="evGa-sx" class="valvs" style="    position: absolute;
+              top: 33%;
+              left: 17%;
+              color: black;
+              font-size: 15px;"></div>
+            
+              <div id="tankGa-sx" class="valvs" style="     position: absolute;
+              top: 56%;
+              left: 17%;
+              color: black;
+              font-size: 15px;"></div>
+             
+                 <div id="ventCamp-sx" class="valvs" style="    position: absolute;
+                 top: 24%;
+                 left: 51%;
+                 color: black;
+                 font-size: 15px;
+             "></div>
+           
+                 <div id="genCamp-sx" class="valvs" style="position: absolute;
+                 top: 73%;
+                 left: 51.6%;
+                 color: black;
+                 font-size: 15px;"></div>
+                
+                 <div id="zero-sx" class="valvs" style="    position: absolute;
+                 top: 25%;
+                 left: 75%;
+                 color: black;
+                 font-size: 15px;"></div>
+              
+                 <div id="span-sx" class="valvs" style="position: absolute;
+                 top: 67%;
+                 left: 75%;
+                 color: black;
+                 font-size: 15px;
+             "></div>
+           
+
+              <div id="spanName-sx" style="    border: 2px solid #000;
+              padding: 4px;
+              position: absolute;
+              top: 40%;
+              left: 81%;
+              transform: translate(-50%, -50%);
+              border-radius: 0.2rem;
+              font-size: 104%;
+          ">Nome</div>
+               <div id="spanName-sx" style="    border: 2px solid #000;
+               padding: 4px;
+               position: absolute;
+               top: 62%;
+               left: 81%;
+               transform: translate(-50%, -50%);
+               border-radius: 0.2rem;
+               font-size: 104%;
+           ">Nome</div>
+              
+        
+             </div>
+        
+        
+        
+             <div class="deskopt">
+              <div style="    position: absolute;
+              top: 3%;
+              left: 43%;
+              color: black;
+              font-size: 27px;;">VALVOLE SX</div>
+              <!-- Testo fissato con top e left -->
+              <div id="evGa-sx" class="valvs" style="position: absolute;
+              top: 29%;
+              left: 29%;
+              color: black;
+              font-size: 21px;"></div>
+              <div id="tankGa-sx" class="valvs" style="    position: absolute;
+              top: 54%;
+              left: 29%;
+              color: black;
+              font-size: 21px;"></div>
+                 <div id="ventCamp-sx" class="valvs" style="position: absolute;
+                 top: 17%;
+                 left: 50%;
+                 color: black;
+                 font-size: 17px;
+             "></div>
+                 <div id="genCamp-sx" class="valvs" style="position: absolute;
+                 top: 78%;
+                 left: 50%;
+                 color: black;
+                 font-size: 17px;"></div>
+                 <p id="zeroName-sx" style="border: 2px solid #000;
+                 padding: 10px;
+                 position: absolute;
+                 top: 33%;
+                 left: 73%;
+                 transform: translate(-50%, -50%); border-radius: 0.2rem;">Nome</p>
+                 <div id="zero-sx" class="valvs" style="    position: absolute; 
+                 top: 20%;
+                 left: 67%;
+                 color: black;
+                 font-size: 17px;"></div>
+                 <div id="spanName-sx" style="border: 2px solid #000;
+                 padding: 10px;
+                 position: absolute;
+                 top: 73%;
+                 left: 73%;
+                 transform: translate(-50%, -50%); border-radius: 0.2rem;">Nome</div>
+                 <div id="span-sx" class="valvs" style="    position: absolute;
+                 top: 73%;
+                 left: 67%;
+                 color: black;
+                 font-size: 17px;
+             "></div>
+             </div>
+         </div>
+        </div>
+        
+        
+        
+        
+        
+        
+          <div class="px-4 sm:px-6 lg:px-8" style="padding-top: 10px; position: relative;">
+            <div class="divide-y divide-gray-200 overflow-hidden bg-white shadow"
+              style="border-radius: 3rem; position: relative;">
+              <div class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+                style="height: 100%; background-color: #fff;">
+               <!-- Link che avvolge l'immagine -->
+        <div style="display: flex; justify-content: space-evenly; align-items: center;">
+        <img src="img/Oxymat_SX.bmp">
+        
+        </div>
+        
+                <!--  Palle a sinistra telefono  -->
+                <div class="telefono">
+                  <div style="display: flex;
+                  flex-direction: column;
+                  align-items: center">
+                    <a href="{{ url_for('calibration_blueprint.oxymat_sx', selector='SX') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;     margin-bottom: 29px;"> Calibrazione</a>
+                    <a href="{{ url_for('reports_blueprint.report_oxysx', selector='SX') }}" style="border: 2px solid #000;
+          padding: 15px;
+          border-radius: 0.7rem;
+          margin-bottom: 29px;
+          width: 101%;
+          text-align: center;"> Report</a>
+                    <a href="{{ url_for('settings_blueprint.oxysxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;"> Impostazioni</a>
+                  </div>
+                  <div id="valPosOxy-sx" style="    border: 2px solid #000;
+                  padding: 4px;
+                  position: absolute;
+                  top: 47%;
+                  left: 28%;
+                  transform: translate(-48%, -50%);
+                  font-size: 6px;
+              ">Valore Qui!</div>
+                </div>
+        
+        
+                <!-- Palle a sinistra tablet  -->
+                <div class="tablet">
+                  <div style="display: flex;
+                  flex-direction: column;
+                  align-items: center">
+                    <a href="{{ url_for('calibration_blueprint.oxymat_sx', selector='SX') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;     margin-bottom: 29px;"> Calibrazione</a>
+                    <a href="{{ url_for('reports_blueprint.report_oxysx', selector='SX') }}" style="border: 2px solid #000;
+                    padding: 15px;
+                    border-radius: 0.7rem;
+                    margin-bottom: 29px;
+                    width: 101%;
+                    text-align: center;"> Report</a>
+                    <a href="{{ url_for('settings_blueprint.oxysxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;"> Impostazioni</a>
+                  </div>
+                
+                  <div id="valPosOxy-sx" style="    border: 2px solid #000;
+                  padding: 6px;
+                  position: absolute;
+                  top: 43%;
+                  left: 30.1%;
+                  transform: translate(-50%, -50%);
+                  font-size: 11px;">Valore Qui!</div>
+                </div>
+        
+        
+                <!--  Palle a sinistra deskopt -->
+                <div class="deskopt">
+                  <div style="display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  position: absolute;
+                  left: 80%;
+                  top: 15%;">
+          <a href="{{ url_for('calibration_blueprint.oxymat_sx', selector='SX') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;     margin-bottom: 29px;"> Calibrazione</a>
+          <a href="{{ url_for('reports_blueprint.report_oxysx', selector='SX') }}" style="border: 2px solid #000;
+          padding: 15px;
+          border-radius: 0.7rem;
+          margin-bottom: 29px;
+          width: 101%;
+          text-align: center;"> Report</a>
+          <a href="{{ url_for('settings_blueprint.oxysxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;"> Impostazioni</a>
+        </div>
+                 
+                  <div id="valPosOxy-sx" style="    border: 2px solid #000;
+                  padding: 7px;
+                  position: absolute;
+                  top: 43%;
+                  left: 40%;
+                  transform: translate(-50%, -50%);">Valore Qui!</div>
+                </div>
+        
+               
+        
+                <!-- Palle a destra Deskopt -->
+                
+              </div>
+            </div>
+          </div>
+        
+        
+        
+        
+        
+        
+          <div class="divide-y divide-gray-200 overflow-hidden bg-white shadow"
+          style="border-radius: 3rem;
+          position: relative;
+          height: 370px; margin-top: 10px;">
+         <div class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+              style="height: 109%;
+              background-color: #fff;
+              padding-top: 5rem !important;
+              display: flex;
+              position: relative;
+              width: 100%;">
+             <img src="img/valvoleoxymatdx.png" alt="Image 1" >
+            
+             <div class="telefono">
+              <!-- Testo fissato con top e left -->
+              <div style="     position: absolute;
+              top: 6%;
+              left: 41%;
+              color: black;
+              font-size: 19px;">VALVOLE DX</div>
+             
+              <div id="evGa-sx" class="valvs" style="position: absolute;
+                  position: absolute;
+     top: 41%;
+     left: 19%;
+     color: black;
+     font-size: 10px;"></div>
+             
+              <div id="tankGa-sx" class="valvs" style="    position: absolute;
+              top: 54%;
+              left: 19%;
+              color: black;
+              font-size: 10px;"></div>
+             
+             <div id="ventCamp-sx" class="valvs" style="    position: absolute;
+             top: 35%;
+             left: 49.8%;
+             color: black;
+             font-size: 10px;
+             "></div>
+            
+                 <div id="genCamp-sx" class="valvs" style="    position: absolute;
+                 top: 67%;
+                 left: 49.8%;
+                 color: black;
+                 font-size: 10px;"></div>
+                
+                 <div id="zero-sx" class="valvs" style="    position: absolute;
+                 top: 37%;
+                 left: 75%;
+                 color: black;
+                 font-size: 10px;"></div>
+                 
+                 <div id="span-sx" class="valvs" style="    position: absolute;
+                 top: 63%;
+                 left: 76%;
+                 color: black;
+                 font-size: 10px;"></div>
+                
+              
+              <div id="spanName-dx" style="    border: 2px solid #000;
+              padding: 4px;
+              position: absolute;
+              top: 46%;
+              left: 81%;
+              transform: translate(-50%, -50%);
+              border-radius: 0.2rem;
+              font-size: 53%;
+          ">Nome</div>
+               <div id="spanName-dx" style="    border: 2px solid #000;
+               padding: 4px;
+               position: absolute;
+               top: 59%;
+               left: 81%;
+               transform: translate(-50%, -50%);
+               border-radius: 0.2rem;
+               font-size: 53%;
+           ">Nome</div>
+             </div>
+         
+         
+             <div class="tablet">
+              <div style="     position: absolute;
+              top: 6%;
+              left: 41%;
+              color: black;
+              font-size: 24px;">VALVOLE DX</div>
+              <!-- Testo fissato con top e left -->
+              <div id="evGa-sx" class="valvs" style="    position: absolute;
+              top: 33%;
+              left: 17%;
+              color: black;
+              font-size: 15px;"></div>
+            
+              <div id="tankGa-sx" class="valvs" style="     position: absolute;
+              top: 56%;
+              left: 17%;
+              color: black;
+              font-size: 15px;"></div>
+             
+                 <div id="ventCamp-sx" class="valvs" style="    position: absolute;
+                 top: 24%;
+                 left: 51%;
+                 color: black;
+                 font-size: 15px;
+             "></div>
+           
+                 <div id="genCamp-sx" class="valvs" style="position: absolute;
+                 top: 73%;
+                 left: 51.6%;
+                 color: black;
+                 font-size: 15px;"></div>
+                
+                 <div id="zero-sx" class="valvs" style="    position: absolute;
+                 top: 25%;
+                 left: 75%;
+                 color: black;
+                 font-size: 15px;"></div>
+              
+                 <div id="span-sx" class="valvs" style="position: absolute;
+                 top: 67%;
+                 left: 75%;
+                 color: black;
+                 font-size: 15px;
+             "></div>
+           
+
+              <div id="spanName-dx" style="    border: 2px solid #000;
+              padding: 4px;
+              position: absolute;
+              top: 40%;
+              left: 81%;
+              transform: translate(-50%, -50%);
+              border-radius: 0.2rem;
+              font-size: 104%;
+          ">Nome</div>
+               <div id="spanName-dx" style="    border: 2px solid #000;
+               padding: 4px;
+               position: absolute;
+               top: 62%;
+               left: 81%;
+               transform: translate(-50%, -50%);
+               border-radius: 0.2rem;
+               font-size: 104%;
+           ">Nome</div>
+              
+        
+             </div>
+         
+         
+         
+              <div class="deskopt">
+               <div style="    position: absolute;
+               top: 3%;
+               left: 43%;
+               color: black;
+               font-size: 27px;;">VALVOLE DX</div>
+               <!-- Testo fissato con top e left -->
+               <div id="evGa-dx" class="valvs" style="position: absolute;
+               top: 29%;
+               left: 29%;
+               color: black;
+               font-size: 21px;"></div>
+               <div id="tankGa-dx" class="valvs" style="    position: absolute;
+               top: 54%;
+               left: 29%;
+               color: black;
+               font-size: 21px;"></div>
+                  <div id="ventCamp-dx" class="valvs" style="position: absolute;
+                  top: 17%;
+                  left: 50%;
+                  color: black;
+                  font-size: 17px;
+              "></div>
+                  <div id="genCamp-dx" class="valvs" style="position: absolute;
+                  top: 78%;
+                  left: 50%;
+                  color: black;
+                  font-size: 17px;"></div>
+                  <p id="zeroName-dx" style="border: 2px solid #000;
+                  padding: 10px;
+                  position: absolute;
+                  top: 33%;
+                  left: 73%;
+                  transform: translate(-50%, -50%); border-radius: 0.2rem;">Nome</p>
+                  <div id="zero-dx" class="valvs" style="    position: absolute; 
+                  top: 20%;
+                  left: 67%;
+                  color: black;
+                  font-size: 17px;"></div>
+                  <p id="spanName-dx" style="border: 2px solid #000;
+                  padding: 10px;
+                  position: absolute;
+                  top: 73%;
+                  left: 73%;
+                  transform: translate(-50%, -50%); border-radius: 0.2rem;">Nome</p>
+                  <div id="span-dx" class="valvs" style="    position: absolute;
+                  top: 73%;
+                  left: 67%;
+                  color: black;
+                  font-size: 17px;
+              "></div>
+              </div>
+          </div>
+         </div>
+         
+        
+          <div class="px-4 sm:px-6 lg:px-8" style="padding-top: 10px; position: relative;">
+            <div class="divide-y divide-gray-200 overflow-hidden bg-white shadow"
+              style="border-radius: 3rem; position: relative;">
+              <div class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+                style="height: 100%; background-color: #fff;">
+                <div style="display: flex; justify-content: space-evenly; align-items: center;">
+                  <img src="img/Oxymat_DX.bmp">
+            
+        </div>
+                <!--  Palle a sinistra telefono  -->
+                <div class="telefono">
+                  <div style="display: flex;
+                  flex-direction: column;
+                  align-items: center">
+                    <a href="{{ url_for('calibration_blueprint.oxymat_sx', selector='DX') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;     margin-bottom: 29px;"> Calibrazione</a>
+                    <a href="{{ url_for('reports_blueprint.report_oxysx', selector='DX') }}" style="border: 2px solid #000;
+          padding: 15px;
+          border-radius: 0.7rem;
+          margin-bottom: 29px;
+          width: 101%;
+          text-align: center;"> Report</a>
+                    <a href="{{ url_for('settings_blueprint.oxy dxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;"> Impostazioni</a>
+                  </div>
+                  <div id="valPosOxy-sx" style="    border: 2px solid #000;
+                  padding: 4px;
+                  position: absolute;
+                  top: 47%;
+                  left: 28%;
+                  transform: translate(-48%, -50%);
+                  font-size: 6px;
+              ">Valore Qui!</div>
+                </div>
+        
+        
+                <!-- Palle a sinistra tablet  -->
+                <div class="tablet">
+                  <div style="display: flex;
+                  flex-direction: column;
+                  align-items: center">
+                    <a href="{{ url_for('calibration_blueprint.oxymat_sx', selector='DX') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;     margin-bottom: 29px;"> Calibrazione</a>
+                    <a href="{{ url_for('reports_blueprint.report_oxysx', selector='DX') }}" style="border: 2px solid #000;
+                    padding: 15px;
+                    border-radius: 0.7rem;
+                    margin-bottom: 29px;
+                    width: 101%;
+                    text-align: center;"> Report</a>
+                    <a href="{{ url_for('settings_blueprint.oxysxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;"> Impostazioni</a>
+                  </div>
+                
+                  <div id="valPosOxy-sx" style="    border: 2px solid #000;
+                  padding: 6px;
+                  position: absolute;
+                  top: 43%;
+                  left: 30.1%;
+                  transform: translate(-50%, -50%);
+                  font-size: 11px;">Valore Qui!</div>
+                </div>
+        
+        
+                <!--  Palle a sinistra deskopt -->
+                <div class="deskopt">
+                  <div style="display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  position: absolute;
+                  left: 80%;
+                  top: 15%;">
+          <a href="{{ url_for('calibration_blueprint.oxymat_sx', selector='DX') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;     margin-bottom: 29px;"> Calibrazione</a>
+          <a href="{{ url_for('reports_blueprint.report_oxysx', selector='DX') }}" style="border: 2px solid #000;
+          padding: 15px;
+          border-radius: 0.7rem;
+          margin-bottom: 29px;
+          width: 101%;
+          text-align: center;"> Report</a>
+          <a href="{{ url_for('settings_blueprint.oxydxsettings') }}" style="border: 2px solid #000; padding: 15px; border-radius: 0.7rem;"> Impostazioni</a>
+        </div>
+                 
+                  <div id="valPosOxy-sx" style="    border: 2px solid #000;
+                  padding: 7px;
+                  position: absolute;
+                  top: 43%;
+                  left: 40%;
+                  transform: translate(-50%, -50%);">Valore Qui!</div>
+                </div>
+        
+              
+               
+                
+        
+              </div>
+            </div>
+          </div>
+        
+        
+        
+        
+        
+          <div class="px-4 sm:px-6 lg:px-8" style="padding-top: 10px; position: relative;">
+            <div class=" overflow-hidden bg-white shadow" style="border-radius: 3rem; position: relative;">
+              <div class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+                style="height: 100%; background-color: #fff;">
+                <img src="img/Valvole.bmp">
+        
+              </div>
+              <div class="relative  py-5 sm:p-6 img-foto-uno flex items-center justify-center" style="    height: 100%;
+              background-color: transparent;
+              margin-top: -96px;
+          ">
+                <img src="img/Ups.bmp">
+        
+              </div>
+        
+        
+            </div>
+        
+          </div>
+        
+        
+        </div> <!-- end container principale -->
+
+
+        <!-- Bottone -->
+        <button id="scrollToTopBtn"
+          class="hidden fixed bottom-5 right-5 z-50 text-black p-3 rounded-3 focus:outline-none"
+          style="background-color: orange">
+          ^
+        </button>
+      </main>
+    </div>
+
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/funzione.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- DataTables JS -->
+    <script type="text/javascript" charset="utf8"
+      src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <!-- Initialize DataTables -->
+</body>
+
+</html>
