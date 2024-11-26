@@ -1,0 +1,601 @@
+{% extends 'new_base.html' %} {% block custom_style %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+  table {
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 20px;
+    border-collapse: collapse;
+  }
+
+  td {
+    border: 1px solid black; /* bordo nero */
+    padding: 8px; /* spazio intorno al contenuto */
+  }
+
+  .align-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+  }
+
+  
+  @media (min-width: 768px) and (max-width: 1185px) {
+    .align-status {
+      margin-left: 15rem;
+    }
+  }
+</style>
+
+{% endblock custom_style %} {% block content %}
+
+<div
+  class="px-4 sm:px-6 lg:px-8 xl:px-10"
+  style="position: relative; margin-top: 76px">
+  <div
+    class="overflow-hidden bg-white shadow"
+    style="border-radius: 3rem; position: relative">
+    <div
+      class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+      style="
+        height: 100%;
+        background-color: #fff;
+        margin-left: 1em;
+        display: flex;
+        justify-content: space-between;
+      ">
+      <div style="flex: 1">
+        <img
+          src="{{ url_for('static', filename='images/Oxymat_DX.bmp') }}"
+          style="width: 100%; height: auto" />
+      </div>
+      <div class="flex-1 mt-6 md:mt-0 md:ml-6">
+        <div class="px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-center mt-6 lg:mt-0">
+            <div class="w-full">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Quadrato 1 -->
+                <div class="mb-5 align-fields">
+                  <h2 class="text-lg mb-3">Modello</h2>
+                  <input
+                    type="text"
+                    class="w-full h-12 text-lg border border-black rounded p-2 text-center"
+                    placeholder="" />
+                </div>
+
+                <!-- Quadrato 2 -->
+                <div class="mb-5 align-fields">
+                  <h2 class="text-lg mb-3">Cert. Taratura</h2>
+                  <input
+                    type="text"
+                    class="w-full h-12 text-lg border border-black rounded p-2 text-center"
+                    placeholder="" />
+                </div>
+
+                <!-- Quadrato 3 -->
+                <div class="mb-5 align-fields">
+                  <h2 class="text-lg mb-3">Serial Number</h2>
+                  <input
+                    type="text"
+                    class="w-full h-12 text-lg border border-black rounded p-2 text-center"
+                    placeholder="" />
+                </div>
+
+                <!-- Quadrato 4 -->
+                <div class="mb-5 align-fields">
+                  <h2 class="text-lg mb-3">Tipo Analisi</h2>
+                  <input
+                    type="text"
+                    class="w-full h-12 text-lg border border-black rounded p-2 text-center"
+                    placeholder="" />
+                </div>
+
+                <!-- Quadrato 5 -->
+                <div class="mb-5 align-fields">
+                  <h2 class="text-lg mb-3">Metodo</h2>
+                  <input
+                    type="text"
+                    class="w-full h-12 text-lg border border-black rounded p-2 text-center"
+                    placeholder="" />
+                </div>
+
+                <!-- Quadrato 6 -->
+                <div class="mb-5 align-fields">
+                  <h2 class="text-lg mb-3">Val. Riferimento</h2>
+                  <input
+                    type="text"
+                    class="w-full h-12 text-lg border border-black rounded p-2 text-center"
+                    placeholder="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="overflow-hidden bg-white shadow mt-2"
+    style="border-radius: 3rem; position: relative">
+    <div
+      class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+      style="
+        height: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+      ">
+      <div style="flex: 1">
+        <div
+          style="
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+          ">
+          <div class="row">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-center">
+                <button type="submit" class="btn-primary py-3 px-4">
+                    Calibrazione Max
+                </button>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-center">
+                <button type="submit" class="btn-primary py-3 px-4">
+                    Calibrazione Min
+                </button>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-3 ">
+              <div class="d-flex align-items-center">
+                  <div class="mr-3">
+                      <p class="mb-0 fw-bold">
+                        {% if lista_valori_tipo[0] %}
+                        Calibrazione Manuale
+                        {% elif lista_valori_tipo[1] %}
+                        Calibrazione Automatica
+                        {% else%}
+                        Calibrazione da Strumento
+                        {% endif %}
+                      </p>
+                  </div>
+                  <div class="w-100">
+                      <input type="text" class="form-control text-center" placeholder="Real Time Value" />
+                  </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-center">
+                <button type="submit" class="btn-primary py-3 px-4">
+                    Calibrazione Auto
+                </button>
+            </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+  <div
+    class="overflow-hidden bg-white shadow mt-2 mb-3"
+    style="border-radius: 3rem; position: relative">
+    <div
+      class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+      style="
+        height: 100%;
+        flex-direction: column;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+      ">
+      <div class="pb-3">
+        <div
+          style="
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+          ">
+          <p
+            class="text-lg align-content-center font-bold"
+            style="padding: 15px">
+            {% if lista_valori_max_min[0] %}
+            Attesa Report
+            {% elif lista_valori_max_min[1] %}
+            Calibrazione MAX
+            {% else%}
+            Calibrazione MIN
+            {% endif %}
+          </p>
+          <p
+            class="text-lg align-content-center font-bold"
+            style="padding: 15px">
+            {% if non_calibrato %}
+            Analizzatore NON Calibrato
+            {% else%}
+            Analizzatore Calibrato
+            {% endif %}          </p>
+          <div class="mb-5 ml-10">
+            <h2 class="text-lg mb-3 text-center fw-bold">Ultima Calibrazione</h2>
+            <input
+              type="text"
+              class="w-full h-12 text-lg border border-black rounded p-2 text-center"
+              placeholder="Valore" />
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-start align-items-center">
+        <p class="fw-bold mr-2 mb-0">
+            Campione 3:
+        </p>
+        <input type="text" class="form-control mr-2 mb-2" style="max-width: 200px;" placeholder="Nome Simbolico">
+        <input type="text" class="form-control mr-2 mb-2" style="max-width: 200px;" placeholder="Validità certificato">
+        <input type="text" class="form-control mr-2 mb-2" style="max-width: 200px;" placeholder="Valore">
+        <input type="text" class="form-control mb-2" style="max-width: 100px;" placeholder="%%%">
+    </div>
+        <div class="d-flex justify-content-start align-items-center">
+            <p class="fw-bold mr-2 mb-0">
+                Campione 4:
+            </p>
+            <input type="text" class="form-control mr-2 mb-2" style="max-width: 200px;" placeholder="Nome Simbolico">
+            <input type="text" class="form-control mr-2 mb-2" style="max-width: 200px;" placeholder="Validità certificato">
+            <input type="text" class="form-control mr-2 mb-2" style="max-width: 200px;" placeholder="Valore">
+            <input type="text" class="form-control mb-2" style="max-width: 100px;" placeholder="%%%">
+        </div>
+    
+    </div>
+  </div>
+  <div
+    class="divide-y divide-gray-200 overflow-hidden bg-white shadow"
+    style="
+      border-radius: 3rem;
+      position: relative;
+      height: 370px;
+      margin-top: 10px;
+    ">
+    <div
+      class="relative px-4 py-5 sm:p-6 img-foto-uno flex items-center justify-center"
+      style="
+        height: 109%;
+        background-color: #fff;
+        padding-top: 5rem !important;
+        display: flex;
+        position: relative;
+        width: 100%;
+      ">
+      <img
+        src="{{ url_for('static', filename='images/valvoleoxymatdx.png') }}"
+        alt="Image 1" />
+
+      <div class="telefono">
+        <!-- Testo fissato con top e left -->
+        <div
+          style="
+            position: absolute;
+            top: 6%;
+            left: 41%;
+            color: black;
+            font-size: 19px;
+          ">
+          VALVOLE DX
+        </div>
+
+        <div
+          id="evGa-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            position: absolute;
+            top: 41%;
+            left: 19%;
+            color: black;
+            font-size: 10px;
+          "></div>
+
+        <div
+          id="tankGa-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 54%;
+            left: 19%;
+            color: black;
+            font-size: 10px;
+          "></div>
+
+        <div
+          id="ventCamp-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 35%;
+            left: 49.8%;
+            color: black;
+            font-size: 10px;
+          "></div>
+
+        <div
+          id="genCamp-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 67%;
+            left: 49.8%;
+            color: black;
+            font-size: 10px;
+          "></div>
+
+        <div
+          id="zero-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 37%;
+            left: 75%;
+            color: black;
+            font-size: 10px;
+          "></div>
+
+        <div
+          id="span-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 63%;
+            left: 76%;
+            color: black;
+            font-size: 10px;
+          "></div>
+
+        <div
+          id="spanName-dx"
+          style="
+            border: 2px solid #000;
+            padding: 4px;
+            position: absolute;
+            top: 46%;
+            left: 81%;
+            transform: translate(-50%, -50%);
+            border-radius: 0.2rem;
+            font-size: 53%;
+          ">
+          Nome
+        </div>
+        <div
+          id="spanName-dx"
+          style="
+            border: 2px solid #000;
+            padding: 4px;
+            position: absolute;
+            top: 59%;
+            left: 81%;
+            transform: translate(-50%, -50%);
+            border-radius: 0.2rem;
+            font-size: 53%;
+          ">
+          Nome
+        </div>
+      </div>
+
+      <div class="tablet">
+        <div
+          style="
+            position: absolute;
+            top: 6%;
+            left: 41%;
+            color: black;
+            font-size: 24px;
+          ">
+          VALVOLE DX
+        </div>
+        <!-- Testo fissato con top e left -->
+        <div
+          id="evGa-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 33%;
+            left: 17%;
+            color: black;
+            font-size: 15px;
+          "></div>
+
+        <div
+          id="tankGa-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 56%;
+            left: 17%;
+            color: black;
+            font-size: 15px;
+          "></div>
+
+        <div
+          id="ventCamp-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 24%;
+            left: 51%;
+            color: black;
+            font-size: 15px;
+          "></div>
+
+        <div
+          id="genCamp-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 73%;
+            left: 51.6%;
+            color: black;
+            font-size: 15px;
+          "></div>
+
+        <div
+          id="zero-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 25%;
+            left: 75%;
+            color: black;
+            font-size: 15px;
+          "></div>
+
+        <div
+          id="span-sx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 67%;
+            left: 75%;
+            color: black;
+            font-size: 15px;
+          "></div>
+
+        <div
+          id="spanName-dx"
+          style="
+            border: 2px solid #000;
+            padding: 4px;
+            position: absolute;
+            top: 40%;
+            left: 81%;
+            transform: translate(-50%, -50%);
+            border-radius: 0.2rem;
+            font-size: 104%;
+          ">
+          Nome
+        </div>
+        <div
+          id="spanName-dx"
+          style="
+            border: 2px solid #000;
+            padding: 4px;
+            position: absolute;
+            top: 62%;
+            left: 81%;
+            transform: translate(-50%, -50%);
+            border-radius: 0.2rem;
+            font-size: 104%;
+          ">
+          Nome
+        </div>
+      </div>
+
+      <div class="deskopt">
+        <div
+          style="
+            position: absolute;
+            top: 3%;
+            left: 43%;
+            color: black;
+            font-size: 27px;
+          ">
+          VALVOLE DX
+        </div>
+        <!-- Testo fissato con top e left -->
+        <div
+          id="evGa-dx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 29%;
+            left: 29%;
+            color: black;
+            font-size: 21px;
+          "></div>
+        <div
+          id="tankGa-dx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 54%;
+            left: 29%;
+            color: black;
+            font-size: 21px;
+          "></div>
+        <div
+          id="ventCamp-dx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 17%;
+            left: 50%;
+            color: black;
+            font-size: 17px;
+          "></div>
+        <div
+          id="genCamp-dx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 78%;
+            left: 50%;
+            color: black;
+            font-size: 17px;
+          "></div>
+        <p
+          id="zeroName-dx"
+          style="
+            border: 2px solid #000;
+            padding: 10px;
+            position: absolute;
+            top: 33%;
+            left: 73%;
+            transform: translate(-50%, -50%);
+            border-radius: 0.2rem;
+          ">
+          Nome
+        </p>
+        <div
+          id="zero-dx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 20%;
+            left: 67%;
+            color: black;
+            font-size: 17px;
+          "></div>
+        <p
+          id="spanName-dx"
+          style="
+            border: 2px solid #000;
+            padding: 10px;
+            position: absolute;
+            top: 73%;
+            left: 73%;
+            transform: translate(-50%, -50%);
+            border-radius: 0.2rem;
+          ">
+          Nome
+        </p>
+        <div
+          id="span-dx"
+          class="valvs"
+          style="
+            position: absolute;
+            top: 73%;
+            left: 67%;
+            color: black;
+            font-size: 17px;
+          "></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %} {% block javascripts %}
+<script>
+  $(document).ready(function () {
+    $("#deviceTable").DataTable();
+  });
+</script>
+{% endblock javascripts %}
