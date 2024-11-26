@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include "utils/preloader.html" %}
+
+<div class="base-container">
+    <h1>Brand Controllori</h1>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for marca in lista_marche %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td class="text-center">{{ marca.name }}</td>
+                <td class="text-center">
+                <a href="{{ url_for('plc_blueprint.visualizza_marca', marca_id=marca.id) }}" class="btn btn-md btn-primary"><i class="mse mse-search"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="text-center">
+</div>
+{% endblock %}
+
+{% block javascripts %} {% endblock javascripts %}
