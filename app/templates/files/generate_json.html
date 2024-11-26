@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include "utils/preloader.html" %}
+
+<div class="base-container">
+    <h1>Generate JSON File</h1>
+    <form action="{{ url_for('files_blueprint.generate_json') }}" method="POST">
+        <div class="mse-input-row-wrap">
+            <div class="mse-select-wrap">
+            <label class="mse-select-label" for="select">Select table</label>
+            <div class="mse-select-row">
+                <select class="mse-input" name="select" id="select">
+                    {% for table_name in table_names %}
+                        <option value="{{ table_name }}">{{ table_name }}</option>
+                    {% endfor %}
+                </select>
+                <div class="mse-select-arrow"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision">
+                    <path d="M6 9l6 6 6-6"></path>
+                </svg> </div>
+            </div>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+              <label class="mse-input-label" for="row_id">ID Row</label>
+              <input class="mse-input" type="text" id="row_id" name="row_id" placeholder="row_id...">
+            </div>
+          </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary text-center">Generate JSON</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+
+{% block javascripts %} {% endblock javascripts %}
+
