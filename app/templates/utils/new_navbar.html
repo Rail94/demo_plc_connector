@@ -1,0 +1,724 @@
+<!-- Static sidebar for desktop -->
+<div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72">
+  <!-- Sidebar component, swap this element with another sidebar if you like -->
+  <div
+    class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-black px-6 pb-4">
+    <div class="flex h-16 justify-center items-center">
+      <a href="/home">
+        <img
+          class="w-auto h-12"
+          src="{{ url_for('static', filename='images/logo.png') }}"
+          alt="Your Company"
+          style="height: 6rem; padding-top: 17px" />
+      </a>
+    </div>
+    <nav class="flex flex-1 flex-col">
+      <ul
+        role="list"
+        class="flex flex-1 flex-col gap-y-7">
+        <li>
+          <div
+            class="text-lg font-bold leading-6 text-center mt-3"
+            style="color: orange">
+            SAA
+          </div>
+          <div
+            class="text-sm font-bold leading-6 text-center"
+            style="color: orange">
+            Sistema Analisi
+          </div>
+          <div
+            class="text-sm font-bold leading-6 text-center"
+            style="color: orange">
+            Automatizzato
+          </div>
+          <ul
+            role="list"
+            class="-mx-2 space-y-1">
+            <li>
+              <a
+                href="/home"
+                class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                style="background-color: transparent"
+                onmouseover="this.style.backgroundColor='#FF8C00'; this.style.color='#000000';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff';">
+                <i class="mse mse-home align-mse"></i>
+                Dashboard
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul
+            role="list"
+            class="-mx-2 mt-2 space-y-1">
+            <li class="dropdown-center">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="
+                    width: 142px;
+                    background-color: transparent;
+                    border: none;
+                    text-align: justify;
+                  ">
+                  Analisi
+                </button>
+                <ul
+                  class="dropdown-menu"
+                  style="background-color: #ff8c00">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('analisis_blueprint.sessione_analisi') }}"
+                      >Sessione Analisi</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="dropdown-center">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="
+                    width: 142px;
+                    background-color: transparent;
+                    border: none;
+                    text-align: justify;
+                  ">
+                  Calibrazione
+                </button>
+                <ul
+                  class="dropdown-menu"
+                  style="background-color: #ff8c00">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('calibration_blueprint.oxymat_sx', selector='SX') }}"
+                      >OxyMat SX</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('calibration_blueprint.oxymat_dx', selector='DX') }}"
+                      >OxyMat DX</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('calibration_blueprint.tsi_sx') }}"
+                      >TSI SX</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('calibration_blueprint.tsi_dx') }}"
+                      >TSI DX</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="dropdown-center">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="
+                    width: 142px;
+                    background-color: transparent;
+                    border: none;
+                    text-align: justify;
+                  ">
+                  Report
+                </button>
+                <ul
+                  class="dropdown-menu"
+                  style="background-color: #ff8c00">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('reports_blueprint.lista_report') }}"
+                      >Lista Report</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('reports_blueprint.report_analisi') }}"
+                      >Analisi</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('reports_blueprint.report_oxysx', selector='SX') }}"
+                      >Oxymat Sx</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('reports_blueprint.report_oxydx', selector='DX') }}"
+                      >Oxymat Dx</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('reports_blueprint.report_tsisx', selector='SX') }}"
+                      >Tsi Sx</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('reports_blueprint.report_tsidx', selector='DX') }}"
+                      >Tsi Dx</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="dropdown-center">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="
+                    width: 142px;
+                    background-color: transparent;
+                    border: none;
+                    text-align: justify;
+                  ">
+                  Impostazioni
+                </button>
+                <ul
+                  class="dropdown-menu"
+                  style="background-color: #ff8c00">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('settings_blueprint.impostazioni_generali') }}"
+                      >Generali</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('settings_blueprint.impostazioni_pagina_campione') }}"
+                      >Pagina Campione</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('settings_blueprint.oxysxsettings') }}"
+                      >Oxymat SX</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('settings_blueprint.oxydxsettings') }}"
+                      >Oxymat DX</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('settings_blueprint.tsisxsettings') }}"
+                      >Tsi SX</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('settings_blueprint.tsidxsettings') }}"
+                      >Tsi dX</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="dropdown-center">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="
+                    width: 142px;
+                    background-color: transparent;
+                    border: none;
+                    text-align: justify;
+                  ">
+                  Amministrazione
+                </button>
+                <ul
+                  class="dropdown-menu"
+                  style="background-color: #ff8c00">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('admin_blueprint.permessi') }}"
+                      >Permessi</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('admin_blueprint.utenti') }}"
+                      >Utenti</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('admin_blueprint.audit_trail') }}"
+                      >Audit trail</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="dropdown-center">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="
+                    width: 142px;
+                    background-color: transparent;
+                    border: none;
+                    text-align: justify;
+                  ">
+                  Gestione Errori
+                </button>
+                <ul
+                  class="dropdown-menu"
+                  style="background-color: #ff8c00">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('errors_blueprint.pagina_segnalazioni') }}"
+                      >Pagina Segnalazioni</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="mt-auto">
+          <a
+            href="/logout"
+            class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+            style="background-color: transparent"
+            onmouseover="this.style.backgroundColor='#FFA500'; this.style.color='#000000';"
+            onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff';">
+            <i class="mse mse-logout align-mse"></i>
+            Logout
+          </a>
+        </li>
+        <div class="relative">
+          <button
+            type="button"
+            class="-m-1.5 flex items-center p-1.5"
+            id="user-menu-button"
+            aria-expanded="false"
+            aria-haspopup="true">
+            <span class="sr-only">Open user menu</span>
+            <img
+              class="h-8 w-8 rounded-full bg-gray-50"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt="" />
+            <span class="hidden lg:flex lg:items-center">
+              <span
+                class="ml-4 text-sm font-semibold leading-6 text-white"
+                aria-hidden="true"
+                >Account</span
+              >
+              <svg
+                class="ml-2 h-5 w-5 text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true">
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Aggiunta dell'hamburger menu per dispositivi mobili -->
+<div
+  class="hamburger-bar"
+  style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: orange;
+  ">
+  <div
+    class="fixed inset-x-0 top-0 z-50 flex items-center justify-end lg:hidden">
+    <button
+      id="mobile-menu-button"
+      class="bg-orange-500 p-4 focus:outline-none"
+      style="background-color: orange; position: fixed; top: 0; left: 0">
+      <svg
+        class="h-6 w-6 text-black"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+  <div
+    class="logo-mobile"
+    style="text-align: center; padding: 16px 0">
+    <a href="/home">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" />
+    </a>
+  </div>
+</div>
+
+<!-- Menu nascosto per dispositivi mobili -->
+<div
+  id="mobile-menu"
+  class="hidden fixed inset-0 z-40 bg-black bg-opacity-75 lg:hidden">
+  <div
+    class="flex justify-end"
+    style="padding: 0.5rem">
+    <button
+      id="close-mobile-menu"
+      class="text-white p-4 focus:outline-none">
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="flex flex-col items-center justify-center">
+    <a
+      href="/home"
+      class="text-white font-bold py-2 px-4"
+      >Dashboard</a
+    >
+    <ul
+      role="list"
+      class="-mx-2 mt-2 space-y-1">
+      <li class="dropdown-center">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="
+              width: 142px;
+              background-color: transparent;
+              border: none;
+              text-align: justify;
+            ">
+            Analisi
+          </button>
+          <ul
+            class="dropdown-menu"
+            style="background-color: #ff8c00">
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('analisis_blueprint.sessione_analisi') }}"
+                >Sessione Analisi</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="dropdown-center">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="
+              width: 142px;
+              background-color: transparent;
+              border: none;
+              text-align: justify;
+            ">
+            Calibrazione
+          </button>
+          <ul
+            class="dropdown-menu"
+            style="background-color: #ff8c00">
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('calibration_blueprint.oxymat_sx', selector='SX') }}"
+                >OxyMat SX</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('calibration_blueprint.oxymat_dx', selector='DX') }}"
+                >OxyMat DX</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('calibration_blueprint.tsi_sx') }}"
+                >TSI SX</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('calibration_blueprint.tsi_dx') }}"
+                >TSI DX</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="dropdown-center">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="
+              width: 142px;
+              background-color: transparent;
+              border: none;
+              text-align: justify;
+            ">
+            Report
+          </button>
+          <ul
+            class="dropdown-menu"
+            style="background-color: #ff8c00">
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('reports_blueprint.lista_report') }}"
+                >Lista Report</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('reports_blueprint.report_analisi') }}"
+                >Analisi</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('reports_blueprint.report_oxysx', selector='SX') }}"
+                >Oxymat Sx</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('reports_blueprint.report_oxydx', selector='DX') }}"
+                >Oxymat Dx</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('reports_blueprint.report_tsisx', selector='SX') }}"
+                >Tsi Sx</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('reports_blueprint.report_tsidx', selector='DX') }}"
+                >Tsi Dx</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="dropdown-center">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="
+              width: 142px;
+              background-color: transparent;
+              border: none;
+              text-align: justify;
+            ">
+            Impostazioni
+          </button>
+          <ul
+            class="dropdown-menu"
+            style="background-color: #ff8c00">
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('settings_blueprint.impostazioni_generali') }}"
+                >Generali</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('settings_blueprint.impostazioni_pagina_campione') }}"
+                >Pagina Campione</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('settings_blueprint.oxysxsettings') }}"
+                >Oxymat SX</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('settings_blueprint.oxydxsettings') }}"
+                >Oxymat DX</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('settings_blueprint.tsisxsettings') }}"
+                >Tsi SX</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('settings_blueprint.tsidxsettings') }}"
+                >Tsi dX</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="dropdown-center">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="
+              width: 142px;
+              background-color: transparent;
+              border: none;
+              text-align: justify;
+            ">
+            Amministrazione
+          </button>
+          <ul
+            class="dropdown-menu"
+            style="background-color: #ff8c00">
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('admin_blueprint.permessi') }}"
+                >Permessi</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('admin_blueprint.utenti') }}"
+                >Utenti</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('admin_blueprint.audit_trail') }}"
+                >Audit trail</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="dropdown-center">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="
+              width: 142px;
+              background-color: transparent;
+              border: none;
+              text-align: justify;
+            ">
+            Gestione Errori
+          </button>
+          <ul
+            class="dropdown-menu"
+            style="background-color: #ff8c00">
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('errors_blueprint.pagina_segnalazioni') }}"
+                >Pagina Segnalazioni</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <!-- Aggiungi altri link del menu qui -->
+  </div>
+</div>
