@@ -1,0 +1,206 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  table.dataTable thead th {
+    background-color: #a20bf3; /* Arancione */
+    color: #fff; /* Bianco */
+    border-bottom: 2px solid #333; /* Nero */
+  }
+  table.dataTable tbody tr:nth-child(odd) {
+    background-color: #161616; /* Grigio scuro */
+  }
+  table.dataTable tbody tr:nth-child(even) {
+    background-color: #000000; /* Grigio chiaro */
+  }
+  table.dataTable tbody tr:hover {
+    background-color: #ff7f00; /* Arancione */
+    color: #000000; /* Bianco */
+  }
+  table.dataTable tr {
+    font-weight: bold;
+  }
+  thead,
+  tbody,
+  tfoot,
+  tr,
+  td,
+  th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 3px;
+    color: white;
+    /* border-radius: 1px; */
+  }
+  table.dataTable {
+    width: 121%;
+    height: 325px;
+    border-collapse: collapse;
+  }
+  table.dataTable th,
+  table.dataTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #555; /* Grigio scuro */
+  }
+  .dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: #ff7f00; /* Arancione */
+    color: #fff !important; /* Bianco */
+    border: 1px solid #333; /* Nero */
+  }
+  .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #333; /* Nero */
+    color: #ff7f00 !important; /* Arancione */
+  }
+  .dataTables_wrapper .dataTables_filter input {
+    background-color: #555; /* Grigio scuro */
+    color: #fff; /* Bianco */
+    border: 1px solid #ff7f00; /* Arancione */
+  }
+</style>
+{% endblock custom_style %}
+
+
+{% block content %}
+<div class="px-4 sm:px-6 lg:px-8">
+            
+  <div class="flex flex-col lg:flex-row lg:space-x-5 space-y-5 lg:space-y-0 mt-12">
+    
+    <!-- Primo div -->
+    <div class="overflow-hidden rounded-lg bg-white shadow p-4" style="width: 100%; height: 343px; border-radius: 3rem;">
+      <p class="text-center font-bold text-2xl">EV Campione</p>
+
+      <!-- Quadrato 1 -->
+      <div class="flex flex-row items-center" style="margin-bottom: 2rem; margin-top: 30px;">
+        <div class="form-check form-switch" style="margin-left: 2rem;">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8);" />
+        </div>
+        <span class="mr-2" style="color: black; font-size: 18px; margin-left: 5.5rem;">OxyMat Max SX</span>
+      </div>
+      <p class="text-center font-bold text-xl" style="border-bottom: 0.6px solid black; margin-top: -29px; font-size: 16px;">ZERO COMUNE</p>
+
+      <!-- Quadrato 2 -->
+      <div class="flex flex-row items-center" style="margin-bottom: 2rem; margin-top: 30px;">
+        <div class="form-check form-switch" style="margin-left: 2rem;">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8);" />
+        </div>
+        <span class="mr-2" style="color: black; font-size: 18px; margin-left: 5.5rem;">OxyMat Min SX</span>
+      </div>
+      <p class="text-center font-bold text-xl" style="border-bottom: 0.6px solid black; margin-top: -29px; font-size: 16px;">SPAN OXYMAT</p>
+
+      
+    </div>
+
+    <div class="overflow-hidden rounded-lg bg-white shadow p-4 flex items-center justify-center" style="width: 100%; height: 455px; border-radius: 3rem;">
+      <div class="w-full lg:w-auto">
+        <p class="text-center font-bold text-2xl">EV GA Tank</p>
+        <p class="text-center text-lg" style="margin-top: 11px;">Generale Analizzatori</p>
+        <div class="form-check form-switch flex justify-center" style="margin-top: 21px;">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8); width: 52px;" />
+        </div>
+        <div class="flex justify-center" style="margin-top: 50px; padding-bottom: 30px;">
+          <div class="flex items-center">
+            <span class="mr-2" style="color: black; font-size: 18px;">VENT</span>
+            <div class="form-check form-switch ml-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8); width: 35px;">
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center" style="margin-top: 41px; padding-bottom: 37px;">
+          <div class="flex items-center">
+            <span class="mr-2" style="color: black; font-size: 18px;">GA2</span>
+            <div class="form-check form-switch ml-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8); width: 35px;">
+            </div>
+            <div class="flex flex-col items-center ml-12">
+              <div class="w-12 h-12 border bg-transparent rounded-full"></div>
+              <div class="text-center" style="width: 91px;">Tank linea 2</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center" style="margin-top: 41px; padding-bottom: 15px;">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="overflow-hidden rounded-lg bg-white shadow p-4 flex items-center justify-center" style="width: 100%; border-radius: 3rem;">
+      <div class="w-full lg:w-auto">
+        <p class="text-center font-bold text-2xl">EV GA Tank</p>
+        <p class="text-center text-lg" style="margin-top: 11px;">Generale Analizzatori</p>
+        <div class="form-check form-switch flex justify-center" style="margin-top: 21px;">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8); width: 52px;" />
+        </div>
+        <div class="flex justify-between mt-3" style="padding-bottom: 43px; padding-top: 32px;">
+          <div class="flex flex-col items-center">
+            <span class="mb-1" style="color: black; font-size: 18px;">Posizione 1</span>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8);" />
+            </div>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="mb-1" style="color: black; font-size: 18px;">Posizione 2</span>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8);" />
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between mt-3" style="padding-bottom: 40px;">
+          <div class="flex flex-col items-center">
+            <span class="mb-1" style="color: black; font-size: 18px;">Posizione 3</span>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8);" />
+            </div>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="mb-1" style="color: black; font-size: 18px;">Posizione 4</span>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8);" />
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col items-center" style="margin-bottom: 10px;">
+          <span class="mb-1" style="color: black; font-size: 18px;">Posizione 5</span>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8);" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- END secondo contenitore -->
+
+<div class="px-4 sm:px-6 lg:px-8" style="margin-top: 51px;">
+  <div class="flex justify-center items-center w-full h-full">
+    <!-- Primo div -->
+    <div class="bg-white shadow p-6 sm:p-8 lg:p-12" style="border-radius: 3rem; width: 100%; max-width: 600px; height: auto; min-height: 230px;">
+      <!-- Contenuto del primo div -->
+      <p class="text-center font-bold text-2xl">Generale campioni</p>
+      <div class="flex items-center justify-center mb-8 mt-8 w-full">
+        <div class="form-check form-switch ml-8">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8);" />
+        </div>
+        <span class="text-black text-lg mx-8">Valvola a 3 vie</span>
+        <div class="flex flex-col items-center mx-4">
+          <span class="text-black text-lg mb-2">OPEN</span>
+          <div class="w-12 h-12 border bg-transparent rounded-full"></div>
+        </div>
+        <div class="flex flex-col items-center mx-4">
+          <span class="text-black text-lg mb-2">VENT</span>
+          <div class="w-12 h-12 border bg-transparent rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END terzo contenitore -->
+{% endblock content %}
+
+{% block javascripts %} 
+{% endblock javascripts %}
