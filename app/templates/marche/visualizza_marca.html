@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="base-container">
+    <h1>Dettagli Brand {{ marca.name }}</h1>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="name">Denominazione:</label>
+                <input type="text" id="name" name="name" class="mse-input" placeholder="Denominazione marca..." value="{{ marca.name }}" disabled>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap" id="caratteristiche-container">
+                <label class="mse-input-label" for="name">Caratteristiche PLC:</label>
+                {% for caratteristica in caratteristiche %}
+                <div class="mse-input-row-wrap">
+                    <input type="text" id="caratteristiche" class= "mse-input mb-" placeholder="Nome caratteristica" name="caratteristiche" value="{{ caratteristica }}" disabled>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %} {% endblock javascripts %}
