@@ -1,0 +1,171 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+{% endblock custom_style %}
+
+
+{% block content %}
+<div class="px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <!-- SHUTDOWN Section -->
+      <div class="bg-white p-4 border rounded">
+        <h2 class="text-xl font-bold">SHUTDOWN</h2>
+        <div class="mt-2">
+          <div class="flex items-center">
+            <i class="mse mse-triangle-warning text-yellow-500"></i>
+            <span class="ml-2">ALLARME - Modulo Reparto GAS</span>
+          </div>
+          <div class="border p-2 mt-2">X</div>
+        </div>
+        <div class="mt-2">
+          <div class="flex items-center">
+            <i class="mse mse-triangle-warning text-yellow-500"></i>
+            <span class="ml-2">SHUTDOWN: Modulo Reparto Liquido</span>
+          </div>
+          <div class="border p-2 mt-2">X</div>
+        </div>
+        <div class="mt-2">
+          <div class="flex items-center">
+            <i class="mse mse-triangle-warning text-yellow-500"></i>
+            <span class="ml-2">SHUTDOWN: Sessione Analisi in Corso</span>
+          </div>
+          <div class="border p-2 mt-2">X</div>
+        </div>
+      </div>
+
+      <!-- Central Buttons -->
+      <div class="flex flex-col justify-center items-center">
+        <button class="bg-orange-500 text-white font-bold py-2 px-4 rounded mb-4 w-full sm:w-1/2 lg:w-full xl:w-1/2" style="background-color: #FF8C00;">RESET ALLARMI</button>
+        <button class="bg-green-500 text-white font-bold py-2 px-4 rounded mb-4 w-full sm:w-1/2 lg:w-full xl:w-1/2">BACK</button>
+        <button class="bg-orange-500 text-white font-bold py-2 px-4 rounded w-full sm:w-1/2 lg:w-full xl:w-1/2" style="background-color: #FF8C00;">AUTO CAL</button>
+      </div>
+
+      <!-- Errore FLUSSO Section -->
+      <div class="bg-white p-4 border rounded">
+        <h2 class="text-xl font-bold">Errore FLUSSO</h2>
+        <div class="mt-2">
+          <div class="flex items-center">
+            <i class="mse mse-triangle-warning text-yellow-500"></i>
+            <span class="ml-2">Ultimo Errore Flusso OXYMAT SX</span>
+          </div>
+          <div class="border p-2 mt-2">X</div>
+        </div>
+        <div class="mt-2">
+          <div class="flex items-center">
+            <i class="mse mse-triangle-warning text-yellow-500"></i>
+            <span class="ml-2">Ultimo Errore Flusso OXYMAT DX</span>
+          </div>
+          <div class="border p-2 mt-2">X</div>
+        </div>
+      </div>
+
+      <!-- AUTO CAL Button -->
+      <div class="flex justify-center items-center mt-4 lg:mt-0">
+        <button class="bg-orange-500 text-white font-bold py-2 px-4 rounded">AUTO CAL</button>
+      </div>
+
+      <!-- TIME OUT Section -->
+      <div class="bg-white p-4 border rounded mt-4 lg:mt-0">
+        <h2 class="text-xl font-bold">TIME OUT</h2>
+        <div class="mt-2">
+          <div class="flex items-center">
+            <i class="mse mse-triangle-warning text-yellow-500"></i>
+            <span class="ml-2">Sessione Analisi</span>
+          </div>
+          <div class="border p-2 mt-2">X</div>
+        </div>
+      </div>
+
+      <!-- Inserted OXYMAT SX Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 col-span-1 lg:col-span-3 border rounded p-4">
+        <div class="col-span-3 text-left text-xl font-bold">OXYMAT SX</div>
+        <div class="lg:col-span-1">
+          <div class="text-center font-bold">Barcode Campione ZERO</div>
+          <div class="mt-2 p-2 text-black border text-center">Certificato SCADUTO</div>
+        </div>
+        <div class="lg:col-span-1">
+          <div class="text-center font-bold">Barcode Campione SPAN</div>
+          <div class="mt-2 p-2 text-black border text-center">Certificato SCADUTO</div>
+        </div>
+        <div class="lg:col-span-1">
+          <div class="text-center font-bold">Ultima CALIBRAZIONE</div>
+          <div class="mt-2 p-2 text-black border text-black text-center">X</div>
+        </div>
+        <div class="lg:col-span-2 mt-4">
+          <div class="text-center font-bold">Ultimo Errore Calibrazione</div>
+          <div class="mt-2 p-2 text-black border text-center">Resettare Libro di BORDO</div>
+        </div>
+        <div class="lg:col-span-1 flex justify-center items-center flex-col mt-4">
+          <div class="bg-green-500 text-white flex items-center justify-center text-center font-bold" style="width: 9rem; height: 3rem;margin: auto;">
+            <i class="mse mse-triangle-warning"></i>
+          </div>
+          <div class="mt-2 p-2 bg-red-500 text-white text-center font-bold">Errore SPAN</div>
+        </div>
+        <div class="lg:col-span-1 mt-4">
+          <div class="mt-2 p-2 text-black border text-center">RESET ALLARME</div>
+        </div>
+        <div class="lg:col-span-2 mt-4">
+          <div class="mt-2 p-2 text-black border text-center">ANALIZZATORE DEGRADATO</div>
+        </div>
+      </div>
+
+      <!-- Inserted OXYMAT DX Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 col-span-1 lg:col-span-3 border rounded p-4">
+        <div class="col-span-3 text-left text-xl font-bold">OXYMAT DX</div>
+        <div class="lg:col-span-1">
+          <div class="text-center font-bold">Barcode Campione ZERO</div>
+          <div class="mt-2 p-2 text-black border text-center">Certificato SCADUTO</div>
+        </div>
+        <div class="lg:col-span-1">
+          <div class="text-center font-bold">Barcode Campione SPAN</div>
+          <div class="mt-2 p-2 text-black border text-center">Certificato SCADUTO</div>
+        </div>
+        <div class="lg:col-span-1">
+          <div class="text-center font-bold">Ultima CALIBRAZIONE</div>
+          <div class="mt-2 p-2 text-black border text-black text-center">X</div>
+        </div>
+        <div class="lg:col-span-2 mt-4">
+          <div class="text-center font-bold">Ultimo Errore Calibrazione</div>
+          <div class="mt-2 p-2 text-black border text-center">Resettare Libro di BORDO</div>
+        </div>
+        <div class="lg:col-span-1 flex justify-center items-center flex-col mt-4">
+          <div class="bg-green-500 text-white flex items-center justify-center text-center font-bold" style="width: 9rem; height: 3rem;margin: auto;">
+            <i class="mse mse-triangle-warning"></i>
+          </div>
+          <div class="mt-2 p-2 bg-red-500 text-white text-center font-bold">Errore SPAN</div>
+        </div>
+        <div class="lg:col-span-1 mt-4">
+          <div class="mt-2 p-2 text-black border text-center">RESET ALLARME</div>
+        </div>
+        <div class="lg:col-span-2 mt-4">
+          <div class="mt-2 p-2 text-black border text-center">ANALIZZATORE DEGRADATO</div>
+        </div>
+      </div>
+
+      <!-- BACKUP Section -->
+      <div class="col-span-1 lg:col-span-3 bg-white p-4 border rounded mt-4">
+        <h2 class="text-xl font-bold">BACKUP: Sessione Analisi in Corso</h2>
+        <div class="mt-2">
+          <span>BARCODE: Ultimo Contenitore Analizzato</span>
+          <div class="border p-2 mt-2">X</div>
+        </div>
+        <div class="mt-2">
+          <span>POSIZIONI in Attesa di Analisi</span>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
+            <div class="border p-2">X</div>
+            <div class="border p-2">X</div>
+            <div class="border p-2">X</div>
+            <div class="border p-2">X</div>
+            <div class="border p-2">X</div>
+            <div class="border p-2">X</div>
+            <div class="border p-2">X</div>
+            <div class="border p-2">X</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}
+
+{% block javascripts %} 
+{% endblock javascripts %}
