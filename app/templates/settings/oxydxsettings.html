@@ -1,0 +1,125 @@
+{% extends 'new_base.html' %} {% block custom_style %} {% endblock custom_style
+%} {% block content %}
+<div class="text-center mt-4">
+  <form action="{{ url_for('pdfs_blueprint.print_pdf_oxydx_settings') }}" method="post">
+    <button type="submit" class="btn-primary text-white font-bold py-2 px-4 rounded">
+      <i class="mse mse-download"></i> Scarica PDF
+    </button>
+  </form>
+</div>
+<div class="px-4 sm:px-6 lg:px-8" style="padding-top: 71px; position: relative">
+  <!-- Disattivazione Calibrazione Auto Section -->
+  <div class="border p-4 mb-4">
+    <h2 class="text-lg font-bold mb-2">Disattivazione Calibrazione Auto</h2>
+    <div class="grid grid-cols-6 gap-4">
+      <div class="col-span-2">
+        <label for="modello" class="block">Modello</label>
+        <input id="modello" type="text" class="border w-full" />
+      </div>
+      <div class="col-span-2">
+        <label for="cert" class="block">Cert. Taratura</label>
+        <input id="cert" type="text" class="border w-full" />
+      </div>
+      <div class="col-span-2">
+        <label for="ns" class="block">N/S</label>
+        <input id="ns" type="text" class="border w-full" />
+      </div>
+      <div class="col-span-2">
+        <label for="tipo-analisi" class="block">Tipo Analisi</label>
+        <input id="tipo-analisi" type="text" class="border w-full" />
+      </div>
+      <div class="col-span-2">
+        <label for="metodo" class="block">Metodo</label>
+        <input id="metodo" type="text" class="border w-full" />
+      </div>
+      <div class="col-span-2">
+        <label for="val-riferimento" class="block">Val. riferimento</label>
+        <input id="val-riferimento" type="text" class="border w-full" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Analisi and Calibrazione Section -->
+  <div class="grid grid-cols-2 gap-4 mb-4">
+    <!-- Analisi Section -->
+    <div class="border p-4">
+      <h2 class="text-lg font-bold mb-2">Analisi</h2>
+      <div class="grid grid-cols-1 gap-4">
+        <div>
+          <label for="tempo-flussaggio-analisi" class="block">Tempo flussaggio</label>
+          <input id="tempo-flussaggio-analisi" type="text" class="border w-full" />
+        </div>
+        <div>
+          <label for="tempo-bilanciamento" class="block">Tempo di bilanciamento</label>
+          <input id="tempo-bilanciamento" type="text" class="border w-full" />
+        </div>
+      </div>
+      <div class="mt-4">
+        <input id="disattivazione-analizzatore" type="checkbox" class="mr-2" />
+        <label for="disattivazione-analizzatore" class="block">Disattivazione Utilizzo Analizzatore</label>
+      </div>
+    </div>
+
+    <!-- Calibrazione Section -->
+    <div class="border p-4">
+      <h2 class="text-lg font-bold mb-2">Calibrazione</h2>
+      <div class="grid grid-cols-1 gap-4">
+        <div>
+          <label for="tempo-flussaggio-calibrazione" class="block">Tempo flussaggio</label>
+          <input id="tempo-flussaggio-calibrazione" type="text" class="border w-full" />
+        </div>
+        <div>
+          <label for="ultima-calibrazione" class="block">Ultima calibrazione</label>
+          <input id="ultima-calibrazione" type="text" class="border w-full bg-red-500 text-white" />
+        </div>
+      </div>
+      <div class="mt-4">
+        <input id="disattivazione-calibrazione" type="checkbox" class="mr-2" />
+        <label for="disattivazione-calibrazione" class="block">Disattivazione Calibrazione Auto.</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gestione Incertezza Strumento Section -->
+  <div class="border p-4">
+    <h2 class="text-lg font-bold mb-2">Gestione Incertezza Strumento</h2>
+    <div class="grid grid-cols-5 gap-4">
+      <div class="col-span-1">
+        <label for="campo1" class="block">Campo 1</label>
+        <div class="grid grid-cols-1 gap-2">
+          <input id="campo1" type="text" class="border w-full" />
+          <label for="campo1" class="block">Campo 2</label>
+          <input id="campo2" type="text" class="border w-full" />
+        </div>
+      </div>
+      <div class="col-span-1">
+        <label for="da1" class="block">DA</label>
+        <div class="grid grid-cols-1 gap-2">
+          <input id="da1" type="text" class="border w-full" />
+          <label for="da1" class="block">DA</label>
+          <input id="da2" type="text" class="border w-full" />
+        </div>
+      </div>
+      <div class="col-span-1">
+        <label for="a1" class="block">A</label>
+        <div class="grid grid-cols-1 gap-2">
+          <input id="a1" type="text" class="border w-full" />
+          <label for="a1" class="block">A</label>
+          <input id="a2" type="text" class="border w-full" />
+        </div>
+      </div>
+      <div class="col-span-2">
+        <label for="incertezza1" class="block">Incertezza</label>
+        <div class="grid grid-cols-1 gap-2">
+          <input id="incertezza1" type="text" class="border w-full" />
+          <label for="incertezza2" class="block">Incertezza</label>
+          <input id="incertezza2" type="text" class="border w-full" />
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 text-center">
+      Inserire il valore assoluto o la percentuale seguita dal simbolo %
+    </p>
+  </div>
+</div>
+{% endblock content %} {% block javascripts %} {% endblock javascripts %}
