@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_css/input_fields.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/MSE-Logo_Bianco_2_head.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_css/mse-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_css/mse-input-fields.css') }}">
+
+</head>
+
+<body class="bg-black">
+
+    {% include "utils/navbar.html"%}
+
+    <div class="container mt-5 content-container">
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-info">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    
+    {% block javascripts %} 
+        <script src="{{ url_for('static', filename='js/page/input_fields.js') }}"></script>
+    {% endblock javascripts %}
+    
+</body>
+</html>
