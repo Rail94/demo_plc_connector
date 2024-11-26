@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="base-container">
+    {% if not plc_selezionato == None %}
+    <h1>Registra variabile da PLC selezionato: "{{ plc_selezionato.name }}"</h1>
+    {% elif not gruppo_selezionato == None %}
+    <h1>Registra variabile da Gruppo selezionato: "{{ gruppo_selezionato.name }}"</h1>
+    {% else %}
+    <h1>Registra variabile</h1>
+    {% endif %}
+    <form action="/registra-variabile" method="post">
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="name">Nome Variabile:</label>
+                <input type="text" class="mse-input" id="name" placeholder="Denominazione variabile..." name="name" required>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                {% if not gruppo_selezionato == None %}
+                <label class="mse-input-label" for="gruppo">Gruppo assegnato:</label>
+                <input type="text" id="gruppo" class="mse-input" name="gruppo" value="{{gruppo_selezionato.name}}" placeholder="Gruppo selezionato..." readonly>
+                {% else %}
+                <label class="mse-input-label" for="gruppi">Gruppi:</label>
+                <select id="gruppi" name="gruppi" placeholder="Gruppo assegnato..."  class="mse-input">
+                    {% for gruppo in lista_gruppi %}
+                    <option value="{{ gruppo.id }}" >{{ gruppo.name }}</option>
+                    {% endfor %}
+                </select>
+                {% endif %}
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                {% if not plc_selezionato == None %}
+                <label class="mse-input-label" for="plc">PLC assegnato:</label>
+                <input type="text" id="plc" class="mse-input" name="plc" value="{{plc_selezionato.name}}" placeholder="PLC selezionato..." readonly>
+                {% else %}
+                <label class="mse-input-label" for="lista_plc">PLC:</label>
+                <select id="lista_plc" name="lista_plc" placeholder="PLC assegnato..."  class="mse-input">
+                    {% for plc in lista_plc %}
+                    <option value="{{ plc.id }}" >{{ plc.name }}</option>
+                    {% endfor %}
+                </select>
+                {% endif %}
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="tipi">Tipi di variabili:</label>
+                <select id="tipi" name="tipi" placeholder="String, Int..."  class="mse-input">
+                    {% for tipo in tipi %}
+                    <option value="{{ tipo.id }}" >{{ tipo.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="mse-input-row justify-content-evenly ">
+            <div class="mse-input-row">    
+                <input class="mse-input" type="checkbox" id="lettura" name="lettura" value="on">
+                <label class="mse-input-label" for="lettura">Lettura</label>    
+            </div>
+            <div class="mse-input-row">
+                <input class="mse-input"  type="checkbox" id="scrittura" name="scrittura" value="on">
+                <label class="mse-input-label" for="scrittura">Scrittura</label>    
+            </div>
+        </div>
+        <div class="mse-input-row">    
+            <button type="submit" class='mse-input' value="submit"><i class="mse mse-add-variable mx-1"></i> Registra Variabile</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+    var urlBaseGetTipi = "{{ url_for('variabili_blueprint.get_tipi', plc_id='__plc_id__') }}";
+    document.addEventListener('DOMContentLoaded', function () {
+        const selectPLC = document.getElementById('lista_plc');
+        // Assicurati che questo sia il riferimento alla select dove vuoi aggiungere le opzioni
+        const selectTipi = document.getElementById('tipi'); 
+
+        selectPLC.addEventListener('change', function () {
+            const plcId = selectPLC.value;
+            const urlWithPLCId = urlBaseGetTipi.replace('__plc_id__', plcId);
+
+            fetch(urlWithPLCId)
+                .then(response => response.json())
+                .then(data => {
+                    if(data.error) {
+                        console.error(data.error);
+                        return; // Gestisci l'errore come preferisci
+                    }
+                
+                    selectTipi.innerHTML = ''; // Pulisci la select
+                    data.tipi.forEach(tipo => {
+                        const option = document.createElement('option');
+                        option.value = tipo.id;
+                        option.textContent = tipo.name;
+                        selectTipi.appendChild(option);
+                    });
+                
+                    // Aggiorna l'oggetto tipiInfo con i nuovi tipi ricevuti
+                    tipiInfo = {};
+                    data.tipi.forEach(tipo => {
+                        tipiInfo[tipo.id] = { 'lettura': tipo.lettura, 'scrittura': tipo.scrittura };
+                    });
+                
+                    // Aggiorna le caselle di controllo in base al tipo selezionato
+                    aggiornaCheckbox();
+                })
+                .catch(error => console.error('Errore nel recupero delle Tipologie di variabili dalla Marca PLC:', error));
+        });
+        // Scateno l'evento al caricamento iniziale del documento
+        const event = new Event('change');
+        selectPLC.dispatchEvent(event);
+    
+        // Caricare i tipi iniziali e aggiornare le checkbox
+        aggiornaCheckbox();
+    });
+
+
+    // Dati passati da Flask
+    var tipiInfo = JSON.parse('{{ tipi_info|tojson|safe }}');
+    
+    // Funzione per controllare e aggiornare lo stato delle checkbox
+    function aggiornaCheckbox() {
+        var selezionato = document.getElementById('tipi').value;
+        var checkboxLettura = document.getElementById('lettura');
+        var checkboxScrittura = document.getElementById('scrittura');
+    
+        // Controlla se l'opzione selezionata ha "lettura" o "scrittura" impostata su False
+        var tipoSelezionato = tipiInfo[selezionato] || {};
+        if (!tipoSelezionato.lettura) {
+          checkboxLettura.checked = false;  // Deseleziona la checkbox
+          checkboxLettura.disabled = true;  // Disabilita la checkbox
+        } else {
+          checkboxLettura.disabled = false; // Abilita la checkbox
+        }
+
+        if (!tipoSelezionato.scrittura) {
+          checkboxScrittura.checked = false; // Deseleziona la checkbox
+          checkboxScrittura.disabled = true;  // Disabilita la checkbox
+        } else {
+          checkboxScrittura.disabled = false; // Abilita la checkbox
+        }
+    }
+    
+    // Aggiungi un event listener per il cambio di selezione
+    document.getElementById('tipi').addEventListener('change', aggiornaCheckbox);
+    
+    // Esegui la funzione al caricamento della pagina per impostare lo stato iniziale delle checkbox
+    window.onload = aggiornaCheckbox;
+</script>
+
+{% endblock javascripts %}
