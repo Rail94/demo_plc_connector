@@ -1,0 +1,18 @@
+      <!-- Modal -->
+      <div class="modal fade" id="modalDelete{{ modal_id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel{{ modal_id }}" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Elimina gruppo</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Questo gruppo verrà rimosso da tutte le variabili a cui è assegnato, confermi?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+              <a type="button" class="btn btn-danger" href="{{ url_for('variabili_blueprint.elimina_gruppo', gruppo_id=gruppo_id) }}">Elimina</a>
+            </div>
+          </div>
+        </div>
+      </div>
