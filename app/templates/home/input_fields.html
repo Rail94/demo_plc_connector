@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="aks-input-row">
+      <input class="aks-input" type="text" id="name" name="name" placeholder="Name...">
+    </div>
+    <div class="aks-input-row">
+      <div class="aks-date-row">
+        <input class="aks-input" type="date" id="date" name="date" placeholder="Name...">
+        <div class="aks-date-calender">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <path d="M16 2v4" />
+            <path d="M8 2v4" />
+            <path d="M3 10h18" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="aks-input-row">
+      <div class="aks-input-icon-wrap">
+        <div class="aks-input-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <path d="M22 6l-10 7L2 6"></path>
+          </svg>
+        </div>
+        <input class="aks-input" type="text" id="name" name="name" placeholder="Name...">
+      </div>
+    </div>
+    <div class="aks-input-row">
+      <div class="aks-input-wrap">
+        <label class="aks-input-label" for="surname">Surname</label>
+        <input class="aks-input" type="text" id="surname" name="surname" placeholder="Surname...">
+      </div>
+    </div>
+    <div class="aks-input-row">
+      <div class="aks-select-row">
+        <select class="aks-input" name="select" id="select">
+          <option value="Option 1" selected>Option 1</option>
+          <option value="Option 2">Option 2</option>
+          <option value="Option 3">Option 3</option>
+          <option value="Option 4">Option 4</option>
+        </select>
+        <div class="aks-select-arrow"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg> </div>
+      </div>
+    </div>
+    <div class="aks-input-row" data-password="">
+      <input class="aks-input" type="password" id="password" name="password" placeholder="Password..." data-pass-target="" />
+      <button class="password-show-hide" data-pass-show-hide="">
+  
+        <svg data-pass-show="" class="password-show" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+          <circle cx="12" cy="12" r="3" /></svg>
+        <svg data-pass-hide="" class="password-hide" viewBox="0 0 24 24" width="18" height="18ccccc" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision">
+          <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24" />
+          <path d="M1 1l22 22" /></svg>
+  
+      </button>
+    </div>
+    <div class="aks-input-row">
+      <input class="aks-input" type="checkbox" id="checkbox" name="checkbox">
+      <label class="aks-input-label" for="checkbox">Checkbox</label>
+    </div>
+    <div class="aks-input-row">
+      <input class="aks-input" type="radio" id="radio1" name="radio">
+      <label class="aks-input-label" for="radio1">Radio</label>
+    </div>
+    <div class="aks-input-row">
+      <input class="aks-input" type="radio" id="radio2" name="radio">
+      <label class="aks-input-label" for="radio2">Radio</label>
+    </div>
+    <div class="aks-input-row">
+      <input class="aks-switch" type="checkbox" id="switch" name="switch">
+      <label class="aks-input-label" for="switch">Switch</label>
+    </div>
+    <div class="aks-input-row">
+      <input class="aks-input" type="submit" id="submit" name="submit">
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %} 
+<script src="{{ url_for('static', filename='js/page/input_fields.js') }}"></script>
+{% endblock javascripts %}
