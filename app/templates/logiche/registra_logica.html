@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="base-container">
+    <h1>Registra nuova Logica su gruppo: {{gruppo.name}}</h1>
+    <form action="/registra-logica" method="post">
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="name">Denominazione:</label>
+                <input type="text" id="name" class="mse-input"
+                    placeholder="Denominazione logica..." name="name" required>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap" name="logiche" id="logiche">
+            <button type="button" class='btn btn-primary' id="conditionButton"> Aggiungi Blocco Condizione</button><br>
+            <button type="button" class='btn btn-primary' id="delayButton"> Aggiungi Blocco Delay</button><br>
+        </div>
+        <div class="mse-input-row-wrap">
+            <button type="submit" class='mse-input'><i class="mse-add mx-1"></i>
+                Crea Nuova Logica</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ url_for('static', filename='js/logiche/constructors.js') }}"></script>
+<script src="{{ url_for('static', filename='js/logiche/querys.js') }}"></script>
+<script>
+    var condition_counter = 1;
+    var delay_counter = 1;
+
+    document.addEventListener("click", document.getElementById("conditionButton"), function() {
+        condition_counter ++;
+        aggiungiBloccoCondizione(condition_counter);
+    });
+
+    document.addEventListener("click", document.getElementById("delayButton"), function() {
+        delay_counter ++;
+        aggiungiBloccoDelay(delay_counter);
+    });
+</script>
+{% endblock javascripts %}
