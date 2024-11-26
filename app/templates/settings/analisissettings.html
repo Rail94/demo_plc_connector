@@ -1,0 +1,96 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+<style>
+  body {
+  font-family: Arial, sans-serif;
+ 
+}
+</style>
+{% endblock custom_style %}
+
+
+{% block content %}
+<div class=" sm:px-6 lg:px-8" style="padding-top: 71px;">
+        
+           
+            
+
+  <div class="px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col xl:flex-row xl:space-x-5 space-y-5 xl:space-y-0 mt-12 justify-center">
+      <!-- Primo div -->
+      <div class="overflow-hidden rounded-lg bg-white shadow p-4" style="width: 100%; height: 420px; border-radius: 3rem; margin-right: 21px;">
+        <p class="text-center text-2xl">Sostituzione certificato di taratura al posto della data di ultime calibrazione o verifica sul report di analisi</p>
+        <!-- Quadrato 1 -->
+        <div class="flex flex-row items-center" style="margin-bottom: 3rem; margin-top: 26px;">
+          <input type="checkbox" class="form-checkbox h-8 w-8 border" style="border-radius: 5rem;">
+          <p class="text-xl" style="margin-left: 20px;">OxyMat SX Max</p>
+        </div>
+        <!-- Quadrato 2 -->
+        <div class="flex flex-row items-center" style="margin-bottom: 3rem;">
+          <input type="checkbox" class="form-checkbox h-8 w-8 border" style="border-radius: 5rem;">
+          <p class="text-xl" style="margin-left: 20px;">OxyMat SX Min</p>
+        </div>
+        <!-- Quadrato 3 -->
+        <div class="flex flex-row items-center" style="margin-bottom: 3rem;">
+          <input type="checkbox" class="form-checkbox h-8 w-8 border" style="border-radius: 5rem;">
+          <p class="text-xl" style="margin-left: 20px;">OxyMat DX Max</p>
+        </div>
+        <!-- Quadrato 4 -->
+        <div class="flex flex-row items-center" style="margin-bottom: 3rem;">
+          <input type="checkbox" class="form-checkbox h-8 w-8 border" style="border-radius: 5rem;">
+          <p class="text-xl" style="margin-left: 20px;">OxyMat DX Min</p>
+        </div>
+      </div>
+  
+      <!-- Secondo div -->
+      <div class="flex flex-col space-y-5 xl:space-y-0">
+        <!-- Primo contenitore -->
+        <div class="overflow-hidden rounded-lg bg-white shadow p-4" style="width: 100%; height: 250px; border-radius: 3rem;">
+          <p class="text-center font-bold text-2xl">Preselezione Analizzatore</p>
+          <!-- Quadrati -->
+          <div class="flex flex-col">
+            <!-- Quadrato 1 -->
+            <div class="flex flex-row items-center" style="margin-bottom: 3rem; margin-top: 26px;">
+              <input type="checkbox" class="form-checkbox h-8 w-8 border" style="border-radius: 5rem;">
+              <p class="text-xl" style="margin-left: 20px;">Preselezione VENT</p>
+            </div>
+            <!-- Quadrato 2 -->
+            <div class="flex flex-row items-center" style="margin-bottom: 3rem;">
+              <input type="checkbox" class="form-checkbox h-8 w-8 border" style="border-radius: 5rem;">
+              <p class="text-xl" style="margin-left: 20px;">Preselezione GA2</p>
+            </div>
+           
+          </div>
+        </div>
+        <!-- Secondo contenitore -->
+        <div class="overflow-hidden rounded-lg bg-white shadow p-4" style="width: 100%; height: 237px; border-radius: 3rem; margin-top: 20px;">
+          <p class="text-center font-bold text-2xl">TIMEOUT analisi</p>
+          <!-- Quadrati -->
+          <div class="flex flex-col justify-center items-center h-full">
+            <!-- Impostazione tempo di TIMEOUT -->
+            <p class="text-center" style="font-size: 21px; width: 311px;">Impostazioni Tempo di TIMEOUT per analisi in corso</p>
+            <!-- Tempo di TIMEOUT -->
+            <div class="border border-black rounded-lg px-72 py-2 mt-4">
+              <p class="text-center font-bold">15 min</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- END terzo contenitore -->
+  </div>
+{% endblock content %}
+
+{% block javascripts %} 
+<script>
+    $(document).ready(function() {
+        $('#deviceTable').DataTable();
+    });
+
+
+</script>
+
+{% endblock javascripts %}
