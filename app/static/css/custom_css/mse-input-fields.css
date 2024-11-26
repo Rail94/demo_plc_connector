@@ -1,0 +1,569 @@
+/*
+
+  Custom Style for input fields and form
+
+*/
+
+@font-face {
+    font-family: 'mse-automation'; /* Name of your icon font */
+}
+
+.mse-input-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .mse-input-row-wrap {
+    display: block;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .mse-input-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .mse-input-icon-wrap .mse-input[type="text"] {
+    padding-left: 33px;
+  }
+  .mse-input-icon {
+    position: absolute;
+    left: 10px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7575a0;
+  }
+
+
+/*
+
+  ## TEXT AND LABEL ##
+
+*/
+
+.mse-input-label {
+    margin-left: 1rem;
+    cursor: pointer;
+    position: relative;
+  }
+  .mse-input-wrap .mse-input-label {
+    margin-left: 0rem;
+    margin-bottom: 0.3rem;
+    display: block;
+    font-size: 15px;
+    color: #484b57;
+  }
+
+
+/*
+
+  ## TEXT INPUT ##
+
+*/
+
+.mse-input[type="text"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    border-radius: 5px;
+    padding: 8px 10px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: unset;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 0.1rem solid #bbc1e1;
+    background: #fff;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .mse-input[type="text"]:hover {
+    border-color: #ffa246;
+  }
+  .mse-input[type="text"]:focus {
+    box-shadow: 0 0 0 2px rgba(39, 94, 254, 0.3);
+    border-color: #ffa246;
+  }
+  .mse-input[type="text"]:disabled {
+    background: #f6f8ff;
+    cursor: not-allowed;
+    opacity: 0.9;
+    border-color: #bbc1e1;
+  }
+  
+  
+
+/*
+
+  ## TEXTAREA ##
+
+*/
+
+textarea.mse-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    border-radius: 5px;
+    padding: 8px 10px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: unset;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 0.1rem solid #bbc1e1;
+    background: #fff;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  textarea.mse-input:hover {
+    border-color: #ffa246;
+  }
+  textarea.mse-input:focus {
+    box-shadow: 0 0 0 2px rgba(39, 94, 254, 0.3);
+    border-color: #ffa246;
+  }
+  textarea.mse-input:disabled {
+    background: #f6f8ff;
+    cursor: not-allowed;
+    opacity: 0.9;
+    border-color: #bbc1e1;
+  }
+
+
+/*
+
+  ## CHECKBOX ##
+
+*/
+
+.mse-input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: 'mse-automation';
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: unset;
+    position: relative; /* Ensure this is set for positioning pseudo-elements */
+    font-size: 28px; /* Added 'px' for font-size */
+    cursor: pointer;
+    color: #bbc1e1;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  /* Unchecked Icon */
+  .mse-input[type="checkbox"]:before {
+    content: "\ea53"; /* Unchecked icon */
+    position: absolute;
+    opacity: 1; /* Visible when unchecked */
+    transition: opacity 0.3s ease;
+  }
+  /* Checked Icon */
+.mse-input[type="checkbox"]:after {
+    content: "\ea52"; /* Checked icon */
+    position: absolute;
+    opacity: 0; /* Hidden when unchecked */
+    transition: opacity 0.3s ease;
+  }
+  /* Hover effect */
+.mse-input[type="checkbox"]:hover {
+    color: #ff7f00;
+  }
+  
+  /* Checked state */
+  .mse-input[type="checkbox"]:checked {
+    color: #ff7f00;
+  }
+  
+  .mse-input[type="checkbox"]:checked:before {
+    opacity: 0; /* Hide unchecked icon */
+  }
+  
+  .mse-input[type="checkbox"]:checked:after {
+    opacity: 1; /* Show checked icon */
+  }
+  
+  .mse-input[type="checkbox"]:disabled {
+    color: #f6f8ff;
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+
+
+  /*
+  
+    ## RADIO ##
+  
+  */
+
+  .mse-input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: 'mse-automation';
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: unset;
+    position: relative; /* Ensure this is set for positioning pseudo-elements */
+    font-size: 28px; /* Added 'px' for font-size */
+    cursor: pointer;
+    color: #bbc1e1;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  /* Unchecked Icon */
+  .mse-input[type="radio"]:before {
+    content: "\ea56"; /* Unchecked icon */
+    position: absolute;
+    opacity: 1; /* Visible when unchecked */
+    transition: opacity 0.3s ease;
+  }
+  /* Checked Icon */
+.mse-input[type="radio"]:after {
+    content: "\ea54"; /* Checked icon */
+    position: absolute;
+    opacity: 0; /* Hidden when unchecked */
+    transition: opacity 0.3s ease;
+  }
+  /* Hover effect */
+.mse-input[type="radio"]:hover {
+    color: #ff7f00;
+  }
+  
+  /* Checked state */
+  .mse-input[type="radio"]:checked {
+    color: #ff7f00;
+  }
+  
+  .mse-input[type="radio"]:checked:before {
+    opacity: 0; /* Hide unchecked icon */
+  }
+  
+  .mse-input[type="radio"]:checked:after {
+    opacity: 1; /* Show checked icon */
+  }
+  
+  .mse-input[type="radio"]:disabled {
+    color: #f6f8ff;
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+
+
+  /*
+  
+    ## SWITCH ##
+  
+  */
+
+  .mse-switch[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: 'mse-automation';
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: unset;
+    position: relative; /* Ensure this is set for positioning pseudo-elements */
+    font-size: 32px; /* Added 'px' for font-size */
+    cursor: pointer;
+    color: #bbc1e1;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  /* Unchecked Icon */
+  .mse-switch[type="checkbox"]:before {
+    content: "\e907"; /* Unchecked icon */
+    position: absolute;
+    opacity: 1; /* Visible when unchecked */
+    transition: opacity 0.3s ease;
+  }
+  /* Checked Icon */
+.mse-switch[type="checkbox"]:after {
+    content: "\e906"; /* Checked icon */
+    position: absolute;
+    opacity: 0; /* Hidden when unchecked */
+    transition: opacity 0.3s ease;
+  }
+  /* Hover effect */
+.mse-switch[type="checkbox"]:hover {
+    color: #ff7f00;
+  }
+  
+  /* Checked state */
+  .mse-switch[type="checkbox"]:checked {
+    color: #ff7f00;
+  }
+  
+  .mse-switch[type="checkbox"]:checked:before {
+    opacity: 0; /* Hide unchecked icon */
+  }
+  
+  .mse-switch[type="checkbox"]:checked:after {
+    opacity: 1; /* Show checked icon */
+  }
+  
+  .mse-switch[type="checkbox"]:disabled {
+    color: #f6f8ff;
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+
+
+
+/*
+
+  ## SELECT ##
+
+*/
+
+.mse-select-label {
+    margin-left: 0.4rem;
+    cursor: pointer;
+    position: relative;
+  }
+  .mse-select-wrap .mse-select-label {
+    margin-left: 0rem;
+    margin-bottom: 0.3rem;
+    display: block;
+    font-size: 15px;
+    color: #5e6272;
+  }
+  
+  .mse-select-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .mse-select-arrow {
+    position: absolute;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  select.mse-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    border-radius: 7px;
+    padding: 8px 10px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: unset;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 0.1rem solid #bbc1e1;
+    background: #fff;
+    color: #6d6d6d;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  select.mse-input:hover {
+    border-color: #ffa246;
+  }
+  select.mse-input:focus {
+    box-shadow: 0 0 0 2px rgba(39, 94, 254, 0.3);
+    border-color: #ffa246;
+  }
+  select.mse-input:disabled {
+    background: #f6f8ff;
+    cursor: not-allowed;
+    opacity: 0.9;
+    border-color: #bbc1e1;
+  }
+  
+  /*
+  
+    ## SUBMIT ##
+  
+  */
+  
+  
+  .mse-input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: auto;
+    border-radius: 7px;
+    padding: 8px 10px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: unset;
+    position: relative;
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    border: 0.2rem solid #ffa246;
+    background: #fff;
+    color: #ffa246;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .mse-input[type="submit"]:hover {
+    background-color: #ffa246;
+    color: #fff;
+  }
+  .mse-input[type="submit"]:focus {
+    box-shadow: 0 0 0 3px rgba(39, 94, 254, 0.3);
+    border-color: #ffa246;
+  }
+  .mse-input[type="submit"]:disabled {
+    background: #f6f8ff;
+    cursor: not-allowed;
+    opacity: 0.9;
+    border-color: #bbc1e1;
+  }
+  
+  
+  /*
+  
+    ## DATE ##
+  
+  */
+  
+  .mse-date-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .mse-date-calender {
+    position: absolute;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    color: #7575a0;
+    cursor: pointer;
+  }
+  .mse-date-calender:hover {
+    color: #ffa246;
+  }
+  .mse-input[type="date"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    border-radius: 7px;
+    padding: 8px 10px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: unset;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 0.1rem solid #bbc1e1;
+    background: #fff;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .mse-input[type="date"]:hover {
+    border-color: #ffa246;
+  }
+  .mse-input[type="date"]:focus {
+    box-shadow: 0 0 0 2px rgba(39, 94, 254, 0.3);
+    border-color: #ffa246;
+  }
+  .mse-input[type="date"]:disabled {
+    background: #f6f8ff;
+    cursor: not-allowed;
+    opacity: 0.9;
+    border-color: #bbc1e1;
+  }
+  .mse-input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  .mse-input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 5;
+    color: #7575a0;
+    cursor: pointer;
+    opacity: 0;
+  }
+  
+
+
+  /*
+  
+  ##BUTTON##
+
+  */
+
+  .mse-input[type="button"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: auto;
+    text-decoration: none;
+    border-radius: 7px;
+    padding: 8px 10px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: unset;
+    position: relative;
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    border: 0.2rem solid #ffa246;
+    background: #fff;
+    color: #ffa246;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .mse-input[type="button"]:hover {
+    background-color: #ffa246;
+    text-decoration: none;
+    color: #fff;
+  }
+  .mse-input[type="button"]:focus {
+    box-shadow: 0 0 0 3px rgba(39, 94, 254, 0.3);
+    border-color: #ffa246;
+    text-decoration: none;
+  }
+  .mse-input[type="button"]:disabled {
+    background: #f6f8ff;
+    cursor: not-allowed;
+    opacity: 0.9;
+    border-color: #bbc1e1;
+    text-decoration: none;
+  }
