@@ -1,0 +1,14 @@
+<div id="preloader">
+    <div class="half-circle-spinner"></div>
+</div>
+<script>
+    // Hide and remove the preloader after a delay
+    window.addEventListener('load', function () {
+        var preloader = document.getElementById('preloader');
+        preloader.classList.add('fade-out');
+        setTimeout(function () {
+            preloader.parentNode.removeChild(preloader);
+        }, 500);  // Delay in milliseconds (1 second in this example)
+    });
+</script>
+
