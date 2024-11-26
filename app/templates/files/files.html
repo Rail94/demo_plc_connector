@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="base-container">
+    <h1>File Management</h1>
+    <ul class=" list-inline text-center">
+        {% for file in files %}
+            <li class="list-inline-item">{{ file }},</li>
+        {% endfor %}
+    </ul>
+    <div class="text-center">
+        <a href="{{ url_for('files_blueprint.upload_file') }}" class="btn btn-primary">Upload Files</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %} {% endblock javascripts %}
