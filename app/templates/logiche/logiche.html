@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include "utils/preloader.html" %}
+
+<div class="base-container">
+    <h1>Lista Logiche di Gruppi</h1>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for logica in lista_logiche %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td class="text-center">{{ logica.name }}</td>
+                <td class="text-center">{{ logica.marca.name }}</td>
+                <td class="text-center">
+                    <a href="{{ url_for('logiche_blueprint.modifica_logica', logica_id=logica.id) }}" class="btn btn-md btn-primary"><i class="mse mse-edit"></i></a>
+                    <button type="button" class="btn btn-md btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete{{ loop.index }}"><i class="mse mse-delete"></i></button>
+                </td>
+            </tr>
+            {% set modal_id = loop.index %}
+            {% set logica_id = logica.id %}
+            {% include "utils/modal_delete_l.html"%}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="mse-input-row">
+    <a href="{{ url_for('logiche_blueprint.crea_logica') }}" type="button" class='mse-input'><i class="mse mse-add mx-1"></i> Registra nuova logica</a>
+</div>
+{% endblock %}
+
+{% block javascripts %} {% endblock javascripts %}
