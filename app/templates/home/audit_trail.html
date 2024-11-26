@@ -1,0 +1,181 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+<style>
+    .box-report {
+        border-radius: 30px;
+        box-shadow: 5px 10px 8px 10px #888888;
+        padding: 3rem;
+        width: 100%;
+    }
+
+    .text-columns {
+        color: gray;
+        font-size: 14px;
+    }
+    .title {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border-bottom: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr {
+        border-bottom: 1px solid gray
+      }
+
+    .download-btn {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transition: 0.2s;
+      }
+
+    #search {
+        border: 1px solid gray;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 80%;
+        padding: 0.5rem;
+      }
+
+      @media (min-width: 387px) and (max-width: 552px) {
+        #search {
+            width: 50%;
+        }
+        .file-width {
+            width: 70%;
+          }
+          td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+        }
+      }
+
+      @media (min-width: 553px) and (max-width: 767px) {
+        td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+        }
+        #search {
+            width: 60%;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1185px) {
+        #search {
+            width: 70%;
+        }
+      }
+</style>
+{% endblock custom_style %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class ="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="box-report mt-5">
+                            <h2 class="text-center text-lg mb-3 text-center title">Report Log</h2>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-center">
+                                        <input type="text" id="search" name="search" placeholder="Cerca...">
+                                        <button class="btn-primary download-btn px-3 py-2"><i class=" mse mse-file"></i> Scarica PDF</button>
+                                    </div>
+                                            
+                                </div>
+                                 
+                            </div>
+
+                                <div class="col-12 mt-3">
+                                    <div >
+                                        <table id="search-table">
+                                            <thead>
+                                                <tr class="text-columns">
+                                                    <th>Nome Log</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Log 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Log 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Log A</td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+    
+{% endblock content %}
+
+{% block javascripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search');
+            const table = document.getElementById('search-table');
+            
+            if (!searchInput || !table) {
+                console.error('Elemento di input per la ricerca o tabella non trovato');
+                return;
+            }
+
+            searchInput.addEventListener('input', function() {
+                let filter = this.value.toLowerCase();
+                let rows = table.querySelectorAll('tbody tr');
+
+                rows.forEach(function(row) {
+                    let cells = row.querySelectorAll('td');
+                    let textContent = '';
+
+                    cells.forEach(function(cell) {
+                        textContent += cell.textContent.toLowerCase() + ' ';
+                    });
+
+                    if (textContent.includes(filter)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+</script> 
+{% endblock javascripts %}
