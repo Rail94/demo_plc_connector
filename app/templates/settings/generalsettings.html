@@ -1,0 +1,203 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("../img/3751.jpg");
+    }
+    table.dataTable thead th {
+      background-color: #a20bf3; /* Arancione */
+      color: #fff; /* Bianco */
+      border-bottom: 2px solid #333; /* Nero */
+    }
+    table.dataTable tbody tr:nth-child(odd) {
+      background-color: #161616; /* Grigio scuro */
+    }
+    table.dataTable tbody tr:nth-child(even) {
+      background-color: #000000; /* Grigio chiaro */
+    }
+    table.dataTable tbody tr:hover {
+      background-color: #ff7f00; /* Arancione */
+      color: #000000; /* Bianco */
+    }
+    table.dataTable tr {
+      font-weight: bold;
+    }
+    thead,
+    tbody,
+    tfoot,
+    tr,
+    td,
+    th {
+      border-color: inherit;
+      border-style: solid;
+      border-width: 3px;
+      color: white;
+      /* border-radius: 1px; */
+    }
+    table.dataTable {
+      width: 200%;
+      height: 325px;
+      border-collapse: collapse;
+    }
+    table.dataTable th,
+    table.dataTable td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #555; /* Grigio scuro */
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      background-color: #ff7f00; /* Arancione */
+      color: #fff !important; /* Bianco */
+      border: 1px solid #333; /* Nero */
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+      background-color: #333; /* Nero */
+      color: #ff7f00 !important; /* Arancione */
+    }
+    .dataTables_wrapper .dataTables_filter input {
+      background-color: #555; /* Grigio scuro */
+      color: #fff; /* Bianco */
+      border: 1px solid #ff7f00; /* Arancione */
+    }
+  </style>
+{% endblock custom_style %}
+
+
+{% block content %}
+<div class="text-center mt-4">
+  <form action="{{ url_for('pdfs_blueprint.print_pdf_impostazioni_generali') }}" method="post">
+    <button type="submit" class="btn-primary text-white font-bold py-2 px-4 rounded">
+      <i class="mse mse-download"></i> Scarica PDF
+  </button>
+</form>
+</div>
+    <div class="flex flex-col lg:flex-row px-4 sm:px-6 lg:px-8" style="margin-top: 51px; gap: 16px;">
+        <!-- First Container -->
+        <div class="bg-white shadow-lg rounded-lg p-8 max-w-full sm:max-w-md lg:max-w-3xl xl:max-w-5xl">
+            <div class="text-center mb-4">
+                <h1 class="text-2xl font-bold">IMPOSTAZIONI GENERALI</h1>
+            </div>
+            <!-- Flex container for the two sections -->
+            <div class="flex flex-col sm:flex-row justify-between mb-4">
+                <!-- Tempo flussaggio rack analisi -->
+                <div class="flex justify-between items-center mb-4 sm:mb-0 sm:mr-4">
+                    <label class="font-semibold">Tempo flussaggio rack analisi</label>
+                    <input type="text" value="20 s" class="border rounded px-2 py-1 w-24 text-right">
+                </div>
+                <!-- Auto CAL: hh:mm -->
+                <div class="flex justify-between items-center" style="margin-top: -25px;">
+                    <label class="font-semibold">Auto CAL: hh:mm</label>
+                    <div class="flex items-center">
+                        <input type="text" value="06" class="border rounded px-2 py-1 w-12 text-right mr-2">
+                        <span>:</span>
+                        <input type="text" value="00" class="border rounded px-2 py-1 w-12 text-right ml-2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div class="flex justify-between items-center">
+                    <label>Tempo flussaggio VENT</label>
+                    <input type="text" value="1 s" class="border rounded px-2 py-1 w-24 text-right">
+                </div>
+                <div class="flex justify-between items-center">
+                    <label>Disattivazione Utilizzo TSI</label>
+                    <input type="checkbox" class="h-5 w-5">
+                </div>
+                <div class="flex justify-between items-center">
+                    <label>Tempo flussaggio Oxy</label>
+                    <input type="text" value="1 s" class="border rounded px-2 py-1 w-24 text-right">
+                </div>
+                <div class="flex justify-between items-center">
+                    <label>Disattivazione Utilizzo Oxy</label>
+                    <input type="checkbox" class="h-5 w-5">
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex items-center">
+                    <input type="checkbox" class="h-5 w-5 mr-2">
+                    <label>Disattivazione Tank GA2</label>
+                </div>
+                <div class="flex items-center">
+                    <label>Impostazione flusso analisi</label>
+                    <input type="text" value="x.x x" class="border rounded px-2 py-1 w-24 text-right">
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Container -->
+        <div class="bg-white shadow-lg rounded-lg p-8 max-w-full sm:max-w-md lg:max-w-3xl xl:max-w-5xl">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-center text-lg font-semibold mb-4">
+                    Sostituzione certificato di taratura al posto della data di ultime calibrazione o verifica sul report di analisi
+                </h2>
+                <div class="space-y-2">
+                    <div>
+                        <input type="checkbox" id="oxymat-sx" class="mr-2">
+                        <label for="oxymat-sx">OxyMat </label>
+                    </div>
+                   
+                    <div>
+                        <input type="checkbox" id="tsi-sx" class="mr-2">
+                        <label for="tsi-sx">Tsi </label>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="flex space-x-6 mt-4">
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg flex-1">
+                    <h2 class="text-center text-lg font-semibold mb-4">TIMEOUT analisi</h2>
+                    <div>
+                        <label for="timeout" class="block text-center mb-2">Impostazioni Tempo di TIMEOUT per analisi in corso</label>
+                        <input type="text" id="timeout" class="w-full p-2 border rounded" value="15 min">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Container -->
+    <div class="bg-white shadow-lg rounded-lg p-8 max-w-full sm:max-w-md lg:max-w-3xl xl:max-w-5xl mt-8" style="border-radius: 3rem;margin-top: 11px;">
+      <h1 class="text-2xl font-bold text-center mb-4">Posizioni di analisi</h1>
+      <div class="flex flex-col lg:flex-row justify-between items-center">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 flex-grow">
+              <div class="p-4 border rounded shadow-md text-center">Posizione 1<br><button class="mt-2 p-2 border rounded">X</button></div>
+              <div class="p-4 border rounded shadow-md text-center">Posizione 2<br><button class="mt-2 p-2 border rounded">X</button></div>
+              <div class="p-4 border rounded shadow-md text-center">Posizione 3<br><button class="mt-2 p-2 border rounded">X</button></div>
+              <div class="p-4 border rounded shadow-md text-center">Posizione 4<br><button class="mt-2 p-2 border rounded">X</button></div>
+              <div class="p-4 border rounded shadow-md text-center">Posizione 5<br><button class="mt-2 p-2 border rounded">X</button></div>
+              <div class="p-4 border rounded shadow-md text-center">Posizione 1<br><button class="mt-2 p-2 border rounded">X</button></div>
+              <div class="p-4 border rounded shadow-md text-center">Posizione 2<br><button class="mt-2 p-2 border rounded">X</button></div>
+              <div class="p-4 border rounded shadow-md text-center">Posizione 3<br><button class="mt-2 p-2 border rounded">X</button></div>
+              <div class="p-4 border rounded shadow-md text-center">Posizione 4<br><button class="mt-2 p-2 border rounded">X</button></div>
+              <div class="p-4 border rounded shadow-md text-center">Posizione 5<br><button class="mt-2 p-2 border rounded">X</button></div>
+          </div>
+          <div class="border p-4 text-center mt-4 lg:mt-0 lg:ml-8">
+              <p>Discriminante</p>
+              <button class="mt-2 p-2 border rounded">X</button>
+          </div>
+      </div>
+  </div>
+  
+{% endblock content %}
+
+{% block javascripts %} 
+<script>
+    $(document).ready(function () {
+      $("#deviceTable").DataTable();
+    });
+
+
+document.getElementById('mobile-menu-button').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+document.getElementById('close-mobile-menu').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.add('hidden');
+});
+  </script>
+{% endblock javascripts %}
