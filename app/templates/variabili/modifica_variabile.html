@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="base-container">
+    <h1>Modifica variabile</h1>
+    <form action="/modifica-variabile" method="post">
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="name">Nome Variabile:</label>
+                <input type="text" id="name" class="mse-input" name="name" placeholder="Denominazione variabile..." value="{{ variabile.name }}" required>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="gruppo">Gruppo di appartenenza:</label>
+                <input type="text" id="gruppo" class="mse-input" name="gruppo" value="{{variabile.gruppo.name}}" placeholder="Gruppo di appartenenza..." readonly>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="plc">PLC assegnato:</label>
+                <input type="text" id="plc" class="mse-input" name="plc" value="{{variabile.plc.name}}" placeholder="PLC assegnato..." readonly>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="tipi">Tipo di variabile:</label>
+                <input type="text" id="tipo" class="mse-input" name="tipo" value="{{variabile.tipo.name}}" placeholder="Tipo di variabile..." readonly>
+            </div>
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="lunghezza">Lunghezza Variabile:</label>
+                <input type="text" id="lunghezza" class="mse-input" name="lunghezza" value="{{variabile.tipo.lunghezza}}" placeholder="Tipo di variabile..." readonly>
+            </div>
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="valore">Valore attuale</label>
+                <input type="text" id="valore" class="mse-input" name="valore" value="{{variabile.valore}}" placeholder="Tipo di variabile..." readonly>
+            </div>
+        </div>
+        <div class="mse-input-row justify-content-evenly ">
+            <div class="mse-input-row">    
+                <input class="mse-input"  type="checkbox" id="lettura" name="lettura" value="on" readonly {% if variabile.lettura %}checked{% endif %} disabled>
+                <label class="mse-input-label" for="lettura">Lettura</label>    
+            </div>
+            <div class="mse-input-row">
+                <input class="mse-input"  type="checkbox" id="scrittura" name="scrittura" value="on" readonly {% if variabile.scrittura %}checked{% endif %} disabled>
+                <label class="mse-input-label" for="scrittura">Scrittura</label>    
+            </div>
+        </div>
+        <div class="mse-input-row">
+            <input class="mse-input" type="submit" id="submit" name="submit" value="Conferma">
+        </div>
+        </form>
+</div>
+
+{% endblock %}
+
+{% block javascripts %} 
+{% endblock javascripts %}
