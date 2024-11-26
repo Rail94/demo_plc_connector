@@ -1,0 +1,24 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+{% endblock custom_style %}
+
+
+{% block content %}
+<div class="px-4 sm:px-6 lg:px-8" style="padding-top: 71px; position: relative;">
+    <div class="divide-y divide-gray-200 overflow-hidden bg-white shadow" style="border-radius: 3rem">
+      <div class="flex items-center justify-center h-full">
+        <div class="text-center" style="width: 70%;">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4" style="color: red;">ERROR 404</h1>
+          <p class="text-xl sm:text-2xl lg:text-3xl mb-4">Internal error</p>
+          <p class="text-md sm:text-lg lg:text-xl mb-8">
+            Si è verificato un errore interno al server, se il problema persiste contattare l'amministrazione.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block javascripts %} 
+{% endblock javascripts %}
