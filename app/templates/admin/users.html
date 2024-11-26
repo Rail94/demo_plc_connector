@@ -1,0 +1,195 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+<style>
+    .box-report {
+        border-radius: 30px;
+        box-shadow: 5px 10px 8px 10px #888888;
+        padding: 3rem;
+        width: 100%;
+    }
+
+    .text-columns {
+        color: gray;
+        font-size: 14px;
+    }
+    .title {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border-bottom: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr {
+        border-bottom: 1px solid gray
+      }
+
+      .download-btn {
+        padding: 18px;
+    }
+
+      .add-btn {
+        background-color: orange;
+        color: white;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 16px;
+        transition: 0.2s;
+      }
+
+      .add-btn:hover {
+        background-color: orangered;
+        color: white;
+        transition: 0.2s;
+      }
+
+      #search {
+        border: 1px solid gray;
+        border-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width: 90%;
+        padding: 0.5rem;
+      }
+
+      .file-width {
+        width: 92%;
+      }
+
+      @media (min-width: 387px) and (max-width: 552px) {
+        #search {
+            width: 68%;
+        }
+          td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+        }
+      }
+
+      @media (min-width: 553px) and (max-width: 767px) {
+        td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+        }
+        #search {
+            width: 73%;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1185px) {
+        #search {
+            width: 83%;
+        }
+      }
+
+</style>
+
+{% endblock custom_style %}
+
+{% block content %}
+
+        <div class="container-fluid">
+            <div class ="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="d-flex justify-content-center mt-3">
+                            <div class="box-report mt-5">
+                                <h2 class="text-center text-lg mb-3 text-center title">Lista Utenti</h2>
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center">
+                                                <input type="text" id="search" name="search" placeholder="Cerca...">
+                                                <td><a href="{{ url_for('admin_blueprint.aggiungi_utente') }}" class="add-btn mse mse-add btn-primary"></a></td>
+
+                                    </div>
+                                     
+                                </div>
+
+                                    <div class="col-12 mt-3">
+                                        <div>
+                                            <table id="search-table">
+                                                <thead>
+                                                    <tr class="text-columns">
+                                                        <th>Nome Utente</th>
+                                                        <th>Ruolo</th>
+                                                        <th>Modifica</th>
+                                                        <th>Elimina</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for utente in utenti %}
+                                                    <tr>
+                                                        <td>{{utente.username}}</td>
+                                                        <td>-</td>
+                                                        <td><a  href="{{ url_for('admin_blueprint.modifica_utente') }}" class="download-btn mse mse-edit btn-primary"></a></td>
+                                                        <td><button class="download-btn mse mse-delete btn btn-danger"></button></td>
+                                                    </tr>
+                                                    {%endfor%}
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+    
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+
+{% endblock content %}
+
+{% block javascripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search');
+            const table = document.getElementById('search-table');
+            
+            if (!searchInput || !table) {
+                console.error('Elemento di input per la ricerca o tabella non trovato');
+                return;
+            }
+
+            searchInput.addEventListener('input', function() {
+                let filter = this.value.toLowerCase();
+                let rows = table.querySelectorAll('tbody tr');
+
+                rows.forEach(function(row) {
+                    let cells = row.querySelectorAll('td');
+                    let textContent = '';
+
+                    cells.forEach(function(cell) {
+                        textContent += cell.textContent.toLowerCase() + ' ';
+                    });
+
+                    if (textContent.includes(filter)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+</script>
+{% endblock javascripts %}
