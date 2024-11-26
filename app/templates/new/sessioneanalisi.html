@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="css/new_style.css" rel="stylesheet" />
+    <link href="css/bootstrap-530.css" rel="stylesheet" />
+    <link href="css/mse-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <link
+        href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+        rel="stylesheet"
+      />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("../img/3751.jpg");
+      }
+      table.dataTable thead th {
+        background-color: #a20bf3; /* Arancione */
+        color: #fff; /* Bianco */
+        border-bottom: 2px solid #333; /* Nero */
+      }
+      table.dataTable tbody tr:nth-child(odd) {
+        background-color: #161616; /* Grigio scuro */
+      }
+      table.dataTable tbody tr:nth-child(even) {
+        background-color: #000000; /* Grigio chiaro */
+      }
+      table.dataTable tbody tr:hover {
+        background-color: #ff7f00; /* Arancione */
+        color: #000000; /* Bianco */
+      }
+      table.dataTable tr {
+        font-weight: bold;
+      }
+      thead,
+      tbody,
+      tfoot,
+      tr,
+      td,
+      th {
+        border-color: inherit;
+        border-style: solid;
+        border-width: 3px;
+        color: white;
+        /* border-radius: 1px; */
+      }
+      table.dataTable {
+        width: 200%;
+        height: 325px;
+        border-collapse: collapse;
+      }
+      table.dataTable th,
+      table.dataTable td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #555; /* Grigio scuro */
+      }
+      .dataTables_wrapper .dataTables_paginate .paginate_button {
+        background-color: #ff7f00; /* Arancione */
+        color: #fff !important; /* Bianco */
+        border: 1px solid #333; /* Nero */
+      }
+      .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background-color: #333; /* Nero */
+        color: #ff7f00 !important; /* Arancione */
+      }
+      .dataTables_wrapper .dataTables_filter input {
+        background-color: #555; /* Grigio scuro */
+        color: #fff; /* Bianco */
+        border: 1px solid #ff7f00; /* Arancione */
+      }
+    </style>
+  </head>
+  <body class="matteosfondo">
+    
+    <div>
+      <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+     
+
+     <!-- Static sidebar for desktop -->
+     <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72">
+      <!-- Sidebar component, swap this element with another sidebar if you like -->
+      <div
+        class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-black px-6 pb-4"
+      >
+        <div class="flex h-16 justify-center items-center">
+          <a href="index.html">
+            <img
+              class="w-auto h-12"
+              src="img/logo.png"
+              alt="Your Company"
+              style="height: 6rem; padding-top: 17px"
+            />
+          </a>
+        </div>
+        <nav class="flex flex-1 flex-col">
+          <ul role="list" class="flex flex-1 flex-col gap-y-7">
+            <li>
+              <ul role="list" class="-mx-2 space-y-1">
+                <li>
+                  <a
+                    href="index.html"
+                    class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                    style="background-color: transparent"
+                    onmouseover="this.style.backgroundColor='#FF8C00'; this.style.color='#000000';"
+                    onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff';"
+                  >
+                    <svg
+                      class="h-6 w-6 shrink-0 text-white group-hover:text-black"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"
+                      />
+                    </svg>
+                    Dashboard
+                  </a>
+                </li>
+              
+               
+              
+              
+              </ul>
+            </li>
+            <li>
+              <div class="text-lg font-bold leading-6 " style="color: orange;">
+                Gestionale
+              </div>
+              <ul role="list" class="-mx-2 mt-2 space-y-1">
+                <li class="dropdown-center">
+                  <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                          Analisi
+                      </button>
+                      <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                          <li><a class="dropdown-item" href="sessioneanalisi.html">Sessione Analisi</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="dropdown-center">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                        Calibrazione
+                    </button>
+                    <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                        <li><a class="dropdown-item" href="oxymat1.html">OxyMat1</a></li>
+                        <li><a class="dropdown-item" href="oxymat2.html">OxyMat2</a></li>
+                        <li><a class="dropdown-item" href="tsi1.html">TSI 1</a></li>
+                        <li><a class="dropdown-item" href="tsi2.html">TSI 2</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown-center">
+              <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                      Manuali
+                  </button>
+                  <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                      <li><a class="dropdown-item" href="testanalisi1.html">Test Analisi 1</a></li>
+                      <li><a class="dropdown-item" href="testanalisi2.html">Test Analisi 2</a></li>
+                      <li><a class="dropdown-item" href="movimentielettrovalvole1.html">Movi. Elettrova. 1</a></li>
+                      <li><a class="dropdown-item" href="movimentielettrovalvole2.html">Movi. Elettrova. 2</a></li>
+                  </ul>
+              </div>
+          </li>
+          <li class="dropdown-center">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+                    Impostazioni
+                </button>
+                <ul class="dropdown-menu" style="background-color: #FF8C00;">
+                    <li><a class="dropdown-item" href="impostazionigenerali.html">Generali</a></li>
+                    <li><a class="dropdown-item" href="impostazionianalisi.html">Analisi</a></li>
+                    <li><a class="dropdown-item" href="impostazionirampaanalisi.html">Rampa Analisi</a></li>
+                    <li><a class="dropdown-item" href="impostazionipaginacampione.html">Pagina Campione</a></li>
+                    <li><a class="dropdown-item" href="impostazionitank.html">TANK</a></li>
+                </ul>
+            </div>
+        </li>
+       
+              </ul>
+            </li>
+            <li class="mt-auto">
+              <a
+                href="#"
+                class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                style="background-color: transparent"
+                onmouseover="this.style.backgroundColor='#FFA500'; this.style.color='#000000';"
+                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff';"
+              >
+                <svg
+                  class="h-6 w-6 shrink-0 text-white group-hover:text-black"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                Settings
+              </a>
+            </li>
+            <div class="relative">
+              <button
+                type="button"
+                class="-m-1.5 flex items-center p-1.5"
+                id="user-menu-button"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                <span class="sr-only">Open user menu</span>
+                <img
+                  class="h-8 w-8 rounded-full bg-gray-50"
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt=""
+                />
+                <span class="hidden lg:flex lg:items-center">
+                  <span
+                    class="ml-4 text-sm font-semibold leading-6 text-white"
+                    aria-hidden="true"
+                    >Account</span
+                  >
+                  <svg
+                    class="ml-2 h-5 w-5 text-gray-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+    <!-- Aggiunta dell'hamburger menu per dispositivi mobili -->
+    <div class="hamburger-bar" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background-color: orange;">
+      <div class="fixed inset-x-0 top-0 z-50 flex items-center justify-end lg:hidden">
+        <button id="mobile-menu-button" class="bg-orange-500 p-4 focus:outline-none" style="background-color: orange; position: fixed; top: 0; left: 0;">
+          <svg class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="logo-mobile" style="text-align: center; padding: 16px 0;">
+        <a href="index.html">
+          <img src="img/logo.png"/>
+        </a>
+      </div>
+    </div>
+    
+    
+
+
+<!-- Menu nascosto per dispositivi mobili -->
+<div id="mobile-menu"
+class="hidden fixed inset-0 z-40 bg-black bg-opacity-75 lg:hidden">
+<div class="flex justify-end " style="padding: 0.5rem;">
+  <button id="close-mobile-menu"
+    class="text-white p-4 focus:outline-none">
+    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+      stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+</div>
+<div class="flex flex-col items-center justify-center">
+  <a href="index.html" class="text-white font-bold py-2 px-4">Dashboard</a>
+  
+  <div class="text-lg font-bold leading-6 " style="color: orange;">
+    Gestionale
+  </div>
+  <ul role="list" class="-mx-2 mt-2 space-y-1">
+    <li class="dropdown-center">
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+              Analisi
+          </button>
+          <ul class="dropdown-menu" style="background-color: #FF8C00;">
+              <li><a class="dropdown-item" href="sessioneanalisi.html">Sessione Analisi</a></li>
+          </ul>
+      </div>
+  </li>
+  <li class="dropdown-center">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+            Calibrazione
+        </button>
+        <ul class="dropdown-menu" style="background-color: #FF8C00;">
+            <li><a class="dropdown-item" href="oxymat1.html">OxyMat1</a></li>
+            <li><a class="dropdown-item" href="oxymat2.html">OxyMat2</a></li>
+            <li><a class="dropdown-item" href="tsi1.html">TSI 1</a></li>
+            <li><a class="dropdown-item" href="tsi2.html">TSI 2</a></li>
+        </ul>
+    </div>
+</li>
+<li class="dropdown-center">
+  <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+          Manuali
+      </button>
+      <ul class="dropdown-menu" style="background-color: #FF8C00;">
+          <li><a class="dropdown-item" href="testanalisi1.html">Test Analisi 1</a></li>
+          <li><a class="dropdown-item" href="testanalisi2.html">Test Analisi 2</a></li>
+          <li><a class="dropdown-item" href="movimentielettrovalvole1.html">Movi. Elettrova. 1</a></li>
+          <li><a class="dropdown-item" href="movimentielettrovalvole2.html">Movi. Elettrova. 2</a></li>
+      </ul>
+  </div>
+</li>
+<li class="dropdown-center">
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 142px; background-color: transparent; border: none; text-align: justify;">
+        Impostazioni
+    </button>
+    <ul class="dropdown-menu" style="background-color: #FF8C00;">
+        <li><a class="dropdown-item" href="impostazionigenerali.html">Generali</a></li>
+        <li><a class="dropdown-item" href="impostazionianalisi.html">Analisi</a></li>
+        <li><a class="dropdown-item" href="impostazionirampaanalisi.html">Rampa Analisi</a></li>
+        <li><a class="dropdown-item" href="impostazionipaginacampione.html">Pagina Campione</a></li>
+        <li><a class="dropdown-item" href="impostazionitank.html">TANK</a></li>
+    </ul>
+</div>
+</li>
+
+  </ul>
+  <!-- Aggiungi altri link del menu qui -->
+</div>
+</div>
+
+
+<div class="lg:pl-48">
+
+
+  <main class="py-10">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="divide-y divide-gray-200 overflow-hidden bg-white shadow" style="border-radius: 6.75rem">
+          <div class="relative px-4 py-5 sm:p-6" style="height: 375px; background-color: #fff">
+              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg border-3 card-inferiore" style="width: 850px; height: 350px; border-color: orange; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 1fr); gap: 10px; padding: 10px; opacity: 0.9;">
+                  <table id="deviceTable" class="display">
+                      <tbody>
+                          <tr><td>Oxymat SX</td><td>0000000</td></tr>
+                          <tr><td>Oxymat DX</td><td>0000000</td></tr>
+                          <tr><td>TSI SX</td><td>0000000</td></tr>
+                          <tr><td>TSI DX</td><td>0000000</td></tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  
+      <div class="flex flex-col xl:flex-row space-x-0 xl:space-x-5 mt-12 space-y-5 xl:space-y-0">
+          <div class="overflow-hidden rounded-lg bg-white shadow p-4 bg-blue-50/60 xl:width: 50%;" style="width: 100%; height: 500px; border-radius: 4.75rem">
+              <p class="text-center font-bold text-2xl">Analisi 1</p>
+              <div class="flex justify-around items-center h-full" style="margin-top: -49px">
+                  <!-- Quadrato 1 -->
+                  <div class="flex flex-col items-center">
+                      <span class="mb-2" style="color: black; font-size: 21px;">1</span>
+                      <div class="flex flex-col items-center justify-center w-16 h-16 border bg-transparent" style="border-radius: 2.0rem;">
+                          <span style="color: orange; font-size: 21px;">-1</span>
+                      </div>
+                      <div class="mt-2 w-8 h-8 rounded-full" style="background-color: transparent; border: 1px solid black;"></div>
+                      <div class="mt-2" style="background-color: #555;
+                      border: 1px solid black;
+                      width: 54px;
+                      height: 159px;
+                      border-radius: 11px;"></div>
+                  </div>
+                  <!-- Quadrato 2 -->
+                  <div class="flex flex-col items-center">
+                      <span class="mb-2" style="color: black; font-size: 21px;">2</span>
+                      <div class="flex flex-col items-center justify-center w-16 h-16 border bg-transparent" style="border-radius: 2.0rem;">
+                          <span style="color: orange; font-size: 21px;">-2</span>
+                      </div>
+                      <div class="mt-2 w-8 h-8 rounded-full" style="background-color: transparent; border: 1px solid black;"></div>
+                      <div class="mt-2" style="background-color: orange;
+                      border: 1px solid black;
+                      width: 54px;
+                      height: 159px;
+                      border-radius: 11px;"></div>
+                  </div>
+                  <!-- Quadrato 3 -->
+                  <div class="flex flex-col items-center">
+                      <span class="mb-2" style="color: black; font-size: 21px;">3</span>
+                      <div class="flex flex-col items-center justify-center w-16 h-16 border bg-transparent" style="border-radius: 2.0rem;">
+                          <span style="color: orange; font-size: 21px;">-3</span>
+                      </div>
+                      <div class="mt-2 w-8 h-8 rounded-full" style="background-color: transparent; border: 1px solid black;"></div>
+                      <div class="mt-2" style="background-color: white;
+                      border: 1px solid black;
+                      width: 54px;
+                      height: 159px;
+                      border-radius: 11px;"></div>
+                  </div>
+                  <!-- Quadrato 4 -->
+                  <div class="flex flex-col items-center">
+                      <span class="mb-2" style="color: black; font-size: 21px;">4</span>
+                      <div class="flex flex-col items-center justify-center w-16 h-16 border bg-transparent" style="border-radius: 2.0rem;">
+                          <span style="color: orange; font-size: 21px;">-4</span>
+                      </div>
+                      <div class="mt-2 w-8 h-8 rounded-full" style="background-color: transparent; border: 1px solid black;"></div>
+                      <div class="mt-2" style="background-color: transparent;
+                      border: 1px solid black;
+                      width: 54px;
+                      height: 159px;
+                      border-radius: 11px;"></div>
+                  </div>
+                  <!-- Quadrato 5 -->
+                  <div class="flex flex-col items-center">
+                      <span class="mb-2" style="color: black; font-size: 21px;">5</span>
+                      <div class="flex flex-col items-center justify-center w-16 h-16 border bg-transparent" style="border-radius: 2.0rem;">
+                          <span style="color: orange; font-size: 21px;">-5</span>
+                      </div>
+                      <div class="mt-2 w-8 h-8 rounded-full" style="background-color: transparent; border: 1px solid black;"></div>
+                      <div class="mt-2" style="background-color: transparent;
+                      border: 1px solid black;
+                      width: 54px;
+                      height: 159px;
+                      border-radius: 11px;"></div>
+                  </div>
+              </div>
+              <div class="input-group mb-3" style="width: 100%; margin-top: -29px; margin-left: 0; border: 1px solid black; border-radius: 5px;">
+                  <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Bombola in Analisi" aria-describedby="inputGroup-sizing-default" style="text-align: center;">
+              </div>
+          </div>
+  
+          <div class="overflow-hidden rounded-lg bg-white shadow p-4 xl:width: 50%;" style="width: 100%;  height: 500px; border-radius: 4.75rem">
+              <p class="text-center font-bold text-2xl">Analisi 2</p>
+              <div class="flex justify-around items-center h-full" style="margin-top: -49px;">
+                  <!-- Quadrato 6 -->
+                  <div class="flex flex-col items-center">
+                      <span class="mb-2" style="color: black; font-size: 21px;">6</span>
+                      <div class="flex flex-col items-center justify-center w-16 h-16 border bg-transparent" style="border-radius: 2.0rem;">
+                          <span style="color: orange; font-size: 21px;">-6</span>
+                      </div>
+                      <div class="mt-2 w-8 h-8 rounded-full" style="background-color: transparent; border: 1px solid black;"></div>
+                      <div class="mt-2" style="background-color: transparent;
+                      border: 1px solid black;
+                      width: 54px;
+                      height: 159px;
+                      border-radius: 11px;"></div>
+                  </div>
+                  <!-- Quadrato 7 -->
+                  <div class="flex flex-col items-center">
+                      <span class="mb-2" style="color: black; font-size: 21px;">7</span>
+                      <div class="flex flex-col items-center justify-center w-16 h-16 border bg-transparent" style="border-radius: 2.0rem;">
+                          <span style="color: orange; font-size: 21px;">-7</span>
+                      </div>
+                      <div class="mt-2 w-8 h-8 rounded-full" style="background-color: transparent; border: 1px solid black;"></div>
+                      <div class="mt-2" style="background-color: transparent;
+                      border: 1px solid black;
+                      width: 54px;
+                      height: 159px;
+                      border-radius: 11px;"></div>
+                  </div>
+                  <!-- Quadrato 8 -->
+                  <div class="flex flex-col items-center">
+                      <span class="mb-2" style="color: black; font-size: 21px;">8</span>
+                      <div class="flex flex-col items-center justify-center w-16 h-16 border bg-transparent" style="border-radius: 2.0rem;">
+                          <span style="color: orange; font-size: 21px;">-8</span>
+                      </div>
+                      <div class="mt-2 w-8 h-8 rounded-full" style="background-color: transparent; border: 1px solid black;"></div>
+                      <div class="mt-2" style="background-color: transparent;
+                      border: 1px solid black;
+                      width: 54px;
+                      height: 159px;
+                      border-radius: 11px;"></div>
+                  </div>
+                  <!-- Quadrato 9 -->
+                  <div class="flex flex-col items-center">
+                      <span class="mb-2" style="color: black; font-size: 21px;">9</span>
+                      <div class="flex flex-col items-center justify-center w-16 h-16 border bg-transparent" style="border-radius: 2.0rem;">
+                          <span style="color: orange; font-size: 21px;">-9</span>
+                      </div>
+                      <div class="mt-2 w-8 h-8 rounded-full" style="background-color: transparent; border: 1px solid black;"></div>
+                      <div class="mt-2" style="background-color: transparent;
+                      border: 1px solid black;
+                      width: 54px;
+                      height: 159px;
+                      border-radius: 11px;"></div>
+                  </div>
+                  <!-- Quadrato 10 -->
+                  <div class="flex flex-col items-center">
+                      <span class="mb-2" style="color: black; font-size: 21px;">10</span>
+                      <div class="flex flex-col items-center justify-center w-16 h-16 border bg-transparent" style="border-radius: 2.0rem;">
+                          <span style="color: orange; font-size: 21px;">-10</span>
+                      </div>
+                      <div class="mt-2 w-8 h-8 rounded-full" style="background-color: transparent; border: 1px solid black;"></div>
+                      <div class="mt-2" style="background-color: transparent;
+                      border: 1px solid black;
+                      width: 54px;
+                      height: 159px;
+                      border-radius: 11px;"></div>
+                  </div>
+              </div>
+              <div class="input-group mb-3" style="width: 100%; margin-top: -29px; margin-left: 0; border: 1px solid black; border-radius: 5px;">
+                  <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Bombola in Analisi" aria-describedby="inputGroup-sizing-default" style="text-align: center;">
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+      <div class="flex flex-col xl:flex-row space-x-0 xl:space-x-5 mt-12 space-y-5 xl:space-y-0">
+        <div class="overflow-hidden rounded-lg bg-white shadow p-4 bg-blue-50/60 xl:width: 50%;" style="width: 100%; height: 500px; border-radius: 4.75rem">
+            <p class="text-center font-bold text-2xl">Analisi 1</p>
+            <div class="flex flex-col lg:flex-row justify-between mb-4">
+              <div class="mb-4 lg:mb-0">
+                  <h2 class="text-lg font-bold mb-2">Selezione analisi:</h2>
+                  <div class="flex items-center mb-2">
+                      <button class="bg-gray-500 text-white px-4 py-2 rounded ml-2">OFF</button>
+                      <button class="border text-black px-4 py-2 rounded ml-2 w-1/2 lg:w-auto">TSI</button>
+                  </div>
+                  <div class="flex items-center">
+                      <button class="bg-gray-500 text-white px-4 py-2 rounded ml-2">OFF</button>
+                      <button class="border text-black px-4 py-2 rounded ml-2 w-1/2 lg:w-auto">Oxymat</button>
+                  </div>
+              </div>
+              <div>
+                  <h2 class="text-lg font-bold mb-2">Elementi in sessione corrente:</h2>
+                  <div class="flex items-center mb-2">
+                      <input type="text" value="+00000" class="border rounded px-2 py-1 mr-2 text-center">
+                      <span class="mr-2">di</span>
+                      <input type="text" value="+00000" class="border rounded px-2 py-1 text-center">
+                      <span class="text-red-500 font-bold ml-2">PIENA</span>
+                  </div>
+              </div>
+          </div>
+          <div>
+            <div class="mb-2">
+                <label class="block font-bold mb-1">Bonibola in analisi:</label>
+                <input type="text" value="0000000000000000000000000000" class="border rounded w-full px-2 py-1 text-center">
+            </div>
+            <div class="flex flex-col lg:flex-row items-center mb-2">
+                <div class="mb-2 lg:mb-0 lg:mr-2 flex-1">
+                    <label class="block font-bold mb-1">Lotto:</label>
+                    <input type="text" value="0000000000000000000000000000" class="border rounded w-full px-2 py-1 text-center">
+                </div>
+                <div>
+                    <label class="block font-bold mb-1">N°:</label>
+                    <input type="text" value="+00000" class="border rounded px-2 py-1 text-center">
+                </div>
+            </div>
+        </div>
+           
+        </div>
+
+        <div class="overflow-hidden rounded-lg bg-white shadow p-4 bg-blue-50/60 xl:width: 50%;" style="width: 100%; height: 500px; border-radius: 4.75rem">
+          <p class="text-center font-bold text-2xl">Analisi 1</p>
+          <div class="flex flex-col lg:flex-row justify-between mb-4">
+            <div class="mb-4 lg:mb-0">
+                <h2 class="text-lg font-bold mb-2">Selezione analisi:</h2>
+                <div class="flex items-center mb-2">
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded ml-2">OFF</button>
+                    <button class="border text-black px-4 py-2 rounded ml-2 w-1/2 lg:w-auto">TSI</button>
+                </div>
+                <div class="flex items-center">
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded ml-2">OFF</button>
+                    <button class="border text-black px-4 py-2 rounded ml-2 w-1/2 lg:w-auto">Oxymat</button>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-lg font-bold mb-2">Elementi in sessione corrente:</h2>
+                <div class="flex items-center mb-2">
+                    <input type="text" value="+00000" class="border rounded px-2 py-1 mr-2 text-center">
+                    <span class="mr-2">di</span>
+                    <input type="text" value="+00000" class="border rounded px-2 py-1 text-center">
+                    <span class="text-red-500 font-bold ml-2">PIENA</span>
+                </div>
+            </div>
+        </div>
+        <div>
+          <div class="mb-2">
+              <label class="block font-bold mb-1">Bonibola in analisi:</label>
+              <input type="text" value="0000000000000000000000000000" class="border rounded w-full px-2 py-1 text-center">
+          </div>
+          <div class="flex flex-col lg:flex-row items-center mb-2">
+              <div class="mb-2 lg:mb-0 lg:mr-2 flex-1">
+                  <label class="block font-bold mb-1">Lotto:</label>
+                  <input type="text" value="0000000000000000000000000000" class="border rounded w-full px-2 py-1 text-center">
+              </div>
+              <div>
+                  <label class="block font-bold mb-1">N°:</label>
+                  <input type="text" value="+00000" class="border rounded px-2 py-1 text-center">
+              </div>
+          </div>
+      </div>
+         
+      </div>
+    </div>
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+      <div class="flex flex-col xl:flex-row space-x-0 xl:space-x-5 mt-12 space-y-5 xl:space-y-0">
+        <div class="bg-white shadow" style="border-radius: 3rem; padding: 45px; flex-grow: 1; width: 100%;">
+          <p class="text-center font-bold text-2xl mb-7">Dati 1</p>
+          <div class="mb-5" style="display: flex; align-items: center;">
+              <h2 class="text-lg mb-3 mr-3">Bombola</h2>
+              <p class="text-lg mb-3 flex-grow" style="width: 100%;text-align: center; color: red;">Presente</p>
+              <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="X">
+          </div>
+      
+          <div class="mb-5" style="display: flex; align-items: center;">
+              <h2 class="text-lg mb-3 mr-3">Posizione</h2>
+              <p class="text-lg mb-3 flex-grow" style="width: 100%; text-align: center; color: red;">Occupata</p>
+              <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center  " placeholder="X">
+          </div>
+      </div>
+      
+      <div class="bg-white shadow" style="border-radius: 3rem; padding: 45px; flex-grow: 1; width: 100%;">
+        <p class="text-center font-bold text-2xl mb-7">Dati 2</p>
+        <div class="mb-5" style="display: flex; align-items: center;">
+            <h2 class="text-lg mb-3 mr-3">Bombola</h2>
+            <p class="text-lg mb-3 flex-grow" style="width: 100%;text-align: center; color: red;">Presente</p>
+            <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center" placeholder="X">
+        </div>
+    
+        <div class="mb-5" style="display: flex; align-items: center;">
+            <h2 class="text-lg mb-3 mr-3">Posizione</h2>
+            <p class="text-lg mb-3 flex-grow" style="width: 100%; text-align: center; color: red;">Occupata</p>
+            <input type="text" class="w-full h-12 text-lg border border-black rounded p-2 text-center  " placeholder="X">
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+  <div class="telefono">
+    <div class="flex flex-col xl:flex-row space-x-0 xl:space-x-5 mt-12 space-y-5 xl:space-y-0" style="margin-top: 39px;">
+      <div class="bg-white shadow xl:width: 27%;" style="border-radius: 3rem; width: 100%; padding: 30px; position: relative;">
+          <div style="margin-bottom: 10px">
+              <div class="flex justify-between mt-3" style="margin-left: 60px">
+                  <div class="flex flex-col items-center">
+                      <span class="mb-1" style="color: black; font-size: 18px">VENT</span>
+                      <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem"></div>
+                  </div>
+                  <div class="flex flex-col items-center" style="margin-right: 60px">
+                      <span class="mb-1" style="color: black; font-size: 18px; margin-top: 48px">TANK</span>
+                  </div>
+              </div>
+          </div>
+          <div style="border-bottom: 1px solid black; margin-bottom: 10px; width: 50%; position: relative;"></div>
+          <div style="position: absolute; top: 11%; left: 50%; height: 80%; border-left: 1px solid black; transform: translateX(-50%); width: 0%;"></div>
+          <div style="margin-bottom: 10px">
+              <div class="flex justify-between mt-3" style="margin-left: 60px">
+                  <div class="flex flex-col items-center">
+                      <span class="mb-1" style="color: black; font-size: 18px">GA2</span>
+                      <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem"></div>
+                  </div>
+                  <div class="flex flex-col items-center" style="margin-right: 60px">
+                      <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem; margin-top: 31px"></div>
+                  </div>
+              </div>
+          </div>
+          <div style="margin-bottom: 10px">
+              <div class="flex justify-between mt-3" style="margin-left: 60px">
+                  <div class="flex flex-col items-center">
+                      
+                  </div>
+                  <div class="flex flex-col items-center" style="margin-right: 60px">
+                      <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem; margin-top: 35px"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      </div>
+  
+    </div>
+
+    <div class="tablet">
+      <div class="flex flex-col xl:flex-row space-x-0 xl:space-x-5 mt-12 space-y-5 xl:space-y-0" style="margin-top: 39px;">
+        <div class="bg-white shadow xl:width: 27%;" style="border-radius: 3rem; width: 100%; padding: 30px; position: relative;">
+            <div style="margin-bottom: 10px">
+                <div class="flex justify-between mt-3" style="margin-left: 60px">
+                    <div class="flex flex-col items-center">
+                        <span class="mb-1" style="color: black; font-size: 18px">VENT</span>
+                        <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem"></div>
+                    </div>
+                    <div class="flex flex-col items-center" style="margin-right: 60px">
+                        <span class="mb-1" style="color: black; font-size: 18px; margin-top: 48px">TANK</span>
+                    </div>
+                </div>
+            </div>
+            <div style="border-bottom: 1px solid black; margin-bottom: 10px; width: 50%; position: relative;"></div>
+            <div style="position: absolute; top: 11%; left: 50%; height: 80%; border-left: 1px solid black; transform: translateX(-50%); width: 0%;"></div>
+            <div style="margin-bottom: 10px">
+                <div class="flex justify-between mt-3" style="margin-left: 60px">
+                    <div class="flex flex-col items-center">
+                        <span class="mb-1" style="color: black; font-size: 18px">GA2</span>
+                        <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem"></div>
+                    </div>
+                    <div class="flex flex-col items-center" style="margin-right: 60px">
+                        <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem; margin-top: 31px"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px">
+                <div class="flex justify-between mt-3" style="margin-left: 60px">
+                    <div class="flex flex-col items-center">
+                        
+                    </div>
+                    <div class="flex flex-col items-center" style="margin-right: 60px">
+                        <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem; margin-top: 35px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        </div>
+    
+      </div>
+
+
+      <div class="deskopt">
+        <div class="flex flex-col xl:flex-row space-x-0 xl:space-x-5 mt-12 space-y-5 xl:space-y-0" style="justify-content: center;
+        margin-top: 39px;">
+          <div class="bg-white shadow xl:width: 27%;" style="border-radius: 3rem;
+          width: 50%;
+          padding: 30px;
+          position: relative;">
+              <div style="margin-bottom: 10px">
+                  <div class="flex justify-between mt-3" style="margin-left: 60px">
+                      <div class="flex flex-col items-center">
+                          <span class="mb-1" style="color: black; font-size: 18px">VENT</span>
+                          <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem"></div>
+                      </div>
+                      <div class="flex flex-col items-center" style="margin-right: 60px">
+                          <span class="mb-1" style="color: black; font-size: 18px; margin-top: 48px">TANK</span>
+                      </div>
+                  </div>
+              </div>
+              <div style="border-bottom: 1px solid black; margin-bottom: 10px; width: 50%; position: relative;"></div>
+              <div style="position: absolute; top: 11%; left: 50%; height: 80%; border-left: 1px solid black; transform: translateX(-50%); width: 0%;"></div>
+              <div style="margin-bottom: 10px">
+                  <div class="flex justify-between mt-3" style="margin-left: 60px">
+                      <div class="flex flex-col items-center">
+                          <span class="mb-1" style="color: black; font-size: 18px">GA2</span>
+                          <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem"></div>
+                      </div>
+                      <div class="flex flex-col items-center" style="margin-right: 60px">
+                          <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem; margin-top: 31px"></div>
+                      </div>
+                  </div>
+              </div>
+              <div style="margin-bottom: 10px">
+                  <div class="flex justify-between mt-3" style="margin-left: 60px">
+                      <div class="flex flex-col items-center">
+                          
+                      </div>
+                      <div class="flex flex-col items-center" style="margin-right: 60px">
+                          <div class="w-12 h-12 border bg-transparent" style="border-radius: 2rem; margin-top: 35px"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    
+          </div>
+      
+        </div>
+
+
+  </div>
+  
+          <!-- end container principale -->
+
+          <!-- Bottone -->
+          <button
+            id="scrollToTopBtn"
+            class="hidden fixed bottom-5 right-5 z-50 text-black p-3 rounded-3 focus:outline-none"
+            style="background-color: orange"
+          >
+            ^
+          </button>
+        </main>
+      </div>
+    
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/funzione.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://code.jquery.com/jquery-3.5.1.js"
+    ></script>
+    <!-- DataTables JS -->
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"
+    ></script>
+    <!-- Initialize DataTables -->
+    <script>
+      $(document).ready(function () {
+        $("#deviceTable").DataTable();
+      });
+
+
+  
+  
+    </script>
+  </body>
+</html>
