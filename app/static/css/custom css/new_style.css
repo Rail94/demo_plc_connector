@@ -1,0 +1,237 @@
+/* caricamento pagina */
+/*  .matteosfondo {
+    background-image: url('../img/3751.jpg'); 
+  
+}  */
+
+body {
+    font-family: Arial, sans-serif;
+
+  }
+
+.logo-mobile img {
+    width: 20%;
+    display: inline-block;
+}
+@media (min-width: 500px) {
+    .logo-mobile img {
+       padding: 0px 0px;
+        width: 13%;
+      
+    }
+}
+
+@media (min-width: 700px) {
+    .logo-mobile img {
+       padding: 0px 0px;
+        width: 10%;
+      
+    }
+}
+
+@media (min-width: 700px) {
+    .logo-mobile img {
+       padding: 0px 0px;
+        width: 8%;
+      
+    }
+}
+
+
+
+
+@media (min-width: 1024px) {
+    .logo-mobile img {
+        display: none;
+        width: 31%;
+    }
+    .hamburger-bar {
+        display: none;
+    }
+
+}
+/* sono le foto della dssboard */
+
+.img-foto-uno img {
+    width: 60%;
+}
+@media (max-width: 1424px) {
+    .matteo-palline-deskopt {
+        display: none;
+    }
+}
+@media (max-width: 1024px) {
+    .matteo-palline-deskopt {
+        display: none;
+    }
+}
+@media (min-width: 1424px) {
+    .img-foto-uno img {
+        width: 40%;
+    }
+   .matteo-pallini {
+    display: none;
+   }
+
+}
+
+.img-foto-tre img {
+    width: 60%;
+}
+@media (min-width: 1424px) {
+    .img-foto-tre img {
+        width: 40%;
+    }
+}
+
+/* Stili per schermi di larghezza compresa tra 600px e 1024px (ad esempio, tablet) */
+@media only screen and (min-width: 200px) and (max-width: 699px) {
+    .tablet {
+        display: none;
+    }
+    .deskopt {
+        display: none;
+    }
+}
+@media only screen and (min-width: 700px) and (max-width: 1423px) {
+    .telefono {
+        display: none;
+    }
+    .deskopt {
+        display: none;
+    }
+}
+@media only screen and (min-width: 1424px) and (max-width: 8000px) {
+    .tablet {
+        display: none;
+    }
+    .telefono {
+        display: none;
+    }
+}
+
+
+
+
+
+.arrow-container {
+    display: flex;
+    align-items: center;
+    margin: 50px;
+}
+
+.line-container {
+    position: relative;
+    animation: move 2s infinite;
+    top: -8px;
+    left: 51px;
+}
+
+.line {
+    width: 100px;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrowhead {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 20px solid #000;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes move {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    
+}
+
+.loader {
+
+    width: 381px;
+    height: 167px;
+    animation: spin 5s linear infinite;
+    background-image: url('../img/MSE-Logo_small.png');
+    background-size: cover;
+
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* fine caricamento pagina */
+
+
+/* Grafico ciambella */
+
+canvas {
+    max-width: 400px;
+    margin: 0 auto;
+}
+/* .header-gradient {
+    background: linear-gradient(to right, #FFA500, #FF8C00, #000000);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -109px;
+} */
+.header-gradient {
+    background-image: url('../img/3751.jpg'); 
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -109px;
+    background-size: cover;
+}
+.circle {
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+
