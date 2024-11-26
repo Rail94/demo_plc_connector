@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="base-container">
+    <h1>Modifica PLC</h1>
+    <form action="/modifica-plc" method="post">
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="name">Denominazione:</label>
+                <input type="text" id="name" class="mse-input" id="name" placeholder="Denominazione plc..." value="{{ plc.name }}" required>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="marca">Marca:</label>
+                <input type="text" id="marca" class="mse-input" id="marca" placeholder="Marca assegnata..." value="{{ plc.marca.name }}" readonly>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            {% for chiave, valore in caratteristiche.items() %}
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="name">{{ chiave }}:</label>
+                <input type="text" id="caratteristiche" class= "mse-input" placeholder="Inserisci {{ chiave }}" name="caratteristiche" value="{{ valore }}">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="mse-input-row">    
+            <button type="submit" class='mse-input' value="submit"><i class="mse mse-edit mx-1"></i> Conferma modifiche</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block javascripts %} {% endblock javascripts %}
