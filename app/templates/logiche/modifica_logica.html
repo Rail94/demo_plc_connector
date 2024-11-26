@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="base-container">
+    <h1>Modifica Logica</h1>
+    <form action="{{ url_for('plc_blueprint.modifica_marca', marca_id=marca.id) }}" method="post">
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="name">Denominazione:</label>
+                <input type="text" id="name" name="name" class="mse-input" placeholder="Denominazione marca..." value="{{ marca.name }}" required>
+            </div>
+        </div>
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap" id="caratteristiche-container">
+                <label class="mse-input-label" for="name">Caratteristiche PLC:</label>
+                {% for caratteristica in caratteristiche %}
+                <input type="text" id="caratteristiche" class= "mse-input" placeholder="Nome caratteristica" name="caratteristiche" value="{{ caratteristica }}">
+                {% endfor %}
+            </div>
+        </div>
+        <div class="form-group text-center">    
+            <input type="submit" class='btn btn-primary' value="Conferma">
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block javascripts %} {% endblock javascripts %}
