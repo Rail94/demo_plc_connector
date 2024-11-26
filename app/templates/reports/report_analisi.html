@@ -1,0 +1,272 @@
+{% extends 'new_base.html' %} 
+{% block custom_style %}
+<style>
+  .container {
+    margin-top: 20px;
+  }
+  
+  .logo-container {
+      display: flex;
+      align-items: center;
+  }
+  .logo-container img {
+      height: 3rem;
+      margin-right: 10px;
+      background-color: black;
+      border-radius: 6px;
+  }
+  .segment {
+      font-size: 1rem;
+      font-weight: 700;
+  }
+  
+  .date-text {
+    font-weight: 700;
+  }
+
+  .input-value::after {
+    content: attr(value);
+    display: block;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  .text-green-600 {
+    color: green;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 1.7rem;
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+
+    .input-value {
+      margin-bottom: 1rem;
+    }
+
+    .top-info {
+      display: block;
+    }
+
+    h3 {
+      display: none;
+    }
+
+    .print-down {
+      padding-top: 3rem;
+    }
+  }
+  
+</style>
+{% endblock custom_style
+%} {% block content %}
+<div class="container top-info d-none">
+  <div class="logo-container">
+      <img class="w-auto h-12" src="http://192.168.1.148/static/images/logo.png" alt="Your Company"> <!---->
+      <p class="segment">Sistema Analisi Automatizzato SAA |</p>
+      <p class="date-text">| Data: {{ current_date }}</p>
+      
+  </div>
+  <div class="text-center title">Report Analisi</div>
+</div>
+
+<div class="text-center mt-4 no-print">
+    <form action="{{ url_for('pdfs_blueprint.print_pdf_report_analisi') }}" method="post">
+        <button type="submit" class="btn-primary text-white font-bold py-2 px-4 rounded">
+            <i class="mse mse-download"></i> Scarica PDF
+        </button>
+      </form>
+</div>
+<div class="px-4 sm:px-6 lg:px-8">
+  <div
+    class="max-w-full mx-auto bg-white p-6 rounded-lg shadow-md grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+    <!-- Left Side -->
+    <div class="border-r-0 lg:border-r-2 border-gray-200 pr-0 lg:pr-4">
+      <h2 class="text-lg font-bold text-green-600">Lato sinistro SX</h2>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="block font-bold">N° Elementi</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="00"
+            readonly />
+
+        </div>
+        <div>
+          <label class="block font-bold">Indice</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="00"
+            readonly />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="block font-bold">Contenitore</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="00000000000000000000000000000000"
+            readonly />
+        </div>
+        <div>
+          <label class="block font-bold">Posizione</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="00000000000000000000000000000000"
+            readonly />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="block font-bold">Lotto</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="00000000000000000000000000000000"
+            readonly />
+        </div>
+        <div>
+          <label class="block font-bold">Data</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="0000000000"
+            readonly />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="block font-bold">Ora</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="0000000"
+            readonly />
+        </div>
+      </div>
+      <h3 class="text-md font-bold mt-6">Strumento</h3>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="block font-bold">Flusso</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="0000000000000000000000"
+            readonly />
+          <span class="block text-green-600 font-bold mt-1">OK</span>
+        </div>
+        <div>
+          <label class="print-down block font-bold">Oxymat</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="0000000000000000000000"
+            readonly />
+          <span class="block text-green-600 font-bold mt-1">OK</span>
+        </div>
+      </div>
+    </div>
+    <!-- Right Side -->
+    <div class="pl-0 lg:pl-4">
+      <h2 class="print-down text-lg font-bold text-green-600">Lato destro DX</h2>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="block font-bold">N° Elementi</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="00"
+            readonly />
+        </div>
+        <div>
+          <label class="block font-bold">Indice</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="00"
+            readonly />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="block font-bold">Contenitore</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="00000000000000000000000000000000"
+            readonly />
+        </div>
+        <div>
+          <label class="block font-bold">Posizione</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="00000000000000000000000000000000"
+            readonly />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="block font-bold">Lotto</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="00000000000000000000000000000000"
+            readonly />
+        </div>
+        <div>
+          <label class="block font-bold">Data</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="0000000000"
+            readonly />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="block font-bold">Ora</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="0000000"
+            readonly />
+        </div>
+      </div>
+      <h3 class="text-md font-bold mt-6">Strumento</h3>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="print-down block font-bold">Flusso</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="0000000000000000000000"
+            readonly />
+          <span class="block text-green-600 font-bold mt-1">OK</span>
+        </div>
+        <div>
+          <label class="block font-bold">Oxymat</label>
+          <input
+            type="text"
+            class="w-full border p-2 input-value"
+            value="0000000000000000000000"
+            readonly />
+          <span class="block text-green-600 font-bold mt-1">OK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %} {% block javascripts %} {% endblock javascripts %}
