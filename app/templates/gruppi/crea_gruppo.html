@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="base-container">
+    <h1>Crea gruppo</h1>
+    <form action="/crea-gruppo" method="post">
+        <div class="mse-input-row-wrap">
+            <div class="mse-input-wrap">
+                <label class="mse-input-label" for="name">Nome gruppo:</label>
+                <input type="text" id="name" class= "mse-input" placeholder="Denominazione gruppo..." name="name" required>
+            </div>
+        </div>
+        <div class="mse-input-row">    
+            <button type="submit" class='mse-input' value="submit"><i class="mse mse-add-group mx-1"></i> Crea Gruppo</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block javascripts %} {% endblock javascripts %}
