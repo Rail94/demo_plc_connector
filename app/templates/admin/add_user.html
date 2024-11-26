@@ -1,0 +1,213 @@
+{% extends 'new_base.html' %}
+
+{% block custom_style %}
+<style>
+    .box-add {
+        border-radius: 30px;
+        box-shadow: 5px 10px 8px 10px #888888;
+        padding: 3rem;
+        width: 100%;
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .field {
+        border: 1px solid gray;
+        border-radius: 10px;
+        width: 18rem;
+        padding: 1.5rem;
+    }
+
+    .btn-registra {
+        border: 1px solid gray;
+        background-color: orange;
+        color: white;
+        padding: 15px;
+        border-radius: 15px;
+        transition: 0.5s;
+        transition: 0.5s;
+    }
+
+    .btn-registra:hover {
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+        transition: 0.5s;
+    }
+
+    .text-columns {
+        color: gray;
+        font-size: 14px;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border-bottom: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr {
+        border-bottom: 1px solid gray
+      }
+
+      #search {
+        border: 1px solid gray;
+        border-radius: 10px;
+        width: 100%;
+        padding: 0.5rem;
+      }
+
+      td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+    }
+
+    #error {
+        color: red;
+    }
+
+    @media (min-width: 360px) and (max-width: 552px) {
+        .field {
+            width: 13rem;
+        }
+      }
+
+      @media (min-width: 553px) and (max-width: 767px) {
+        .field {
+            width: 16rem;
+        }
+      }
+
+    @media (min-width: 768px) and (max-width: 1185px) {
+        .box-add {
+            width: 50%;
+        }
+      }
+
+      @media (min-width: 1186px) and (max-width: 1600px) {
+        .box-add {
+            width: 50%;
+        }
+      }
+
+</style>
+{% endblock custom_style %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-center align-content-center mt-5">
+                    <div class="box-add text-center">
+                        <h3 class="title mb-5">Informazioni</h3>
+                        <form onsubmit="validateEmailInput(); return false;" action="post">
+                            <label for="username" class="fw-bold mb-2">Username: </label><br>
+                            <input type="text" id="username" class="mb-2 py-2 field" name="username" required><br>
+                            
+                            <label for="password" class="fw-bold mb-2">Password:</label><br>
+                            <input type="password" id="password" class="mb-2 py-2 field" name="password" required><br><br>
+                            
+                            <label for="email" class="fw-bold mb-2">Email:</label><br>
+                            <input type="text" id="email" class="py-2 field" name="email" required><br><br>
+                            <div id="error" class="mb-4 hidden">Inserire un formato email valido!</div>
+                            
+                            <button type="submit" class="btn-registra fw-bold mt-2">Aggiungi</button>
+                          
+                          <div class="col-12 mt-3">
+                            <div class="col-12 d-flex justify-content-center my-3">
+                                <input type="text" id="search" name="search" placeholder="Cerca...">
+                    </div>
+                            <div>
+                                <table id="search-table">
+                                    <thead>
+                                        <tr class="text-columns">
+                                            <th>Ruolo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" class="me-3">Admin</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" class="me-3"> Utente, Settore: Esempio ecc...</td>
+                                        </tr>
+                                        </tbody>
+            
+                                </table>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            
+            
+        </div>
+
+{% endblock content %}
+
+{% block javascripts %}
+<script>
+    //Search Function
+    document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search');
+            const table = document.getElementById('search-table');
+            
+            if (!searchInput || !table) {
+                console.error('Elemento di input per la ricerca o tabella non trovato');
+                return;
+            }
+
+            searchInput.addEventListener('input', function() {
+                let filter = this.value.toLowerCase();
+                let rows = table.querySelectorAll('tbody tr');
+
+                rows.forEach(function(row) {
+                    let cells = row.querySelectorAll('td');
+                    let textContent = '';
+
+                    cells.forEach(function(cell) {
+                        textContent += cell.textContent.toLowerCase() + ' ';
+                    });
+
+                    if (textContent.includes(filter)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        //Email validation Function
+        function isValidEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        function validateEmailInput() {
+            const emailInput = document.getElementById("email").value;
+            const error = document.getElementById("error");
+            
+            if (isValidEmail(emailInput)) {
+                error.style = "display: none";
+            } else {
+                error.style = "display: block";
+            }
+        }
+        
+</script>
+{% endblock javascripts %}
